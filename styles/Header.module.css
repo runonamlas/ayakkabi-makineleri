@@ -1,0 +1,144 @@
+.headerDiv {
+  width: 100%;
+  height: 7.5vh;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.logo {
+  color: #2F8F9D;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.searchDiv {
+  display: flex;
+  align-items: center;
+}
+
+.searchBox {
+  text-align: center;
+  color: #2F8F9D;
+  font-size: 1.1rem;
+  width: 35rem;
+  border-radius:2rem;
+  border: 0.2rem solid #2F8F9D;
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+}
+
+.searchBox::placeholder { 
+  color: #2F8F9D;
+}
+
+.searchIcon{
+  cursor: pointer;
+}
+
+
+.navUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menuItem {
+  color:#2F8F9D;
+  font-size: 1.5rem;
+  font-weight: normal;
+  padding-left: 2rem;
+  cursor: pointer;
+}
+
+.menuItem:hover{
+  font-weight: bold;
+}
+
+.menuItemSelected {
+  color:#2F8F9D;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 2rem;
+  cursor: pointer;
+}
+
+.menuText {
+  padding-left: 0.5rem; 
+}
+
+
+@media only screen and (max-width:768px){
+  .headerDiv {
+    width: 100%;
+    height: 7.5vh;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .logo {
+    color: #2F8F9D;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 1rem;
+  }
+  
+  .searchDiv {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+  }
+  
+  .searchBox {
+    display: none;
+    text-align: center;
+    color: #2F8F9D;
+    font-size: 1.1rem;
+    width: 35rem;
+    border-radius:2rem;
+    border: 0.2rem solid #2F8F9D;
+    padding: 0.3rem;
+    margin-right: 0.5rem;
+  }
+  
+  .searchBox::placeholder { 
+    color: #2F8F9D;
+  }
+  
+  .searchIcon{
+    cursor: pointer;
+  }
+  
+  
+  .navUl {
+    z-index: 8;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+    position: fixed;
+    justify-content: space-between;
+    bottom: 0px;
+    background-color: white;
+  }
+  
+  .menuItem {
+    font-size: 0;
+    padding-left: 0;
+  }
+  
+  .menuItemSelected {
+    padding-left: 0;
+  }
+  
+  .menuText {
+    font-size: 0;
+  }
+}

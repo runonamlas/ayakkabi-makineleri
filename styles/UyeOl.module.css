@@ -1,0 +1,69 @@
+.main {
+  height: 91.2vh;
+  width: 100%;
+  float: left;
+  padding: 1rem 0 0 3rem;
+  text-align: center;
+}
+
+.title {
+  color: #2F8F9D;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.formStyle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fieldHead {
+  color: #2F8F9D;
+  margin-top: 1rem;
+}
+
+.categoryInput {
+  text-align: center;
+  color: black;
+  font-size: 1.1rem;
+  width: 80%;
+  border-radius:2rem;
+  border: 0.2rem solid #2F8F9D;
+  padding: 0.3rem 0;
+  margin-top: 0.5rem;
+}
+
+.adressDiv {
+  width: 80%;
+}
+
+.adressDownDiv{
+  float: left;
+  width: 50%;
+}
+
+.adressSelect{
+  text-align: center;
+  color: black;
+  font-size: 1.1rem;
+  width: 95%;
+  border-radius:2rem;
+  border: 0.2rem solid #2F8F9D;
+  padding: 0.3rem 0;
+  margin-top: 0.5rem;
+}
+
+.saveButton{
+  text-align: center;
+  color: white;
+  background-color: #2F8F9D;
+  font-size: 1.5rem;
+  width: 79%;
+  border-radius:2rem;
+  border: 0.2rem solid #2F8F9D;
+  padding: 0.3rem 0;
+  margin-top: 1rem;
+  cursor: pointer;
+}

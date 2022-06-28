@@ -1,0 +1,132 @@
+.main {
+  height: 91.2vh;
+  width: 100%;
+  float: left;
+  padding: 1rem 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.OwnerTitle{
+  width: 100%;
+  height: 5vh;
+  background-color: #2F8F9D;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+.productimage{
+  object-fit: contain;
+}
+.mesajTitle{
+  display: inline-block;
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: calc(100%);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding-top: 0.2rem;
+  padding-left: 0.2rem;
+  text-align: start;
+}
+
+.mesajContent{
+  display: inline-block;
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: calc(100%);
+  font-size: 1.1rem;
+  padding-left: 0.2rem;
+  padding-top: 0.2rem;
+  text-align: start;
+}
+
+.chatView{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.chatSatirLeft{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.chatSatirRight{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chatDiv{
+  width: 49%;
+  height: 15vh;
+  border: 0.2rem solid #2F8F9D;
+  border-radius: 2rem;
+  margin-top: 0.5rem;
+
+}
+
+.chatWrite{
+  width: 100%;
+  height: 15vh;
+}
+
+
+.productCard{
+  width: 25%;
+  display: flex;
+  border: 0.1rem solid #EBEBED;
+  padding: 0  0.2rem 0.3rem 0.2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.productimage{
+  object-fit: contain;
+}
+
+.productTitle{
+  display: inline-block;
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: calc(100%);
+  font-size: 1.1rem;
+  padding-top: 0.2rem;
+}
+
+.productPrice{
+  font-weight: bold;
+  padding-top: 0.2rem;
+  font-size: 1.2rem;
+}
+
+
+.chatInput{
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
+  width: 95%;
+  border-radius:2rem;
+  border: 0.2rem solid #2F8F9D;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  float: left;
+}
+
+.writeButton{
+  border-radius: 1rem;
+  border: 0.2rem solid #2F8F9D;
+  padding: 0.2rem;
+}
