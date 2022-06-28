@@ -71,7 +71,7 @@ export default function UyeOl () {
         <input required className={styles.categoryInput} type="password" id="passwordR" placeholder="şifre tekrar" name="passwordR" />
         <div className={styles.fieldHead}>
         <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-        <label for="vehicle1"> Kvk okudum anldım</label>
+        <label htmlFor="vehicle1"> Kvk okudum anldım</label>
         </div>
 
         <button type="submit" className={styles.saveButton}>

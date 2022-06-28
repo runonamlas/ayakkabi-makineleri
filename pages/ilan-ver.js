@@ -110,14 +110,14 @@ export default function IlanVer () {
         <label className={styles.fieldHead} >fotograflar*</label>
         <div className={styles.imageDiv} draggable="false">
           {selectedFile &&  preview.map((e, index)=>(
-          <div draggable="false" className={styles.imageDivCup}>
+          <div draggable="false" key={index} className={styles.imageDivCup}>
             <button type="button" name="vitrinimage" onClick={()=>vitrinimage(index)} disabled={vitrin==index ? true : false} className={styles.vitrinimage}>vitrin</button>
             <button type="button" name="deleteimage" onClick={()=>deleteimage(index)} className={styles.deleteimage}>X</button>
             <Image key={index} draggable="false" className={styles.productimage} src={e} height='160' width='200' />
           </div>)) }
         </div>
         {selectedFile.length>=6 ? (<a className={styles.maxImages}>en fazla 6 adet resim yükleyebilirsiniz</a>): (
-          <label class={styles.customFileUpload}>
+          <label className={styles.customFileUpload}>
             <input type='file' accept="image/png, image/jpeg, image/jpg" className={styles.imageInput} onChange={onSelectFile} multiple/>
             fotograf seç
           </label>

@@ -17,7 +17,7 @@ function ProductPage({data}){
     </Head>
     <main className={styles.main}>
       <div className={styles.left}>
-        <div class={styles.imageTop}>
+        <div className={styles.imageTop}>
           <button type="button" name="sag" onClick={()=>{}} className={styles.leftbutton}>&lt;</button>
           <Image className={styles.productimage} src={'/icons/'+ image + '.svg'}  height='700' width='700'/>
           <button type="button" name="sol" onClick={()=>{}} className={styles.rightbutton}>&gt;</button>
