@@ -53,7 +53,7 @@ function MagazaScreen({data}){
             <Link key={product.id} href={`/ilan/${product.title}`}>
               <div className={styles.productCard}>
                 <div className={styles.productLeft}>
-                  <Image className={styles.productimage} src='/icons/add.svg' height='80' width='100' layout='responsive'/>
+                  <Image className={styles.productimage} src='/icons/add.svg' height='65' width='100' layout='responsive'/>
                 </div>
                 <div className={styles.productRight}>
                   <a className={styles.productTitle}>Sahibinden sıfır ayarında bla bla bla hahdadhdh ahdhadhdhh ahdahdhsdh hadhasdhashdah</a>

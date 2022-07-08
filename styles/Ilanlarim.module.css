@@ -64,3 +64,74 @@
   padding-top: 0.2rem;
   font-size: 1.2rem;
 }
+
+@media only screen and (max-width:768px){
+  .main {
+    height: 86vh;
+    width: 100%;
+    float: left;
+    padding: 0;
+    padding-left: 1rem;
+    text-align: center;
+    overflow: scroll;
+  }
+  
+  .title {
+    color: #2F8F9D;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .categoryTitle{
+    color: #2F8F9D;
+    text-align: start;
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  
+  .productList{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    overflow: scroll;
+  }
+  
+  .productCard{
+    width: 47%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    border: 0.1rem solid #EBEBED;
+    padding: 0  0.2rem 0.3rem 0.2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  
+  .productimage{
+    object-fit: contain;
+  }
+  
+  .productTitle{
+    display: inline-block;
+    overflow: hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: calc(100%);
+    font-size: 1.1rem;
+    padding-top: 0.2rem;
+  }
+  
+  .productPrice{
+    font-weight: bold;
+    padding-top: 0.2rem;
+    font-size: 1.2rem;
+  }
+}

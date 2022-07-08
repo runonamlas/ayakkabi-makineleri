@@ -1,15 +1,48 @@
 import Link from "next/link";
 import Layout from "../components/Layout";
 import styles from '../styles/Hesabim.module.css'
+import { parseCookies, destroyCookie} from 'nookies'
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
-export default function Hesabim(){
+function Hesabim(){
+  const [name , setName] = useState('')
+  const [callNumber , setCallNumber] = useState('')
+  const [address , setAddress] = useState('')
+  const [status, setStatus] = useState('')
+  const router = useRouter();
+
+  useEffect(() => {
+    const cookies = parseCookies()
+    setName(cookies.name)
+    setCallNumber(cookies.callNumber)
+    setAddress(cookies.address)
+    switch (cookies.type) {
+      case '0':
+        return setStatus('amatör hesap')
+      case '1':
+        return setStatus('gold hesap')
+      default:
+        return setStatus('ana hesap')
+    }
+  }, []);
+  
+  const handleLogout = () => {
+    const cookies = parseCookies()
+    for (const cookie of Object.keys(cookies)) {
+      destroyCookie(null, cookie)
+    }
+    router.push("/")
+  }
+
+  console.log(status)
   return <Layout navSelect={2}>
     <main className={styles.main}>
-      <h1 className={styles.title}>Salman Makine</h1>
-      <h2 className={styles.title}>0542 744 78 39</h2>
-      <h3 className={styles.title}>Aykosan Ayakkabıcılar Sanayi Sitesi 6lı E blok no:64</h3>
+      <h1 className={styles.title}>{name}</h1>
+      <h2 className={styles.title}>{callNumber}</h2>
+      <h3 className={styles.title}>{address}</h3>
       <div className={styles.hesapType}>
-        <a>amatör hesap</a>
+        <a>{status}</a>
         <Link href='hesap-yukselt'>
           <div className={styles.saveButton}>
           yükselt</div>
@@ -35,13 +68,13 @@ export default function Hesabim(){
       </div>
 
       <div className={styles.butonGroup}>
-        <Link href='hesap-yukselt'>
-          <div className={styles.saveButton}>
+          <div className={styles.saveButton} onClick={handleLogout}>
           çıkış yap</div>
-        </Link>
       </div>
       
     </main>
 
   </Layout>
 }
+
+export default Hesabim
