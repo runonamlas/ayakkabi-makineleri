@@ -2,8 +2,19 @@
   height: 91.2vh;
   width: 100%;
   float: left;
-  padding: 1rem 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 0 0;
   text-align: center;
+}
+.errorDiv{
+  width: 100%;
+  color: white;
+  font-size: 1.2rem;
+  background-color: red;
+  padding: 0.6rem;
+  margin-top: 1rem;
 }
 
 .title {
@@ -16,6 +27,7 @@
 
 .formStyle{
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
@@ -28,7 +40,7 @@
   text-align: center;
   color: black;
   font-size: 1.1rem;
-  width: 80%;
+  width: 100%;
   border-radius:2rem;
   border: 0.2rem solid #2F8F9D;
   padding: 0.3rem 0;
@@ -36,7 +48,7 @@
 }
 
 .adressDiv {
-  width: 80%;
+  width: 100%;
 }
 
 .adressDownDiv{
@@ -56,7 +68,7 @@
 }
 
 .imageDiv{
-  width: 80%;
+  width: 100%;
   height: 18vh;
   border-radius:2rem;
   border: 0.2rem solid #2F8F9D;
@@ -133,13 +145,38 @@
   color: white;
   background-color: #2F8F9D;
   font-size: 1.5rem;
-  width: 79%;
+  width: 98%;
   border-radius:2rem;
   border: 0.2rem solid #2F8F9D;
   padding: 0.3rem 0;
   margin-top: 1rem;
   cursor: pointer;
 }
+
+.loaderDiv{
+  font-size: 2rem;
+  color: #2F8F9D;
+}
+
+.loader {
+  border: 1rem solid #f3f3f3;
+  border-top: 1rem solid #2F8F9D;
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
 
 
 @media only screen and (max-width:768px){

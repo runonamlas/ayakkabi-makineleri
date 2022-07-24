@@ -1,9 +1,8 @@
 .main {
-  height: 91.2vh;
+  height: 55rem;
   width: 100%;
   float: left;
-  padding: 1rem 0 0 3rem;
-  margin-left: 1rem;
+  padding: 1rem 0 0 0;
   background-color: #2F8F9D;
   text-align: center;
   display: flex;

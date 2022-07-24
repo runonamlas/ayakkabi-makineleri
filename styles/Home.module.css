@@ -23,9 +23,9 @@
 }
 
 .productCard{
-  width: 16%;
-  height: 25vh;
-  display: flex;
+  color: black;
+  width: 14.5rem;
+  height: 15rem;
   flex-direction: column;
   margin-left: 0.5rem;
   margin-top: 0.5rem;
@@ -35,6 +35,7 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
+
 
 .productimage{
   object-fit: contain;
@@ -80,7 +81,11 @@
     align-content: flex-start;
     overflow: auto;
   }
-  
+
+ .productsList a:visited :hover :active{
+    color:black;
+  }
+
   .productCard{
     width: 47%;
     height: 25vh;
@@ -94,6 +99,12 @@
     border-radius: 0.5rem;
     cursor: pointer;
   }
+
+  .productCard>a:visited{
+    color: black;
+  }
+
+
   
   .productimage{
     object-fit: contain;

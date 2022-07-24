@@ -1,0 +1,124 @@
+.main {
+  height: 91.2vh;
+  width: 100%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 0 0;
+  text-align: center;
+}
+
+.title {
+  color: #2F8F9D;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  justify-content: space-evenly;
+}
+
+.boxinbox{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+  background-color: white;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0.2rem solid #2F8F9D;
+  border-radius: 1rem;
+  justify-content: space-evenly;
+}
+
+.boxinboxTop{
+  width: 20%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0.2rem solid #2F8F9D;
+  border-radius: 1rem;
+  justify-content: space-evenly;
+}
+.staticticTitle{
+  color: #2F8F9D;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.staticticValue{
+  color: black;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.productsList{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-flow: column;
+}
+
+.productCard{
+  width: 100%;
+  height: 100%;
+  flex-direction:row;
+  margin-top: 1rem;
+  border: 0.1rem solid #EBEBED;
+  padding: 0  0.2rem 0.3rem 0.2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: black;
+}
+
+
+.productLeft{
+  float: left;
+  width: 30%;
+
+}
+
+.productRight{
+  float: left;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.productOwner{
+  color: #2F8F9D;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.productimage{
+  object-fit: contain;
+}
+
+.productTitle{
+  font-size: 1.1rem;
+  padding-top: 0.8rem;
+  font-weight: bold;
+}
+
+.productPrice{
+  font-weight: bold;
+  padding-top: 0.2rem;
+  font-size: 1.2rem;
+}
+
+.productAdress{
+  padding-top: 1rem;
+}

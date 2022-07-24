@@ -17,6 +17,16 @@ export default function middleware(req) {
     }
     return NextResponse.next();
   }
+  if (url.includes("/uye-ol")) {
+    if (jwt) {
+      try {
+       return NextResponse.redirect(new URL('/', url));
+      } catch (e) {
+        console.log(e)
+      }
+    }
+    return NextResponse.next();
+  }
 
   if (url.includes('/ilan-ver')) {
     if (jwt === undefined) {

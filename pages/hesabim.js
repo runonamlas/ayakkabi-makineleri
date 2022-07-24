@@ -9,14 +9,24 @@ function Hesabim(){
   const [name , setName] = useState('')
   const [callNumber , setCallNumber] = useState('')
   const [address , setAddress] = useState('')
+  const [city, setCity] = useState('')
   const [status, setStatus] = useState('')
   const router = useRouter();
 
   useEffect(() => {
     const cookies = parseCookies()
-    setName(cookies.name)
+    const nameArray = cookies.name.split("-")
+    const nameConfig =''
+    nameArray.forEach(e=>{
+      const nameParse = e.charAt(0).toUpperCase()+ e.slice(1) + " "
+      nameConfig += nameParse
+    })
+
+    setName(nameConfig.replace(/\s+$/g, ''))
     setCallNumber(cookies.callNumber)
-    setAddress(cookies.address)
+    const addressArray = cookies.address.split("%")
+    setAddress(addressArray[0])
+    setCity(addressArray[1])
     switch (cookies.type) {
       case '0':
         return setStatus('amatör hesap')
@@ -27,20 +37,19 @@ function Hesabim(){
     }
   }, []);
   
-  const handleLogout = () => {
+  const handleLogout = async () => {
     const cookies = parseCookies()
     for (const cookie of Object.keys(cookies)) {
-      destroyCookie(null, cookie)
+      await destroyCookie(null, cookie)
     }
     router.push("/")
   }
 
-  console.log(status)
   return <Layout navSelect={2}>
     <main className={styles.main}>
       <h1 className={styles.title}>{name}</h1>
       <h2 className={styles.title}>{callNumber}</h2>
-      <h3 className={styles.title}>{address}</h3>
+      <h3 className={styles.title}>{address} {city}</h3>
       <div className={styles.hesapType}>
         <a>{status}</a>
         <Link href='hesap-yukselt'>

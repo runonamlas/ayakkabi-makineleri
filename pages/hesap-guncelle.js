@@ -3,47 +3,57 @@ import Layout from "../components/Layout";
 import styles from '../styles/HesapGuncelle.module.css'
 import * as React from "react";
 import citiesList from "../cities.config";
+import { parseCookies, setCookie } from "nookies";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function HesapGuncelle(){
   const [selectedCity, setSelectedCity] = React.useState();
   const [selectedDistrict, setSelectedDistrict] = React.useState();
+  const [username, setUsername] = React.useState('')
+  const [openAddress, setOpenAddress] = React.useState('')
   const availableDistrict = citiesList.cities.find((c) => c.name === selectedCity);
-  const [selectedFile, setSelectedFile] = React.useState([])
-  const [preview, setPreview] = React.useState([])
-  const [vitrin, setVitrin] = React.useState(0)
+  const [buttonState, setButtonState] = React.useState(false);
+  const router = useRouter();
 
-  // create a preview as a side effect, whenever selected file is changed
-  React.useEffect(() => {
-      if (!selectedFile) {
-          return
-      }
-      setPreview([])
-      selectedFile.map(e=>{
-        const objectUrl = URL.createObjectURL(e)
-        setPreview(arr => [...arr, objectUrl])
-        return () => URL.revokeObjectURL(e)
-      }
-      )
-  }, [selectedFile])
 
-  const onSelectFile = e => {
-      if (!e.target.files || e.target.files.length === 0) {
-          return
-      }
-      const arr = Array.from(e.target.files);
-      arr.map(a=>{
-        setSelectedFile(arr => [...arr, a]);
-      })
+  const submitLogin = async (event) => {
+    setButtonState(true);
+    event.preventDefault();
+    const cookies = parseCookies()
+    const address = openAddress+"%"+selectedDistrict+"&"+selectedCity
       
+      const groupData = {
+        username, address
+      }
+      
+      axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
+      await axios.put("http://localhost:8080/api/user/profile",groupData).then(response => {
+        setCookie(null, 'name', response.data.data.username, {
+          secure: process.env.NODE_ENV !== "development",
+          sameSite: 'strict',
+          maxAge: 60 * 60 * 24 * 30,
+          path: '/',
+        });
+        setCookie(null, 'address', response.data.data.address, {
+          secure: process.env.NODE_ENV !== "development",
+          sameSite: 'strict',
+          maxAge: 60 * 60 * 24 * 30,
+          path: '/',
+        })
+        router.push('/hesabim')
+        
+      }).catch((error) => {
+        console.error('Error:', error.response);
+      });
   }
 
-  var id=2
   return <Layout>
     <main className={styles.main}>
       <h1 className={styles.title}>profili düzenle</h1>
-      <form className={styles.formStyle} action="/kaydet" method="post">
+      <form className={styles.formStyle} onSubmit={submitLogin}>
         <label className={styles.fieldHead} htmlFor="baslik">şirket adınız*</label>
-        <input required className={styles.categoryInput} type="text" id="baslik" name="baslik" placeholder="şirket adınız" maxLength="25" />
+        <input required className={styles.categoryInput} type="text" id="baslik" name="baslik" placeholder="şirket adınız" maxLength="52" value={username} onChange={(e) => setUsername(e.target.value)} />
         <label className={styles.fieldHead} >adres*</label>
         <div className={styles.adressDiv}>
           
@@ -84,12 +94,12 @@ export default function HesapGuncelle(){
             </select>
           </div>
         </div>
-        <textarea required name="message" rows="5"  className={styles.categoryInput} placeholder="açık adres">
+        <textarea required name="message" rows="5"  className={styles.categoryInput} placeholder="açık adres" value={openAddress} onChange={(e) => setOpenAddress(e.target.value)} >
         </textarea>
     
 
        
-        <button type="submit" className={styles.saveButton}>
+        <button type="submit" className={styles.saveButton} disabled={buttonState}>
           kaydet
         </button>
        

@@ -9,6 +9,7 @@ import { setCookie } from 'nookies'
 export default function GirisYap(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [passwordShown, setPasswordShown] = useState(false);
 
   const router = useRouter();
 
@@ -18,32 +19,46 @@ export default function GirisYap(){
     const groupData = {
       email, password
     }
-    console.log("GroupData ", groupData)
 
-    try {
-      const { data } = await axios({
-        url:"http://localhost:8080/api/auth/login",
+    await axios("http://localhost:8080/api/auth/login",{
         method: "POST",
         data: groupData
-      });
-
-      console.log("response back ", data.data);
-      setCookie(null, "OursiteJWT", data.data.token, {
+    }).then(response => {
+      setCookie(null, "OursiteJWT", response.data.data.token, {
         secure: process.env.NODE_ENV !== "development",
         sameSite: 'strict',
         maxAge: 60 * 60 * 24 * 30,
         path: '/',
       });
-      setCookie(null, 'name', data.data.username)
-      setCookie(null, 'callNumber', data.data.callNumber)
-     // console.log(decodeURIComponent("salman%20makina"))
-      setCookie(null, 'address', data.data.address)
-      setCookie(null, 'type', data.data.accountType)
+      setCookie(null, 'name', response.data.data.username, {
+        secure: process.env.NODE_ENV !== "development",
+        sameSite: 'strict',
+        maxAge: 60 * 60 * 24 * 30,
+        path: '/',
+      });
+      setCookie(null, 'callNumber', response.data.data.callNumber, {
+        secure: process.env.NODE_ENV !== "development",
+        sameSite: 'strict',
+        maxAge: 60 * 60 * 24 * 30,
+        path: '/',
+      })
+      setCookie(null, 'address', response.data.data.address, {
+        secure: process.env.NODE_ENV !== "development",
+        sameSite: 'strict',
+        maxAge: 60 * 60 * 24 * 30,
+        path: '/',
+      })
+      setCookie(null, 'type', response.data.data.accountType, {
+        secure: process.env.NODE_ENV !== "development",
+        sameSite: 'strict',
+        maxAge: 60 * 60 * 24 * 30,
+        path: '/',
+      })
       router.push('/')
-      
-    } catch (error) {
+
+      }).catch (error => {
       console.log("error ", error)
-    }
+    });
   }
   return <Layout>
     <main className={styles.main}>
@@ -55,8 +70,11 @@ export default function GirisYap(){
           <label className={styles.fieldHead} htmlFor="email">telefon numarası veya e-posta adresi*</label>
           <input required className={styles.categoryInput} type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="e-posta adresi veya telefon numarası" maxLength="25" />
           <label className={styles.fieldHead} htmlFor="passwordText">şifreniz*</label>
-          <input required className={styles.categoryInput} type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="sifreniz" name="oassword" />
-          <a className={styles.sifremiUnuttum}>şifremi unuttum</a>
+          <div className={styles.passField}>
+            <input required className={styles.passInput} type={passwordShown ? "text" : "password"} id="password" value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="sifreniz" name="oassword" />
+            <button type="button" className={styles.iconButton} onClick={()=>setPasswordShown(!passwordShown)}><img className={styles.icon} type="image" src={passwordShown ? "icons/passSee.svg" : "icons/passNotSee.svg"}/></button>
+          </div>
+          <Link href='sifremi-unuttum'><a className={styles.sifremiUnuttum}>şifremi unuttum</a></Link>
           <button type="submit" className={styles.saveButton}>giriş yap</button>
         </form>
         <a className={styles.veya}>veya</a>

@@ -15,7 +15,7 @@
 
 .headText{
   width: 100%;
-  height: 27vh;
+  height: 16rem;
   background-color: #2F8F9D;
   padding-top: 1rem;
   text-align: center;
@@ -24,7 +24,7 @@
 
 .ilanlar{
   width: 100%;
-  height: 60vh;
+  height: 38rem;
 }
 
 .butonGroup{
@@ -63,7 +63,7 @@
 
 .productsList{
   width: 100%;
-  height: 99%;
+  height: 100%;
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
@@ -71,38 +71,26 @@
 }
 
 .productCard{
-  width: 49%;
-  height: 18vh;
-  display: flex;
-  flex-direction:row;
+  width: 21.5rem;
+  height: 18.5rem;
+  flex-direction:column;
   margin-left: 0.5rem;
   margin-top: 0.5rem;
   border: 0.1rem solid #EBEBED;
   padding: 0  0.2rem 0.3rem 0.2rem;
   text-align: center;
   border-radius: 0.5rem;
+  align-items: center;
+  align-self: center;
   cursor: pointer;
 }
 
-.productLeft{
-  float: left;
-  width: 30%;
-  height: 100%;
-}
-
 .productRight{
-  float: left;
-  width: 70%;
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.productOwner{
-  color: #2F8F9D;
-  padding-top: 1rem;
-  font-size: 1.2rem;
-}
 
 .productimage{
   object-fit: contain;
@@ -120,9 +108,6 @@
   font-size: 1.8rem;
 }
 
-.productAdress{
-  padding-top: 1rem;
-}
 
 @media only screen and (max-width:768px){
   .main {
@@ -223,12 +208,7 @@
     display: flex;
     flex-direction: column;
   }
-  
-  .productOwner{
-    color: #2F8F9D;
-    padding-top: 0.3rem;
-    font-size: 1rem;
-  }
+
   
   .productimage{
     object-fit: contain;
@@ -245,8 +225,5 @@
     padding-top: 0.2rem;
     font-size: 1.2rem;
   }
-  
-  .productAdress{
-    padding-top: 0.1rem;
-  }
+
 }

@@ -55,7 +55,33 @@
   padding: 0.3rem 0;
   margin-top: 0.5rem;
 }
+.passField{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  border: 0.2rem solid #2F8F9D;
+  border-radius: 2rem;
+}
 
+.passInput {
+  text-align: center;
+  color: black;
+  font-size: 1.1rem;
+  width: 92%;
+  margin-left: 1rem;
+  border: none;
+  padding: 0.3rem 0;
+}
+
+.icon{
+  width: 2rem;
+}
+
+.iconButton{
+  margin-right: 1rem;
+  background-color: white;
+  border: none;
+}
 .sifremiUnuttum {
   color: #2F8F9D;
   font-weight: bold;

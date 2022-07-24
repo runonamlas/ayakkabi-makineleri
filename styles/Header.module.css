@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .logo {
@@ -17,6 +17,66 @@
 .searchDiv {
   display: flex;
   align-items: center;
+  flex-direction: column;
+}
+
+.productCard{
+  height: 8rem;
+  flex-direction:row;
+  margin: 0.5rem;
+  border: 0.1rem solid #EBEBED;
+  padding: 0  0.2rem 0.3rem 0.2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+}
+
+
+.productLeft{
+  float: left;
+  width: 30%;
+
+}
+
+.productRight{
+  float: left;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.productimage{
+  object-fit: contain;
+}
+
+.productTitle{
+  font-size: 1.4rem;
+  padding-top: 0.8rem;
+  font-weight: bold;
+}
+
+.productOwner{
+  color: #2F8F9D;
+  padding-top: 0.2rem;
+  font-size: 1rem;
+}
+
+.productPrice{
+  font-weight: bold;
+  padding-top: 0.2rem;
+  font-size: 1.6rem;
+}
+
+.productAdress{
+  padding-top: 0.2rem;
+  font-size: 1rem;
+}
+
+.searchInput{
+  display: flex;
+  flex-direction: row;
 }
 
 .searchBox {
@@ -30,6 +90,7 @@
   margin-right: 0.5rem;
 }
 
+
 .searchBox::placeholder { 
   color: #2F8F9D;
 }
@@ -38,6 +99,14 @@
   cursor: pointer;
 }
 
+.searchSpace {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index:2;
+  margin-top: 0.5rem;
+  background-color: #EBEBED;
+}
 
 .navUl {
   list-style-type: none;
@@ -79,7 +148,7 @@
     display: flex;
     justify-content: space-between;
     text-align: center;
-    align-items: center;
+    align-items: flex-start;
   }
   
   .logo {
@@ -115,7 +184,7 @@
     cursor: pointer;
   }
   
-  
+
   .navUl {
     z-index: 8;
     padding-top: 0.8rem;
