@@ -28,6 +28,17 @@ export default function middleware(req) {
     return NextResponse.next();
   }
 
+  if (url.includes("/sifremi-unuttum")) {
+    if (jwt) {
+      try {
+       return NextResponse.redirect(new URL('/', url));
+      } catch (e) {
+        console.log(e)
+      }
+    }
+    return NextResponse.next();
+  }
+
   if (url.includes('/ilan-ver')) {
     if (jwt === undefined) {
       return NextResponse.redirect(new URL('/giris-yap', url));

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import nookies from 'nookies'
+import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import styles from '../styles/GirisYap.module.css'
@@ -14,6 +14,13 @@ export default function SifremiUnuttum({ data }) {
   const [showFinish, setShowFinish] = useState(false);
   const router = useRouter();
   useEffect(() => { 
+    const handleLogout = async () => {
+      const cookies = parseCookies()
+      for (const cookie of Object.keys(cookies)) {
+        await destroyCookie(null, cookie, {path:"/"})
+      }
+    }
+    handleLogout()
     setMounted(true) 
 
   }, []);

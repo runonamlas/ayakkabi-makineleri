@@ -6,7 +6,6 @@ import Layout from "../../components/Layout";
 import styles from '../../styles/MagazaScreen.module.css';
 
 export default function MagazaScreen({user}){
-  console.log(user)
   const nameArray = user.username.split("-")
   var nameConfig = ''
   nameArray.forEach(e=>{
@@ -27,7 +26,7 @@ export default function MagazaScreen({user}){
       <h3>{user.address}</h3>
       <div className={styles.butonGroup}>
         
-        <Link href={`/mesaj/`}><div className={styles.mesajButton}>
+        <Link href={`/mesaj/${user.id}-${user.username}`}><div className={styles.mesajButton}>
           mesaj gönder</div>
         </Link>
         <Link href={`tel:${user.callNumber}`} ><div className={styles.callButton}>

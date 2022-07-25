@@ -24,16 +24,25 @@ function MessagePage({data, messages, goster, product}){
     3: "$"
   }
 
-  const submitMessage = async () => {
+  const submitMessage = async (event) => {
     setButtonState(true);
     const cookies = parseCookies()
     const userID = parseInt(data[0])
-    var productID = messages.at(-1).product.id
-    if(product != {}){
-      productID = product.id
+    var groupData = {}
+    if(messages.length>0){
+      var productID = messages.at(-1).product.id
     }
-    const groupData = {
+    if(product){
+      var productID = product.id
+    }
+    if(productID){
+      groupData = {
       message, userID, productID
+      }
+    }else{
+      groupData = {
+        message, userID
+      }
     }
     axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
     await axios.post("http://localhost:8080/api/messages",groupData).then(response => {
@@ -60,12 +69,11 @@ function MessagePage({data, messages, goster, product}){
       <div id="chatView" className={styles.chatView} ref={node => {if(node) node.scrollTop = node.scrollHeight }}>
       {messages.map(e=>{
         const imageArray = e.product.images.split(",")
-        
         if(e.owner.id == data[0]){
           return <div className={styles.chatSatirLeft}>
           <div className={styles.chatDiv}>
             <div className={styles.productCardM}>
-              <Image priority="true"  className={styles.productimageM} src={imageArray[e.product.vitrin - 1]} height='100' width='140'/>
+              <Image priority="true" key={e.id} className={styles.productimageM} src={imageArray[e.product.vitrin - 1]} height='100' width='140'/>
               <a className={styles.productTitleM}>{e.product.name}</a>
               <a className={styles.productPriceM}>{e.product.price} {unit[e.product.priceUnit]}</a>
             </div>
@@ -109,7 +117,7 @@ export const getServerSideProps = async (context) => {
     axios.defaults.headers.common['Authorization'] = token;
     const { data } = await axios.get(`http://localhost:8080/api/messages/${params[0]}`)
     const messages = data.data
-    var product ={}
+    var product =false
     messages.sort((a, b) => a.id - b.id);
     if(context.query.product){
       const { data } = await axios.get(`http://localhost:8080/api/products/${context.query.product}`)
@@ -125,7 +133,7 @@ export const getServerSideProps = async (context) => {
     }
   } catch (error) {
     const messages = []
-    const product = {}
+    const product = false
     return {
       props: {
         data: params,

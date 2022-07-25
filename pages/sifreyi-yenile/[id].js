@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import nookies from 'nookies'
+import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import styles from '../../styles/GirisYap.module.css'
@@ -15,8 +15,14 @@ export default function SifreyiYenile({ data }) {
   const [buttonState, setButtonState] = useState(false);
   const router = useRouter();
   useEffect(() => { 
+    const handleLogout = async () => {
+      const cookies = parseCookies()
+      for (const cookie of Object.keys(cookies)) {
+        await destroyCookie(null, cookie, {path:"/"})
+      }
+    }
+    handleLogout()
     setMounted(true) 
-
   }, []);
 
 
@@ -85,10 +91,6 @@ export default function SifreyiYenile({ data }) {
 
 export const getServerSideProps = async (context) => {
   const data = context.params
-  const cookies = nookies.get(context)
-  for (const cookie of Object.keys(cookies)) {
-    nookies.destroy(context, cookie, {path:"/"})
-  }
   return {
       props: {
         data,
