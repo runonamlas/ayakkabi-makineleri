@@ -1,14 +1,79 @@
-import Image from "next/image";
-import Link from "next/link";
-import Layout from "../components/Layout";
-import styles from '../styles/Kaydet.module.css'
+import axios from 'axios'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import nookies from 'nookies'
+import { useEffect, useState } from 'react'
+import Layout from '../components/Layout'
+import styles from '../styles/GirisYap.module.css'
 
-export default function SifremiUnuttum(){
-  return <Layout>
+export default function SifremiUnuttum({ data }) {
+  const [email, setEmail] = useState('')
+  const [mounted, setMounted] = useState(false);
+  const [errorState, setErrorState] = useState();
+  const [buttonState, setButtonState] = useState(false);
+  const [showFinish, setShowFinish] = useState(false);
+  const router = useRouter();
+  useEffect(() => { 
+    setMounted(true) 
+
+  }, []);
+
+
+
+  if (!mounted) return <Layout>
     <main className={styles.main}>
-      
-      
-       
+      <h1 className={styles.title}>
+        şifremi unuttum
+      </h1>
+      <div className={styles.productsList}>
+        
+      </div>
     </main>
-  </Layout>
+  </Layout>;
+
+  
+
+  const submitLogin = async (event) => {
+    setButtonState(true)
+    event.preventDefault();
+    const groupData = {
+      email
+    }
+    await axios.post("http://localhost:8080/api/auth/forget",groupData).then(response => {
+      setShowFinish(true)
+      
+    }).catch((error) => {
+      if(error.response.status ==404){
+        setButtonState(false)
+        setErrorState("Bu maile ait bir hesap bulunamadı.")
+      }else{
+        console.error('Error:', error.response);
+      }
+      
+    });
+
+
+
+
+  }
+
+  return (
+    <Layout>
+      <main className={styles.main}>
+        <h1 className={styles.title}>
+          şifremi unuttum
+        </h1>
+        <div className={styles.productsList}>
+        {showFinish ? (<div className={styles.loaderDiv}><div className={styles.loader}></div><a>Mail Kutunuza gelen linke tıklayınız.</a></div>) : (
+        buttonState ? (<div className={styles.loaderDiv}><div className={styles.loader}></div><a>Mail Yollanıyor..</a></div>) : (
+        <form className={styles.formStyle} onSubmit={submitLogin}>
+          <label className={styles.fieldHead} htmlFor="eposta">e-posta adresiniz (mail yollanacaktır)*</label>
+          <input required className={styles.categoryInput} type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email adresiniz (mail yollanacaktır.)" />
+          {errorState && (<div className={styles.errorDiv}>{errorState}</div>)}
+          <button type="submit" className={styles.saveButton}>şifreyi değiştir</button>
+        </form>))}
+        </div>
+      </main>
+    </Layout>
+  )
 }

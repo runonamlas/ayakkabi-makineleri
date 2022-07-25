@@ -8,13 +8,21 @@ import styles from '../styles/Istatistikler.module.css'
 export default function Istatistikler({userData}){
   const [total, setTotal] = useState(0);
   const [topProducts, setTopProducts] = useState([]);
+  
   useEffect(() => {
-    userData?.products?.map( product =>{
-      setTotal(total + product.clickProduct)
-      
-    },
+    
+    const totalFunc = () =>{
+      var totalState = 0
+      userData?.products?.map( product =>{
+      totalState = totalState+ product.clickProduct
+      })
+      setTotal(totalState)
+    };
+
+    totalFunc()
+    
     setTopProducts(userData?.products?.sort(function(a, b) { return a.clickProduct - b.clickProduct; }).slice(0,3).reverse())
-    )
+    
   }, []);
   return <Layout>
     <main className={styles.main}>

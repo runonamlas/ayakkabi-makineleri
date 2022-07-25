@@ -39,6 +39,17 @@ export default function middleware(req) {
       return NextResponse.redirect("/giris-yap");
     }
   }
+  if (url.includes('/mesaj')) {
+    if (jwt === undefined) {
+      return NextResponse.redirect(new URL('/giris-yap', url));
+    }
+
+    try {
+       return NextResponse.next();
+    } catch (e) {
+      return NextResponse.redirect("/giris-yap");
+    }
+  }
 
   if (url.includes('/hesabim')) {
     if (jwt === undefined) {

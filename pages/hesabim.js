@@ -40,7 +40,7 @@ function Hesabim(){
   const handleLogout = async () => {
     const cookies = parseCookies()
     for (const cookie of Object.keys(cookies)) {
-      await destroyCookie(null, cookie)
+      await destroyCookie(null, cookie, {path:"/"})
     }
     router.push("/")
   }

@@ -6,7 +6,7 @@ import * as React from "react";
 import Layout from "../../components/Layout";
 import styles from '../../styles/ProductDetail.module.css';
 
-export default function ProductPage({product, owner}){
+export default function ProductPage({product, owner, }){
   const images = product.images.split(',')
   const [image, setImage] = React.useState(images[product.vitrin-1] ? images[product.vitrin-1]: '')
   const changeImage = (i) => {
@@ -87,7 +87,7 @@ export default function ProductPage({product, owner}){
 
 export const getServerSideProps = async (context) => {
   try {
-    const token=context.req.headers.cookie.split(";").find((c) => c.trim().startsWith("callNumber")).split("=")[1];
+    const token=context.req.headers.cookie?.split(";").find((c) => c.trim().startsWith("callNumber"))?.split("=")[1];
     const params = context.params.id
     const id = params.split('-')
     const {data} = await axios.get('http://localhost:8080/api/products/'+id[0])
@@ -97,7 +97,7 @@ export const getServerSideProps = async (context) => {
     return {
       props: {
         product,
-        owner
+        owner,
       },
     }
   } catch (error) {
@@ -105,7 +105,7 @@ export const getServerSideProps = async (context) => {
     return {
       props: {
         product,
-        owner:false
+        owner:false,
       },
     }
   }
