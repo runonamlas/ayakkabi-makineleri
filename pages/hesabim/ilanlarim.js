@@ -1,10 +1,9 @@
 import axios from "axios";
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
-import { parseCookies } from "nookies";
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
-import styles from '../styles/Ilanlarim.module.css'
+import Layout from "../../components/Layout";
+import styles from '../../styles/Ilanlarim.module.css'
 
 export default function Ilanlarim({products}){
   const [mounted, setMounted] = useState(false);
@@ -42,8 +41,8 @@ export default function Ilanlarim({products}){
             return <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
               <div className={styles.productCard}>
                 <Image priority="true" className={styles.productimage} src={imageArray[product.vitrin - 1]} height='80' width='100' layout='responsive' />
-                <a className={styles.productTitle}>{product.name}</a>
-                <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a></div></a>
+                <p className={styles.productTitle}>{product.name}</p>
+                <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p></div></a>
             </Link>
           }
           )}

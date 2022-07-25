@@ -1,29 +1,16 @@
 import axios from 'axios'
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from 'react';
-import Category from "../components/Category";
-import Layout from "../components/Layout";
-import styles from '../styles/ProductList.module.css'
+import Category from "../../components/Category";
+import Layout from "../../components/Layout";
+import styles from '../../styles/ProductList.module.css'
 
-export default function AyakkabiMakineleri({ products}){
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return <Layout>
-  <Category catSelect={0}/>
-  <main className={styles.main}>
-      <h1 className={styles.title}>
-        ayakkabı makineleri
-      </h1>
-      <div className={styles.productsList}>      
-      </div>
-    </main>
-</Layout>;
+export default function AyakkabiMakineleri({ products, params}){
   return <Layout>
-    <Category catSelect={0}/>
+    <Category catSelect={params[0]-1}/>
     <main className={styles.main}>
         <h1 className={styles.title}>
-          ayakkabı makineleri
+          {params[1]} {params[2]}
         </h1>
         <div className={styles.productsList}>
         { products.map(product => {
@@ -48,30 +35,31 @@ export default function AyakkabiMakineleri({ products}){
                   <Image priority="true" className={styles.productimage} src={imageArray[product.vitrin-1]} height='80' width='100' layout='responsive'/>
                 </div>
                 <div className={styles.productRight}>
-                  <a className={styles.productTitle}>{product.name}</a>
-                  <a className={styles.productOwner}>{nameConfig.replace(/\s+$/g, '')}</a>
-                  <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
-                  <a className={styles.productAdress}>{product.users.address.split('%')[1]}</a>
+                  <p className={styles.productTitle}>{product.name}</p>
+                  <p className={styles.productOwner}>{nameConfig.replace(/\s+$/g, '')}</p>
+                  <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
+                  <p className={styles.productAdress}>{product.users.address.split('%')[1]}</p>
                 </div>
               </div></a>
             </Link>
             }
           )}
         </div>
-
-       
       </main>
   </Layout>
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async (context) => {
+  const params = context.params.id.split("-")
+  const id = params[0]
   try {
-    const {data} = await axios.get('http://localhost:8080/api/product-categories/1')
+    const {data} = await axios.get('http://localhost:8080/api/product-categories/'+id)
     const products = data.data.products.reverse()
 
     return {
       props: {
         products,
+        params,
       },
     }
   } catch (error) {
@@ -79,6 +67,7 @@ export const getStaticProps = async () => {
     return {
       props: {
         products,
+        params,
       },
     }
   }

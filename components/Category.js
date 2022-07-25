@@ -13,26 +13,26 @@ const Category = ({catSelect}) => {
           <a className={styles.categoryHeadText}>kategoriler</a>
       </div>
       <ul className={styles.categoryButonsDiv}>
-      <Link key="ayakkabi-makineleri" href={CONSTANTS.ayakkabiPath} ><a>
-            <li key="ayakkabi-makineleri" className={ catSelect==0? styles.categoryItemSelected : styles.categoryItem }>
-                <a className={styles.catText }>{CONSTANTS.ayakkabi}</a>
-            </li></a>
+        <li key="ayakkabi-makineleri-li" className={ catSelect==0? styles.categoryItemSelected : styles.categoryItem }>
+          <Link key="ayakkabi-makineleri" href={"/kategori"+CONSTANTS.ayakkabiPath} className={styles.catLink} >
+            <a className={ catSelect==0? styles.catTextSelected : styles.catText }>{CONSTANTS.ayakkabi}</a> 
           </Link>
-          <Link key="kesim-makineleri" href={CONSTANTS.kesimPath}><a>
-            <li key="kesim-makineleri" className={ catSelect==1? styles.categoryItemSelected : styles.categoryItem }>
-                <a className={styles.catText }>{CONSTANTS.kesim}</a>
-            </li></a>
+        </li>
+        <li key="kesim-makineleri-li" className={ catSelect==1? styles.categoryItemSelected : styles.categoryItem }>
+          <Link key="kesim-makineleri" href={"/kategori"+CONSTANTS.tabanPath} className={styles.catLink}>
+            <a className={ catSelect==1? styles.catTextSelected : styles.catText }>{CONSTANTS.taban}</a>
           </Link>
-          <Link key="taban-makineleri" href={CONSTANTS.tabanPath} ><a>
-            <li key="taban-makineleri" className={ catSelect==2? styles.categoryItemSelected : styles.categoryItem }>
-                <a className={styles.catText }>{CONSTANTS.taban}</a>
-            </li></a>
+        </li>
+        <li key="taban-makineleri-li" className={ catSelect==2? styles.categoryItemSelected : styles.categoryItem }>
+          <Link key="taban-makineleri" href={"/kategori"+CONSTANTS.kesimPath} className={styles.catLink} >
+            <a className={ catSelect==2? styles.catTextSelected : styles.catText }>{CONSTANTS.kesim}</a>
           </Link>
-          <Link key="kemer-makineleri" href={CONSTANTS.kemerPath}><a>
-            <li key="kemer-makineleri" className={ catSelect==3? styles.categoryItemSelected : styles.categoryItem }>
-                <a className={styles.catText }>{CONSTANTS.kemer}</a>
-            </li></a>
+        </li>
+        <li key="kemer-makineleri-li" className={ catSelect==3? styles.categoryItemSelected : styles.categoryItem }>
+          <Link key="kemer-makineleri" href={"/kategori"+CONSTANTS.kemerPath} className={styles.catLink}>
+            <a className={ catSelect==3? styles.catTextSelected : styles.catText }>{CONSTANTS.kemer}</a>
           </Link>
+        </li>
       </ul>
     </div>
   )

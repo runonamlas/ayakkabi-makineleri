@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Layout from "../components/Layout";
-import styles from '../styles/HesapGuncelle.module.css'
+import Layout from "../../components/Layout";
+import styles from '../../styles/HesapGuncelle.module.css'
 import * as React from "react";
-import citiesList from "../cities.config";
+import citiesList from "../../cities.config";
 import { parseCookies, setCookie } from "nookies";
 import axios from "axios";
 import { useRouter } from "next/router";

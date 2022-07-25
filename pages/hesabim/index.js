@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Layout from "../components/Layout";
-import styles from '../styles/Hesabim.module.css'
+import Layout from "../../components/Layout";
+import styles from '../../styles/Hesabim.module.css'
 import { parseCookies, destroyCookie} from 'nookies'
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
@@ -16,7 +16,7 @@ function Hesabim(){
   useEffect(() => {
     const cookies = parseCookies()
     const nameArray = cookies.name.split("-")
-    const nameConfig =''
+    var nameConfig =''
     nameArray.forEach(e=>{
       const nameParse = e.charAt(0).toUpperCase()+ e.slice(1) + " "
       nameConfig += nameParse
@@ -58,19 +58,19 @@ function Hesabim(){
         </Link>
       </div>
       <div className={styles.butonGroup}>
-        <Link href='istatistikler'>
+        <Link href='/hesabim/istatistikler'>
           <div className={styles.saveButton}>
           istatistikler</div>
         </Link><br/>
-        <Link href='mesajlar'>
+        <Link href='/hesabim/mesajlar'>
           <div className={styles.saveButton}>
           mesajlar</div>
         </Link><br/>
-        <Link href='ilanlarim'>
+        <Link href='hesabim/ilanlarim'>
           <div className={styles.saveButton}>
           ilanlarım</div>
         </Link><br/>
-        <Link href='hesap-guncelle'>
+        <Link href='hesabim/hesap-guncelle'>
           <div className={styles.saveButton}>
           bilgileri güncelle</div>
         </Link>

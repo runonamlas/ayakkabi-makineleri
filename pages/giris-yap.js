@@ -54,7 +54,7 @@ export default function GirisYap(){
         maxAge: 60 * 60 * 24 * 30,
         path: '/',
       })
-      router.push('/')
+      router.push(router.asPath)
 
       }).catch (error => {
       console.log("error ", error)
@@ -71,19 +71,12 @@ export default function GirisYap(){
           <input required className={styles.categoryInput} type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="e-posta adresi veya telefon numarası" maxLength="25" />
           <label className={styles.fieldHead} htmlFor="passwordText">şifreniz*</label>
           <div className={styles.passField}>
-            <input required className={styles.passInput} type={passwordShown ? "text" : "password"} id="password" value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="sifreniz" name="oassword" />
+            <input required className={styles.passInput} type={passwordShown ? "text" : "password"} id="password" autoComplete="on" value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="sifreniz" name="password" />
             <button type="button" className={styles.iconButton} onClick={()=>setPasswordShown(!passwordShown)}><img className={styles.icon} type="image" src={passwordShown ? "icons/passSee.svg" : "icons/passNotSee.svg"}/></button>
           </div>
           <Link href='sifremi-unuttum'><a className={styles.sifremiUnuttum}>şifremi unuttum</a></Link>
           <button type="submit" className={styles.saveButton}>giriş yap</button>
         </form>
-        <a className={styles.veya}>veya</a>
-        <button type="submit" className={styles.loginbutton}>
-            google ile giris yap
-        </button>
-        <button type="submit" className={styles.loginbutton}>
-            facebook ile giriş yap
-        </button>
         <a className={styles.veya}>henüz kayıtlı değil isen</a>
         <Link href='uye-ol'>
           <button type="submit" className={styles.kayıtol}>

@@ -1,5 +1,5 @@
 import axios from "axios"
-import Image from "next/image"
+import Image from "next/future/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import CONSTANTS from "../constants.config"
@@ -18,14 +18,15 @@ const NavBar = ({navSelect}) => {
   return (
     <ul className={styles.navUl}>
       {links.map(link => (
-        <Link key={link.id} href={link.to}><a>
+        
           <li key={link.name} className={ link.select? styles.menuItemSelected : styles.menuItem }>
-            <div style={{ display: "flex", alignItems: "center"}}>
-              <Image src={link.icon} alt={link.name} width="32" height="32" />
-              <a className={styles.menuText }>{link.name}</a>
-            </div>
-          </li></a>
-        </Link>
+            <Link key={link.id} href={link.to}><a className={styles.menuText }>
+              <div style={{ display: "flex", alignItems: "center"}}>
+                <Image src={link.icon} alt={link.name} width="32" height="32" /> &nbsp;
+                {link.name}
+                </div>
+            </a></Link>
+          </li>
       ))}
     </ul>
   )
@@ -33,56 +34,17 @@ const NavBar = ({navSelect}) => {
 
 function Header  ({navSelect})  {
   const [products, setProducts] = useState();
-  const [mounted, setMounted] = useState(false);
   const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
-    setMounted(true)
-  },[]);
-
-  useEffect(() => {if(mounted){
     (async () => {
       const {data} = await axios.get('http://localhost:8080/api/products')
       const productsAPI = data.data
-      /*productsAPI.map(p=> {
-        var name = p.name.toLowerCase()
-        var scorr = 0
-      for (var a in name) {
-        for (var k in searchText.toLowerCase()){
-          if (p.name[a].toLowerCase() == searchText[k].toLowerCase()){
-            kk.push(p)
-            scorr+=1
-          }
-        }
-      }
-      console.log(scorr)
-      
-      for (var a in p.users.username.toLowerCase()) {
-        for (var k in searchText.toLowerCase()){
-
-          if (p.users.username[a].toLowerCase() == searchText[k].toLowerCase()){
-            kk.push(p)
-          }
-        }
-      }
-      })*/
       let gg = productsAPI.filter(p => p.name.toLowerCase().indexOf(searchText.toLowerCase()) >= 0 || p.users.username.toLowerCase().indexOf(searchText.toLowerCase()) >= 0)
       let uniqueChars = [...new Set(gg)];
       setProducts(uniqueChars)
     })()
-    
-    
-  }
-    
-   // 
   },[searchText]);
-  if (!mounted) return <div className={styles.headerDiv}>
-      <div className={styles.headerLogoDiv}>
-          <a className={styles.logo}>ayakkabimakineleri.com</a>
-          </div>
-      <div className={styles.searchDiv}>
-      </div>
-    </div>;
   
   return (
     <div className={styles.headerDiv}>
@@ -121,10 +83,10 @@ function Header  ({navSelect})  {
                   <Image priority="true" className={styles.productimage} src={imageArray[product.vitrin-1]} height='80' width='100' layout='responsive'/>
                 </div>
                 <div className={styles.productRight}>
-                  <a className={styles.productTitle}>{product.name}</a>
-                  <a className={styles.productOwner}>{nameConfig.replace(/\s+$/g, '')}</a>
-                  <a className={styles.productAdress}>{product.users.address.split('%')[1]}</a>
-                  <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
+                  <p className={styles.productTitle}>{product.name}</p>
+                  <p className={styles.productOwner}>{nameConfig.replace(/\s+$/g, '')}</p>
+                  <p className={styles.productAdress}>{product.users.address.split('%')[1]}</p>
+                  <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
                 </div>
               </div></a>
             </Link>

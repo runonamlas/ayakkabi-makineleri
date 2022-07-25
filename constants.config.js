@@ -14,13 +14,13 @@ const CONSTANTS = {
   searchIconPath: '/icons/search.svg',
 
   ayakkabi: 'ayakkabı makineleri',
-  ayakkabiPath: '/ayakkabi-makineleri',
+  ayakkabiPath: '/1-ayakkabi-makineleri',
   kesim: 'kesim makineleri',
-  kesimPath: '/kesim-makineleri',
+  kesimPath: '/3-kesim-makineleri',
   taban: 'taban makineleri',
-  tabanPath: '/taban-makineleri',
+  tabanPath: '/2-taban-makineleri',
   kemer: 'kemer makineleri',
-  kemerPath: '/kemer-makineleri',
+  kemerPath: '/4-kemer-makineleri',
 }
 
 export default CONSTANTS

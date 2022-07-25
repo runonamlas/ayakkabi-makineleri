@@ -2,8 +2,8 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
-import styles from '../styles/Mesajlar.module.css'
+import Layout from "../../components/Layout";
+import styles from '../../styles/Mesajlar.module.css'
 
 export default function Ilanlarim({messages}){
   console.log(messages)

@@ -1,9 +1,9 @@
 import axios from "axios";
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
-import styles from '../styles/Istatistikler.module.css'
+import Layout from "../../components/Layout";
+import styles from '../../styles/Istatistikler.module.css'
 
 export default function Istatistikler({userData}){
   const [total, setTotal] = useState(0);
@@ -58,8 +58,8 @@ export default function Istatistikler({userData}){
                     <Image priority="true" className={styles.productimage} src={imageArray[product.vitrin-1]} height='30' width='50' layout='responsive'/>
                   </div>
                   <div className={styles.productRight}>
-                    <a className={styles.productTitle}>{product.name}</a>
-                    <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
+                    <p className={styles.productTitle}>{product.name}</p>
+                    <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
                   </div>
                 </div></a>
               </Link>

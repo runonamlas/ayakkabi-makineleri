@@ -27,25 +27,37 @@
   border-radius: 2rem;
   color:#2F8F9D;
   font-size: 1.2rem;
+  display: grid;
   cursor: pointer;
 }
 
 .categoryItem:hover {
   background-color: #2F8F9D;
-  color: #ffffff;
 }
 
 .categoryItemSelected {
+  display: grid;
   text-align: center;
   background-color: #2F8F9D;
   padding: 0.3rem;
   margin-bottom: 0.5rem;
   border: 0.2rem solid #2F8F9D;
   border-radius: 2rem;
-  color:#ffffff;
   font-size: 1.2rem;
   cursor: pointer;
 }
+
+.catText{
+  color:#2F8F9D;
+}
+.catText:hover {
+  color: #ffffff;
+}
+
+.catTextSelected{
+  color:#ffffff;
+}
+
 
 @media only screen and (max-width:768px){
   .categoryDiv {

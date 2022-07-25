@@ -113,6 +113,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  color: #2F8F9D;
 }
 
 .menuItem {
@@ -120,6 +121,7 @@
   font-size: 1.5rem;
   font-weight: normal;
   padding-left: 2rem;
+  display: flex;
   cursor: pointer;
 }
 
@@ -127,7 +129,9 @@
   font-weight: bold;
 }
 
+
 .menuItemSelected {
+  display: flex;
   color:#2F8F9D;
   font-size: 1.5rem;
   font-weight: bold;
@@ -135,9 +139,11 @@
   cursor: pointer;
 }
 
-.menuText {
-  padding-left: 0.5rem; 
+
+.menuText:visited{
+  color: #2F8F9D;
 }
+
 
 
 @media only screen and (max-width:768px){
