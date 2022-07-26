@@ -65,9 +65,7 @@ export function middleware(req) {
   }
 
   if (url.startsWith('/ilan-ver')) {
-    console.log(jwt)
     if (jwt === undefined) {
-      console.log("hwew")
       return NextResponse.rewrite(new URL('/giris-yap', BaseUrl));
     }
 
