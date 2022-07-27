@@ -20,7 +20,7 @@ export default function GirisYap(){
       email, password
     }
 
-    await axios(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/login",{
+    await axios(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/login/",{
         method: "POST",
         data: groupData
     }).then(response => {
