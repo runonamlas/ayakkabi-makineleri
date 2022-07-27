@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Category from "./Category";
 import Header from "./Header";
 
 const Layout = ({children, navSelect}) => {

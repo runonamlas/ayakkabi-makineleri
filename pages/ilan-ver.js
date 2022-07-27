@@ -94,7 +94,7 @@ export default function IlanVer () {
       }
       
       axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
-      await axios.post("http://localhost:8080/api/products/add",groupData).then(response => {
+      await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/products/add",groupData).then(response => {
         router.push('/kaydet')
       }).catch((error) => {
         console.error('Error:', error.response);

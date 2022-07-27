@@ -90,7 +90,7 @@ export const getServerSideProps = async (context) => {
     const token=context.req.headers.cookie?.split(";").find((c) => c.trim().startsWith("callNumber"))?.split("=")[1];
     const params = context.params.id
     const id = params.split('-')
-    const {data} = await axios.get('http://localhost:8080/api/products/'+id[0])
+    const {data} = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/products/'+id[0])
     const product = data.data
     var owner = false
     if(product.users.callNumber == token ) owner=true

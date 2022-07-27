@@ -6,7 +6,6 @@ import CONSTANTS from "../constants.config"
 import styles from '../styles/Header.module.css'
 
 const NavBar = ({navSelect}) => {
-  
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
@@ -35,10 +34,9 @@ const NavBar = ({navSelect}) => {
 function Header  ({navSelect})  {
   const [products, setProducts] = useState();
   const [searchText, setSearchText] = useState('');
-
   useEffect(() => {
     (async () => {
-      const {data} = await axios.get('http://localhost:8080/api/products')
+      const {data} = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/products/')
       const productsAPI = data.data
       let gg = productsAPI.filter(p => p.name.toLowerCase().indexOf(searchText.toLowerCase()) >= 0 || p.users.username.toLowerCase().indexOf(searchText.toLowerCase()) >= 0)
       let uniqueChars = [...new Set(gg)];

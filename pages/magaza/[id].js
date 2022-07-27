@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
@@ -64,7 +63,7 @@ export default function MagazaScreen({user}){
 export const getServerSideProps = async (context) => {
   try {
     const param = context.params.id
-    const {data} = await axios.get('http://localhost:8080/api/user/profile/'+param)
+    const {data} = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/user/profile/'+param)
     const user = data.data
     return {
       props: {

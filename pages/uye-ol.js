@@ -1,5 +1,4 @@
 import axios from "axios";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { setCookie } from "nookies";
 import * as React from "react";
@@ -29,7 +28,7 @@ export default function UyeOl () {
     const groupData = {
         username, callNumber, email, address, password
     }
-    await axios("http://localhost:8080/api/auth/register",{
+    await axios(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/register",{
         method: "POST",
         data: groupData
     }).then(response => {

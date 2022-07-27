@@ -1,5 +1,4 @@
 import axios from 'axios'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
@@ -12,7 +11,6 @@ export default function SifremiUnuttum({ data }) {
   const [errorState, setErrorState] = useState();
   const [buttonState, setButtonState] = useState(false);
   const [showFinish, setShowFinish] = useState(false);
-  const router = useRouter();
   useEffect(() => { 
     const handleLogout = async () => {
       const cookies = parseCookies()
@@ -46,7 +44,7 @@ export default function SifremiUnuttum({ data }) {
     const groupData = {
       email
     }
-    await axios.post("http://localhost:8080/api/auth/forget",groupData).then(response => {
+    await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/forget",groupData).then(response => {
       setShowFinish(true)
       
     }).catch((error) => {

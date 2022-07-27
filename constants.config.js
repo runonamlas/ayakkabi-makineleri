@@ -12,7 +12,6 @@ const CONSTANTS = {
   accountIcon: '/icons/user.svg',
   accountIconBg: '/icons/userBg.svg',
   searchIconPath: '/icons/search.svg',
-
   ayakkabi: 'ayakkabı makineleri',
   ayakkabiPath: '/1-ayakkabi-makineleri',
   kesim: 'kesim makineleri',

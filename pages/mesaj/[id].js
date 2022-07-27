@@ -45,7 +45,7 @@ function MessagePage({data, messages, goster, product}){
       }
     }
     axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
-    await axios.post("http://localhost:8080/api/messages",groupData).then(response => {
+    await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/messages",groupData).then(response => {
       console.log(response)
       setButtonState(false);
     }).catch((error) => {
@@ -115,12 +115,12 @@ export const getServerSideProps = async (context) => {
   try {
     const token=context.req.headers.cookie.split(";").find((c) => c.trim().startsWith("OursiteJWT")).split("=")[1];
     axios.defaults.headers.common['Authorization'] = token;
-    const { data } = await axios.get(`http://localhost:8080/api/messages/${params[0]}`)
+    const { data } = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+`/messages/${params[0]}`)
     const messages = data.data
     var product =false
     messages.sort((a, b) => a.id - b.id);
     if(context.query.product){
-      const { data } = await axios.get(`http://localhost:8080/api/products/${context.query.product}`)
+      const { data } = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+`/products/${context.query.product}`)
       product = data.data
     }
     return {

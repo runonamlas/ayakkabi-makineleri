@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Layout from "../../components/Layout";
 import styles from '../../styles/HesapGuncelle.module.css'
 import * as React from "react";
@@ -28,7 +27,7 @@ export default function HesapGuncelle(){
       }
       
       axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
-      await axios.put("http://localhost:8080/api/user/profile",groupData).then(response => {
+      await axios.put(process.env.NEXT_PUBLIC_AXIOS_CONF+"/api/user/profile",groupData).then(response => {
         setCookie(null, 'name', response.data.data.username, {
           secure: process.env.NODE_ENV !== "development",
           sameSite: 'strict',

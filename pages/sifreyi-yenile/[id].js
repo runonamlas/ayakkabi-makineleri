@@ -1,5 +1,4 @@
 import axios from 'axios'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
@@ -52,7 +51,7 @@ export default function SifreyiYenile({ data }) {
     }
     console.log(data.id)
     axios.defaults.headers.common['Authorization'] = data.id;
-    await axios.post("http://localhost:8080/api/auth/change",groupData).then(response => {
+    await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/change",groupData).then(response => {
       router.push('/')
       
     }).catch((error) => {

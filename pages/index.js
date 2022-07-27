@@ -1,7 +1,6 @@
 import axios from 'axios'
 import Image from 'next/future/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import Category from '../components/Category'
 import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
@@ -34,7 +33,7 @@ export default function Home({ products }) {
                 
            
           }
-          )}
+        )}
         </div>
       </main>
     </Layout>
@@ -43,7 +42,7 @@ export default function Home({ products }) {
 
 export const getStaticProps = async () => {
   try {
-    const { data } = await axios.get('http://localhost:8080/api/products')
+    const { data } = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/products')
     const products = data.data
     return {
       props: {

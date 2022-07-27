@@ -50,7 +50,7 @@ export const getServerSideProps = async (context) => {
   try {
     const token=context.req.headers.cookie.split(";").find((c) => c.trim().startsWith("OursiteJWT")).split("=")[1];
     axios.defaults.headers.common['Authorization'] = token;
-    const { data } = await axios.get('http://localhost:8080/api/user/messages')
+    const { data } = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/user/messages')
     const messages = data.data
     return {
       props: {

@@ -53,7 +53,7 @@ export const getServerSideProps = async (context) => {
   const params = context.params.id.split("-")
   const id = params[0]
   try {
-    const {data} = await axios.get('http://localhost:8080/api/product-categories/'+id)
+    const {data} = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/product-categories/'+id)
     const products = data.data.products.reverse()
 
     return {
