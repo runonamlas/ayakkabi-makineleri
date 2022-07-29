@@ -55,8 +55,8 @@ export default function GirisYap(){
         maxAge: 60 * 60 * 24 * 30,
         path: '/',
       })
-      console.log(router.asPath)
-      router.push("hesabim")
+      console.log(router)
+      router.push("/")
 
       }).catch (error => {
          switch (error.response.status) {

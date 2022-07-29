@@ -37,7 +37,8 @@ function Hesabim(){
     }
   }, []);
   
-  const handleLogout = async () => {
+  const handleLogout = async (e) => {
+    e.preventDefault()
     const cookies = parseCookies()
     for (const cookie of Object.keys(cookies)) {
       await destroyCookie(null, cookie, {path:"/"})
@@ -52,7 +53,7 @@ function Hesabim(){
       <h3 className={styles.title}>{address} {city}</h3>
       <div className={styles.hesapType}>
         <a>{status}</a>
-        <Link href='hesap-yukselt'>
+        <Link href='hesabim/hesap-yukselt'>
           <div className={styles.saveButton}>
           yükselt</div>
         </Link>
