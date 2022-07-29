@@ -9,32 +9,32 @@ export function middleware(req) {
 
   if (url.startsWith('/hesabim')) {
     if (jwt === undefined) {
-      return NextResponse.redirect(new URL('/giris-yap', BaseUrl));
+      return NextResponse.rewrite(new URL('/giris-yap', BaseUrl));
     }
 
     try {
        return NextResponse.next();
     } catch (e) {
-      return NextResponse.redirect("/giris-yap");
+      return NextResponse.rewrite("/giris-yap");
     }
   }
 
   if (url.startsWith('/mesaj')) {
     if (jwt === undefined) {
-      return NextResponse.redirect(new URL('/giris-yap', BaseUrl));
+      return NextResponse.rewrite(new URL('/giris-yap', BaseUrl));
     }
 
     try {
        return NextResponse.next();
     } catch (e) {
-      return NextResponse.redirect("/giris-yap");
+      return NextResponse.rewrite("/giris-yap");
     }
   }
 
   if (url.startsWith('/giris-yap')) {
     if (jwt) {
       try {
-       return NextResponse.redirect(new URL('/', BaseUrl));
+       return NextResponse.rewrite(new URL('/', BaseUrl));
       } catch (e) {
         console.log(e)
       }
@@ -45,7 +45,7 @@ export function middleware(req) {
   if (url.startsWith('/uye-ol')) {
     if (jwt) {
       try {
-       return NextResponse.redirect(new URL('/', BaseUrl));
+       return NextResponse.rewrite(new URL('/', BaseUrl));
       } catch (e) {
         console.log(e)
       }
@@ -56,7 +56,7 @@ export function middleware(req) {
   if (url.startsWith('/sifremi-unuttum')) {
     if (jwt) {
       try {
-       return NextResponse.redirect(new URL('/', BaseUrl));
+       return NextResponse.rewrite(new URL('/', BaseUrl));
       } catch (e) {
         console.log(e)
       }
@@ -66,13 +66,13 @@ export function middleware(req) {
 
   if (url.startsWith('/ilan-ver')) {
     if (jwt === undefined) {
-      return NextResponse.redirect(new URL('/giris-yap', BaseUrl));
+      return NextResponse.rewrite(new URL('/giris-yap', BaseUrl));
     }
 
     try {
        return NextResponse.next();
     } catch (e) {
-      return NextResponse.redirect("/giris-yap");
+      return NextResponse.rewrite("/giris-yap");
     }
   }
   return NextResponse.next();
