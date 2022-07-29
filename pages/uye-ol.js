@@ -125,7 +125,7 @@ export default function UyeOl () {
         <textarea required name="message" rows="5"  className={styles.categoryInput} placeholder="açık adres" value={openAddress} onChange={(e) => setOpenAddress(e.target.value)}>
         </textarea>
         <label className={styles.fieldHead} htmlFor="password">şifreniz*</label>
-        <input required minLength="8" className={styles.categoryInput} id="password" type={passwordShown ? "text" : "password"} placeholder="şifre" name="password"  value={password} onChange={(e) => setPassword(e.target.value)}/>
+        <input required autoComplete="on" minLength="8" className={styles.categoryInput} id="password" type={passwordShown ? "text" : "password"} placeholder="şifre" name="password"  value={password} onChange={(e) => setPassword(e.target.value)}/>
         <button type="button" className={styles.sifreyiGoster} onClick={()=>setPasswordShown(!passwordShown)}>şifreyi göster</button>
         <div className={styles.fieldHead}>
         <input type="checkbox" id="sozlesme" name="sozlesme" value="contract" required/>
