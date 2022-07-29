@@ -56,7 +56,7 @@ export default function GirisYap(){
         path: '/',
       })
       console.log(router.asPath)
-      router.push(router.asPath)
+      router.push("hesabim")
 
       }).catch (error => {
          switch (error.response.status) {
