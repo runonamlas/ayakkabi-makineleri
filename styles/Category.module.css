@@ -21,7 +21,6 @@
 
 .categoryItem {
   text-align: center;
-  padding: 0.3rem;
   margin-bottom: 0.5rem;
   border: 0.2rem solid #2F8F9D;
   border-radius: 2rem;
@@ -39,7 +38,6 @@
   display: grid;
   text-align: center;
   background-color: #2F8F9D;
-  padding: 0.3rem;
   margin-bottom: 0.5rem;
   border: 0.2rem solid #2F8F9D;
   border-radius: 2rem;
@@ -49,6 +47,7 @@
 
 .catText{
   color:#2F8F9D;
+  padding: 0.3rem;
 }
 .catText:hover {
   color: #ffffff;
@@ -56,6 +55,7 @@
 
 .catTextSelected{
   color:#ffffff;
+  padding: 0.3rem;
 }
 
 

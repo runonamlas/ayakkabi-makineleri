@@ -10,6 +10,7 @@ export default function GirisYap(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordShown, setPasswordShown] = useState(false);
+  const [errorState, setErrorState] = useState('');
 
   const router = useRouter();
 
@@ -20,7 +21,7 @@ export default function GirisYap(){
       email, password
     }
 
-    await axios(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/login/",{
+    await axios(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/login",{
         method: "POST",
         data: groupData
     }).then(response => {
@@ -57,7 +58,18 @@ export default function GirisYap(){
       router.push(router.asPath)
 
       }).catch (error => {
-      console.log("error ", error)
+         switch (error.response.status) {
+          case 0:
+            console.log("hwewwew")
+            setErrorState("Ağ hatası lütfen tekrar deneyin")
+            break;
+          case 401:
+            setErrorState("Yanlış mail veya parola, tekrar deneyiniz.")
+            break;
+          default:
+            setErrorState(error.response.data.message)
+            break;
+        }
     });
   }
   return <Layout>
@@ -66,6 +78,7 @@ export default function GirisYap(){
         Giriş yap / Üye ol
       </h1>
       <div className={styles.leftPanel}>
+        {errorState != '' && <a>{errorState}</a>}
         <form className={styles.formStyle} onSubmit={submitLogin}>
           <label className={styles.fieldHead} htmlFor="email">telefon numarası veya e-posta adresi*</label>
           <input required className={styles.categoryInput} type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="e-posta adresi veya telefon numarası" maxLength="25" />

@@ -44,7 +44,7 @@ export default function SifremiUnuttum({ data }) {
     const groupData = {
       email
     }
-    await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/forget/",groupData).then(response => {
+    await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/forget",groupData).then(response => {
       setShowFinish(true)
       
     }).catch((error) => {
