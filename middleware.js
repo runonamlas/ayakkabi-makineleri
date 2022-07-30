@@ -34,7 +34,7 @@ export function middleware(req) {
   if (url.startsWith('/giris-yap')) {
     if (jwt) {
       try {
-       return NextResponse.rewrite(new URL('/', BaseUrl));
+       return NextResponse.redirect(new URL('/', BaseUrl));
       } catch (e) {
         console.log(e)
       }
@@ -45,7 +45,7 @@ export function middleware(req) {
   if (url.startsWith('/uye-ol')) {
     if (jwt) {
       try {
-       return NextResponse.rewrite(new URL('/', BaseUrl));
+       return NextResponse.redirect(new URL('/', BaseUrl));
       } catch (e) {
         console.log(e)
       }
@@ -56,7 +56,7 @@ export function middleware(req) {
   if (url.startsWith('/sifremi-unuttum')) {
     if (jwt) {
       try {
-       return NextResponse.rewrite(new URL('/', BaseUrl));
+       return NextResponse.redirect(new URL('/', BaseUrl));
       } catch (e) {
         console.log(e)
       }

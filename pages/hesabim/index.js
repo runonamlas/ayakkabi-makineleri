@@ -15,7 +15,6 @@ function Hesabim(){
 
   useEffect(() => {
     const cookies = parseCookies()
-    console.log(cookies)
     const nameArray = cookies.name.split("-")
     var nameConfig =''
     nameArray.forEach(e=>{

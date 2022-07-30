@@ -59,7 +59,6 @@ export default function GirisYap(){
       }).catch (error => {
          switch (error.response.status) {
           case 0:
-            console.log("hwewwew")
             setErrorState("Ağ hatası lütfen tekrar deneyin")
             break;
           case 401:

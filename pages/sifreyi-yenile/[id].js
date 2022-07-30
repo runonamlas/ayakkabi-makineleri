@@ -49,7 +49,6 @@ export default function SifreyiYenile({ data }) {
     const groupData = {
       password
     }
-    console.log(data.id)
     axios.defaults.headers.common['Authorization'] = data.id;
     await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/auth/change",groupData).then(response => {
       router.push('/')

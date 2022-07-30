@@ -6,7 +6,6 @@ import Layout from "../../components/Layout";
 import styles from '../../styles/Mesajlar.module.css'
 
 export default function Ilanlarim({messages}){
-  console.log(messages)
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return <Layout>
