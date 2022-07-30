@@ -15,6 +15,7 @@ function Hesabim(){
 
   useEffect(() => {
     const cookies = parseCookies()
+    console.log(cookies)
     const nameArray = cookies.name.split("-")
     var nameConfig =''
     nameArray.forEach(e=>{
@@ -43,7 +44,7 @@ function Hesabim(){
     for (const cookie of Object.keys(cookies)) {
       await destroyCookie(null, cookie, {path:"/"})
     }
-    router.push("/")
+    router.reload()
   }
 
   return <Layout navSelect={2}>
