@@ -8,8 +8,6 @@
 .title {
   text-align: center;
   color: #2F8F9D;
-  margin: 0;
-  padding: 0;
 }
 
 .leftPanel{
@@ -130,4 +128,132 @@
   padding: 0.3rem 0;
   margin-top: 1rem;
   cursor: pointer;
+}
+
+@media only screen and (max-width:768px){
+  .main {
+    min-height: 71vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .leftPanel{
+    width: 100%;
+    height: auto;
+    float:none;
+  }
+  
+  .rightPanel{
+    width: 100%;
+    height: auto;
+    float: none;
+
+
+  }
+  
+  .formStyle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .fieldHead {
+    color: #2F8F9D;
+    margin-top: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .categoryInput {
+    text-align: center;
+    color: black;
+    font-size: 1.1rem;
+    width: 80%;
+    border-radius:2rem;
+    border: 0.2rem solid #2F8F9D;
+    padding: 0.3rem 0;
+    margin-top: 0.5rem;
+  }
+  .passField{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    border: 0.2rem solid #2F8F9D;
+    border-radius: 2rem;
+  }
+  
+  .passInput {
+    text-align: center;
+    color: black;
+    font-size: 1.1rem;
+    width: 92%;
+    margin-left: 1rem;
+    border: none;
+    padding: 0.3rem 0;
+  }
+  
+  .icon{
+    width: 2rem;
+  }
+  
+  .iconButton{
+    margin-right: 1rem;
+    background-color: white;
+    border: none;
+  }
+  .sifremiUnuttum {
+    color: #2F8F9D;
+    font-weight: bold;
+    margin-top: 0.8rem;
+  }
+  
+  .veya {
+    color: #2F8F9D;
+    margin-top: 5rem;
+  }
+  
+  .saveButton{
+    text-align: center;
+    color: white;
+    background-color: #2F8F9D;
+    font-size: 1.5rem;
+    width: 79%;
+    border-radius:2rem;
+    border: 0.2rem solid #2F8F9D;
+    padding: 0.3rem 0;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  
+  .loginbutton{
+    text-align: center;
+    color: #2F8F9D;
+    background-color: white;
+    font-size: 1.5rem;
+    width: 79%;
+    border-radius:2rem;
+    border: 0.2rem solid #2F8F9D;
+    padding: 0.3rem 0;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  
+  .kayıtol{
+    text-align: center;
+    color: white;
+    background-color: #2F8F9D;
+    font-size: 1.5rem;
+    width: 79%;
+    border-radius:2rem;
+    border: 0.2rem solid #2F8F9D;
+    padding: 0.3rem 0;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
 }

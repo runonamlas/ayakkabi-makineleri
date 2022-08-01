@@ -181,12 +181,14 @@
 
 @media only screen and (max-width:768px){
   .main {
-    max-height: 86vh;
-    max-width: 100%;
-    float: left;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     padding: 0;
     text-align: center;
     overflow: scroll;
+    background-color: aqua;
   }
   
   .title {

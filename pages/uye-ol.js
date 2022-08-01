@@ -12,7 +12,7 @@ export default function UyeOl () {
   const [username, setUsername] = React.useState('')
   const [openAddress, setOpenAddress] = React.useState('')
   const [password, setPassword] = React.useState('')
-  const [buttonState, setButtonState] = React.useState(false)
+  const [buttonState, setButtonState] = React.useState(true)
   const [passwordShown, setPasswordShown] = React.useState(false);
 
   
@@ -72,7 +72,7 @@ export default function UyeOl () {
   return <Layout>
     <main className={styles.main}>
       <h1 className={styles.title}>
-        Üye Ol
+        üye ol
       </h1>
       {buttonState ? (<div className={styles.loaderDiv}><div className={styles.loader}></div><a>yeni üyelik oluşturuluyorr..</a></div>) : (
       <form className={styles.formStyle} onSubmit={submitRegister} method="POST">

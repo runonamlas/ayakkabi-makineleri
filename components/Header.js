@@ -15,9 +15,9 @@ const NavBar = ({navSelect}) => {
     { id: 2, name: CONSTANTS.account, to: CONSTANTS.accountPath, select: navSelect==2? true : false, icon: navSelect==2 ? CONSTANTS.accountIconBg : CONSTANTS.accountIcon }
   ]
   return (
-    <ul className={styles.navUl}>
+    <nav className={styles.navParent}>
+       <ul className={styles.navUl}>
       {links.map(link => (
-        
           <li key={link.name} className={ link.select? styles.menuItemSelected : styles.menuItem }>
             <Link key={link.id} href={link.to}><a className={styles.menuText }>
               <div style={{ display: "flex", alignItems: "center", color: "#2F8F9D"}}>
@@ -28,6 +28,8 @@ const NavBar = ({navSelect}) => {
           </li>
       ))}
     </ul>
+    </nav>
+   
   )
 }
 
@@ -45,12 +47,10 @@ function Header  ({navSelect})  {
   },[searchText]);
   
   return (
-    <div className={styles.headerDiv}>
-      <div className={styles.headerLogoDiv}>
+    <header className={styles.headerDiv}>
         <Link href='/'>
           <a className={styles.logo}>ayakkabimakineleri.com</a>
         </Link>
-      </div>
       <div className={styles.searchDiv}>
         <div className={styles.searchInput}>
           <form noValidate role="search" >
@@ -91,10 +91,9 @@ function Header  ({navSelect})  {
             }
           )}
         </div>}
-        
       </div>
       <NavBar  navSelect={navSelect}/>
-    </div>
+    </header>
   )
 }
 

@@ -1,6 +1,5 @@
-import { NextResponse, NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 
-// This function can be marked `async` if using `await` inside
 export function middleware(req) {
   const { cookies } = req;
   const jwt = cookies.get("OursiteJWT");

@@ -73,7 +73,7 @@ export default function GirisYap(){
   return <Layout>
     <main className={styles.main}>
       <h1 className={styles.title}>
-        Giriş yap / Üye ol
+        giriş yap / üye ol
       </h1>
       <div className={styles.leftPanel}>
         {errorState != '' && <a>{errorState}</a>}
