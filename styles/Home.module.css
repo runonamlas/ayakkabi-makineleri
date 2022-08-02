@@ -53,7 +53,7 @@
   object-fit:fill;
   width: auto;
   max-width: 100%;
-  height: auto;
+  height:auto;
   max-height: 100%;
 }
 
@@ -141,7 +141,14 @@
   .productCard>a:visited{
     color: black;
   }
-
+  .productImage {
+    object-fit:fill;
+    width: auto;
+    max-width: 100%;
+    height:none;
+    max-height: 100%;
+  }
+  
 .productTitle{
   font-weight: bold;
   display: inline-block;
