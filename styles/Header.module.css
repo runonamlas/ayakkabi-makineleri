@@ -1,14 +1,15 @@
 .headerDiv {
   width: 100%;
-  min-height: 6%;
+  min-height: 7%;
   display: flex;
   justify-content: space-around;
   text-align: center;
   align-items: center;
+  background-color: #2F8F9D;
 }
 
 .logo {
-  color: #2F8F9D;
+  color: white;
   font-size: 2.2rem;
   font-weight: bold;
 }
@@ -100,18 +101,21 @@
 }
 
 .searchSpace {
-  width: 100%;
+  width: 40%;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 5%;
   z-index:2;
   margin-top: 0.5rem;
-  background-color: #EBEBED;
+  background-color: #2F8F9D;
+  border-radius: 1rem;
 }
 
 .navUl{
   list-style-type: none;
   display: flex;
-  color: #2F8F9D;
+  color: white;
   width: 25vw;
   justify-content: space-between;
 }
@@ -119,11 +123,11 @@
 .navDiv{
   display: flex;
   align-items: center;
-  color: #2F8F9D;
+  color: white;
 }
 
 .menuItem {
-  color:#2F8F9D;
+  color:white;
   font-size: 1.5rem;
   font-weight: normal;
   cursor: pointer;
@@ -136,16 +140,15 @@
 
 .menuItemSelected {
   display: flex;
-  color:#2F8F9D;
+  color:white;
   font-size: 1.5rem;
   font-weight: bold;
-  padding-left: 2rem;
   cursor: pointer;
 }
 
 
 .menuText:visited{
-  color: #2F8F9D;
+  color: white;
 }
 
 @media only screen and (max-width:768px){
@@ -190,7 +193,7 @@
     justify-content: center;
     position: fixed;
     bottom: 0px;
-    background-color: white;
+    background-color: #2F8F9D;
   }
 
   .navUl {
