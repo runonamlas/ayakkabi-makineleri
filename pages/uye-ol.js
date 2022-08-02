@@ -12,7 +12,7 @@ export default function UyeOl () {
   const [username, setUsername] = React.useState('')
   const [openAddress, setOpenAddress] = React.useState('')
   const [password, setPassword] = React.useState('')
-  const [buttonState, setButtonState] = React.useState(true)
+  const [buttonState, setButtonState] = React.useState(false)
   const [passwordShown, setPasswordShown] = React.useState(false);
 
   
