@@ -31,7 +31,15 @@ export default function ProductPage({product, owner, }){
       <title>{product.name}</title>
     </Head>
     <main className={styles.main}>
-      <div className={styles.left}>
+      <h1 className={styles.productTitle}>{product.name}</h1>
+      <section className={styles.sliderSection}>
+        
+      </section>
+      <section className={styles.contentSection}>
+
+      </section>
+     {/*
+       <div className={styles.left}>
         <div className={styles.imageTop}>
           <button type="button" name="sag" onClick={()=>{}} className={styles.leftbutton}>&lt;</button>
           <Image className={styles.productimage} src={image}  height='700' width='700'/>
@@ -80,6 +88,7 @@ export default function ProductPage({product, owner, }){
         
 
       </div>
+      */  }
     </main>
     
   </Layout>)

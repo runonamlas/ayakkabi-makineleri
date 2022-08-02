@@ -134,13 +134,12 @@ export default function IlanVer () {
             <Image key={index} draggable="false" className={styles.productimage} src={e} height='150' width='200' />
           </div>)) }
         </div>
-        {selectedFile.length>=6 ? (<a className={styles.maxImages}>en fazla 6 adet resim yükleyebilirsiniz</a>): (
+        {selectedFile.length>=6 ? (<a className={styles.maxImages}>en fazla 6 adet resim yükleyebilirsiniz</a>):(
           <label className={styles.customFileUpload}>
-            <input type='file' accept="image/png, image/jpeg, image/jpg" className={styles.imageInput} onChange={onSelectFile} multiple/>
+            <input type='file' accept="images/*" className={styles.imageInput} onChange={onSelectFile} multiple/>
             fotograf seç
           </label>
-            
-        ) }
+        )}
 
         <label className={styles.fieldHead} >fiyat*</label>
         <div className={styles.adressDiv}>

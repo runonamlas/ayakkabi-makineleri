@@ -1,6 +1,6 @@
 .headerDiv {
   width: 100%;
-  min-height: 5%;
+  min-height: 6%;
   display: flex;
   justify-content: space-around;
   text-align: center;
@@ -25,7 +25,7 @@
   flex-direction:row;
   margin: 0.5rem;
   border: 0.1rem solid #EBEBED;
-  padding: 0  0.2rem 0.3rem 0.2rem;
+  padding: 0  0.3rem 0.3rem 0.3rem;
   text-align: center;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -86,7 +86,7 @@
   font-size: 1.1rem;
   border-radius:2rem;
   border: 0.2rem solid #2F8F9D;
-  padding: 0.2rem;
+  padding: 0.3rem;
 }
 
 
