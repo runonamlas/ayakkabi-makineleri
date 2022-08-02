@@ -195,58 +195,44 @@
 
 @media only screen and (max-width:768px){
   .main {
-    height: 85vh;
+    height: 85%;
     width: 100%;
-    float: none;
     padding: 0;
     display: flex;
-    flex-direction: column ;
-    overflow:scroll;
-  }
-  
-  .left{
-    height: 40%;
-    width: 100%;
+    flex-direction: column;
     align-items: center;
-    display: flex;
     justify-content: center;
+  }
+  
+  .productTitle {
+    font-size: 1.6rem;
+  }
+
+  .productSection{
     flex-direction: column;
   }
   
-  .imageTop{
-    width: 50%;
-    height: 70%;
-  }
-  
-  .imageDown{
+  .contentSection {
     width: 100%;
-    height: 30%;
-    overflow: scroll;
-    float: left;
-  }
-  .right{
-    height: 60%;
-    width: 100%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .productTitle{
-    font-size: 1.5rem;
-    padding-top: 0.2rem;
-  }
-  
-  .productOwner{
-    color: #2F8F9D;
-    font-size: 1rem;
   }
   
   .productDetailDiv{
     width: 100%;
+    padding: 0 1rem;
+    font-size: 1rem;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
+    text-transform: capitalize;
+  }
+  
+  .productOwner{
+    color: #2F8F9D;
   }
   
   .productDetailTitle{
@@ -257,48 +243,38 @@
     font-weight: bold;
   }
   
-  .productimage{
-    object-fit: contain;
-  }
+  .priceAndContactDiv{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    bottom: auto;
   
-  .leftbutton{
-    position: fixed;
-    z-index: 2;
-    margin-top: 6rem;
-    margin-left: -4rem;
-    border: none;
-    background-color: transparent;
-    color: black;
-    font-size: 5rem;
-    
   }
-  
-  .rightbutton{
-    position:absolute;
-    z-index: 2;
-    margin-top: 6rem;
-    margin-right: -5rem;
-    border: none;
-    background-color: transparent;
-    color: black;
-    font-size: 5rem;
+  .buttonsGroup{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
   }
-  
   .productPrice{
     font-weight: bold;
-    padding-top: 1rem;
-    font-size: 3rem;
+    font-size: 1.8rem;
   }
   
   .mesajButton{
     color:#2F8F9D;
     background-color: white;
-    font-size: 1.5rem;
-    width: 95%;
-    border-radius:2rem;
+    font-size: 1.2rem;
+    width: 45%;
+    height: auto;
+    border-radius:1rem;
     border: 0.2rem solid #2F8F9D;
     padding: 0.3rem 0;
-    margin-top: 1rem;
     text-align: center;
     cursor: pointer;
   }
@@ -307,12 +283,84 @@
     color: white;
     text-align: center;
     background-color: #2F8F9D;
-    font-size: 1.5rem;
-    width: 95%;
-    border-radius:2rem;
+    font-size: 1.2rem;
+    width: 51%;
+    height: auto;
+    border-radius:1rem;
     border: 0.2rem solid #2F8F9D;
     padding: 0.3rem 0;
-    margin-top: 1rem;
     cursor: pointer;
   }
+  
+  .sliderSection {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .photoArea {
+    height: 100%;
+    width: 80%;
+    position: relative;
+  }
+  
+  .leftbutton{
+
+    font-size: 2rem;
+  }
+  
+  .rightbutton{
+    font-size: 2rem;
+  }
+  
+  .photoDiv {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .productImage {
+    border-radius: 1rem;
+    object-fit:fill;
+    width: auto;
+    max-width: 95%;
+    height: auto;
+    max-height: 95%;
+  }
+  
+  
+  .smallPhotoArea {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .smallPhotoOne {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .productSmallImage{
+    cursor: pointer;
+    border-radius: 0.5rem;
+    object-fit:fill;
+    width: auto;
+    max-width: 90%;
+    height: 90%;
+  
+  }
+  
 }
