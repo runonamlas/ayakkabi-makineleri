@@ -67,6 +67,11 @@
 
 }
 
+.buttonsGroup{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
 .productPrice{
   font-weight: bold;
   font-size: 3rem;
@@ -87,6 +92,7 @@
 
 .callButton{
   color: white;
+  margin-top: 5%;
   text-align: center;
   background-color: #2F8F9D;
   font-size: 1.5rem;
@@ -280,6 +286,7 @@
   }
   
   .callButton{
+    margin-top: 0;
     color: white;
     text-align: center;
     background-color: #2F8F9D;
