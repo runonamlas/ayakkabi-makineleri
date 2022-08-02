@@ -55,6 +55,7 @@ function Header  ({navSelect})  {
         <div className={styles.searchInput}>
           <form noValidate role="search" >
           <input className={styles.searchBox} placeholder="ara" title='Search bar' value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
+          <Image className={styles.searchIcon} src={CONSTANTS.searchIconPath} alt="search-icon" width="22" height="22" />
           </form>
         </div>
         {(searchText && products) && <div className={styles.searchSpace}>

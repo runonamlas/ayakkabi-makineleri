@@ -1,5 +1,5 @@
 .section{
-  height: 95%;
+  height: 93%;
   display: flex;
   flex-direction: row;
   padding: 1rem 1rem 0 1rem;
@@ -18,29 +18,53 @@
 }
 
 .productsList{
+  width: 100%;
+  height: 95%;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-content: flex-start;
   overflow: auto;
 }
-
 .productCard{
   color: black;
-  width: 14.5rem;
-  height: 15rem;
+  width: 11vw;
+  height: 26vh;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-left: 0.5rem;
   margin-top: 0.5rem;
-  border: 0.1rem solid #EBEBED;
-  padding: 0  0.2rem 0.3rem 0.2rem;
+  border: 0.1rem solid #b7b7b9;
   text-align: center;
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
+.photoDiv{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.productimage{
-  object-fit: contain;
+.productImage {
+  object-fit:fill;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+
+.productInfoDiv{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .productTitle{
@@ -50,13 +74,17 @@
   text-overflow: ellipsis;
   width: calc(100%);
   font-size: 1.1rem;
-  padding-top: 0.2rem;
+  text-transform: capitalize;
+}
+
+.productAddress {
+  font-size: 0.8rem;
 }
 
 .productPrice{
   font-weight: bold;
   padding-top: 0.2rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 @media only screen and (max-width:768px){
@@ -66,7 +94,6 @@
     flex-direction: column-reverse;
     padding: 0.3rem 0 0 0;
   }
-  
   .main {
     height: 85vh;
     width: 100%;
@@ -81,12 +108,13 @@
     font-size: 0.8rem;
     font-weight: normal;
   }
-  
+
   .productsList{
     width: 100%;
     height: 100%;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
     align-content: flex-start;
     overflow: auto;
   }
@@ -95,15 +123,13 @@
     color:black;
   }
 
+
   .productCard{
-    width: 47%;
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    margin-left: 0.5rem;
-    margin-top: 0.5rem;
-    border: 0.1rem solid #EBEBED;
-    padding: 0  0.2rem 0.3rem 0.2rem;
+    width: 48vw;
+    height: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    
     text-align: center;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -111,27 +137,5 @@
 
   .productCard>a:visited{
     color: black;
-  }
-
-
-  
-  .productimage{
-    object-fit: contain;
-  }
-  
-  .productTitle{
-    display: inline-block;
-    overflow: hidden; 
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: calc(100%);
-    font-size: 1.1rem;
-    padding-top: 0.2rem;
-  }
-  
-  .productPrice{
-    font-weight: bold;
-    padding-top: 0.2rem;
-    font-size: 1.2rem;
   }
 }

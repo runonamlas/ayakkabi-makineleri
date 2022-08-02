@@ -24,21 +24,23 @@ export default function Home({ products }) {
               }
               const name = product.name.replace(/ /g, '-')
               return  <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
-                    <div key={product.id} className={styles.productCard}>
-                    <Image priority="true" className={styles.productimage} src={imageArray[product.vitrin - 1]} height='80' width='100' layout='responsive' />
-                  <p className={styles.productTitle}>{product.name}</p>
-                  <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
+                <div key={product.id} className={styles.productCard}>
+                  <div className={styles.photoDiv}>
+                    <Image priority="true" className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
+                  </div>
+                  <div className={styles.productInfoDiv}>
+                    <p className={styles.productTitle}>{product.name}</p>
+                    <p className={styles.productAddress}>{product.users.address.split('%')[1]}</p>
+                    <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
+                  </div>
                   
-                  </div></a>
-                  </Link>
-                  
-            
+                </div>
+              </a></Link>
             }
           )}
           </div>
         </main>
       </section>
-      
     </Layout>
   )
 }

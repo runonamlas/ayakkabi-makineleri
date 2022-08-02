@@ -96,6 +96,7 @@
 
 .searchIcon{
   cursor: pointer;
+  display: none;
 }
 
 .searchSpace {
@@ -170,6 +171,7 @@
   
   .searchIcon{
     cursor: pointer;
+    display: inline;
   }
   
   .navParent{
