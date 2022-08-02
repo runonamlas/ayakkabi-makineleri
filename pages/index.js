@@ -45,7 +45,7 @@ export default function Home({ products }) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const { data } = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/products')
     const products = data.data

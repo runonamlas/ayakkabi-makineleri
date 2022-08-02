@@ -21,7 +21,7 @@ const NavBar = ({navSelect}) => {
           <li key={link.name} className={ link.select? styles.menuItemSelected : styles.menuItem }>
             <Link key={link.id} href={link.to}><a className={styles.menuText }>
               <div className={styles.navDiv}>
-                <Image src={link.icon} alt={link.name} width="32" height="32" /> &nbsp;
+                <Image src={link.icon} alt={link.name} width="32" height="32" priority="true"/> &nbsp;
                 {link.name}
                 </div>
             </a></Link>

@@ -206,7 +206,7 @@
 
   .menuItem {
     width: 30%;
-    padding: 0.8rem 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -215,16 +215,22 @@
 
   .menuItemSelected {
     width: 30%;
-    padding: 0.8rem 0;
+    padding: 0;
     justify-content: center;
   }
 
   .navDiv{
       width: 100%;
+      display: block;
   }
 
   
   .menuText {
     font-size: 0;
+    width: 100%;
+    display: flex;
+    padding: 0.8rem 0;
+    justify-content: center;
+    align-items: center;
   }
 }
