@@ -140,4 +140,15 @@
   .productCard>a:visited{
     color: black;
   }
+
+.productTitle{
+  font-weight: bold;
+  display: inline-block;
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: calc(100%);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
 }

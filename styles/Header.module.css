@@ -116,6 +116,12 @@
   justify-content: space-between;
 }
 
+.navDiv{
+  display: flex;
+  align-items: center;
+  color: #2F8F9D;
+}
+
 .menuItem {
   color:#2F8F9D;
   font-size: 1.5rem;
@@ -176,8 +182,12 @@
   
   .navParent{
     z-index: 8;
-    padding: 0.8rem 2rem;
+    padding: 0;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     bottom: 0px;
     background-color: white;
@@ -185,11 +195,31 @@
 
   .navUl {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
+  
+
+  .menuItem {
+    width: 30%;
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
 
   .menuItemSelected {
-    padding-left: 0;
+    width: 30%;
+    padding: 0.8rem 0;
+    justify-content: center;
   }
+
+  .navDiv{
+      width: 100%;
+  }
+
   
   .menuText {
     font-size: 0;
