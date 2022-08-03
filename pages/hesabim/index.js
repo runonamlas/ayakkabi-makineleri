@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Layout from "../../components/Layout";
 import styles from '../../styles/Hesabim.module.css'
 import { parseCookies, destroyCookie} from 'nookies'
 import { useState, useEffect } from "react";
@@ -46,8 +45,7 @@ function Hesabim(){
     router.reload()
   }
 
-  return <Layout navSelect={2}>
-    <main className={styles.main}>
+  return <main className={styles.main}>
       <h1 className={styles.title}>{name}</h1>
       <h2 className={styles.title}>{callNumber}</h2>
       <h3 className={styles.title}>{address} {city}</h3>
@@ -83,8 +81,6 @@ function Hesabim(){
       </div>
       
     </main>
-
-  </Layout>
 }
 
 export default Hesabim

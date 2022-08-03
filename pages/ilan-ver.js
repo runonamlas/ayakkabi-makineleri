@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { parseCookies } from "nookies";
 import * as React from "react";
-import Layout from "../components/Layout";
 import styles from '../styles/IlanVer.module.css'
 
 export default function IlanVer () {
@@ -102,8 +101,7 @@ export default function IlanVer () {
     }
   }
 
-  return <Layout navSelect={1}>
-    <main className={styles.main}>
+  return <main className={styles.main}>
       <h1 className={styles.title}>
         ilan ver
       </h1>
@@ -162,5 +160,4 @@ export default function IlanVer () {
       </form>
       )}
     </main>
-  </Layout>
 }

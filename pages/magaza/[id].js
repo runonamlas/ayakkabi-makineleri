@@ -1,7 +1,6 @@
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import Layout from "../../components/Layout";
 import styles from '../../styles/MagazaScreen.module.css';
 
 export default function MagazaScreen({user}){
@@ -17,7 +16,7 @@ export default function MagazaScreen({user}){
     3 : "$"
   }
 
-  return (<Layout>
+  return (
     <main className={styles.main}>
       <div className={styles.headText}>
       <h1>{nameConfig.replace(/\s+$/g, '')}</h1>
@@ -56,9 +55,7 @@ export default function MagazaScreen({user}){
           })}
         </div>
       </div>
-    </main>
-
-  </Layout>)
+    </main>)
 }
 export const getServerSideProps = async (context) => {
   try {

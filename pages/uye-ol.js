@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { setCookie } from "nookies";
 import * as React from "react";
 import citiesList from "../cities.config";
-import Layout from "../components/Layout";
 import styles from '../styles/UyeOl.module.css'
 
 export default function UyeOl () {
@@ -69,8 +68,7 @@ export default function UyeOl () {
     });
   }
 
-  return <Layout>
-    <main className={styles.main}>
+  return <main className={styles.main}>
       <h1 className={styles.title}>
         üye ol
       </h1>
@@ -138,6 +136,5 @@ export default function UyeOl () {
        
       </form>)}
     </main>
-  </Layout>
 }
 

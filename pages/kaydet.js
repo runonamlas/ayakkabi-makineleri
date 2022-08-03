@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import Layout from "../components/Layout";
 import styles from '../styles/Kaydet.module.css'
 
 export default function Kaydet(){
-  return <Layout>
-    <main className={styles.main}>
+  return <main className={styles.main}>
       <Image src="/icons/check.svg" alt="success" width="200" height="200" />
       <h1 className={styles.title}>İlanınız onay aşamasındadır.</h1>
       <h2>Bilgilerin doğruluğu ve fiyatın tutarlılığı sonrasında onaylanacaktır. </h2>
@@ -21,5 +19,4 @@ export default function Kaydet(){
       
        
     </main>
-  </Layout>
 }

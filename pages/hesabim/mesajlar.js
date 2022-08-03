@@ -1,23 +1,11 @@
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import Layout from "../../components/Layout";
 import styles from '../../styles/Mesajlar.module.css'
 
 export default function Ilanlarim({messages}){
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return <Layout>
-  <main className={styles.main}>
-    <h1 className={styles.title}>mesajlar</h1>
-    <div className={styles.productList}>k</div>
-  </main>
-  </Layout>
-
 if(messages){
-  return <Layout>
-    <main className={styles.main}>
+  return <main className={styles.main}>
       <h1 className={styles.title}>mesajlar</h1>
       <div className={styles.productList}>
         {messages.map(message => {
@@ -34,15 +22,11 @@ if(messages){
 
       </div>
     </main>
-  </Layout>
 }
-return <Layout>
-  <main className={styles.main}>
+return <main className={styles.main}>
     <h1 className={styles.title}>mesajlar</h1>
     <div className={styles.productList}></div>
   </main>
-  </Layout>
-
 }
 
 export const getServerSideProps = async (context) => {

@@ -2,14 +2,12 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
-import Layout from '../../components/Layout'
 import styles from '../../styles/GirisYap.module.css'
 
 export default function SifreyiYenile({ data }) {
   const [password, setPassword] = useState('')
   const [passwordR, setPasswordR] = useState('')
   const [passwordShown, setPasswordShown] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [errorState, setErrorState] = useState();
   const [buttonState, setButtonState] = useState(false);
   const router = useRouter();
@@ -21,21 +19,9 @@ export default function SifreyiYenile({ data }) {
       }
     }
     handleLogout()
-    setMounted(true) 
   }, []);
 
 
-
-  if (!mounted) return <Layout>
-    <main className={styles.main}>
-      <h1 className={styles.title}>
-        şifreyi yenile
-      </h1>
-      <div className={styles.productsList}>
-        
-      </div>
-    </main>
-  </Layout>;
 
   
 
@@ -62,9 +48,7 @@ export default function SifreyiYenile({ data }) {
 
   }
 
-  return (
-    <Layout>
-      <main className={styles.main}>
+  return ( <main className={styles.main}>
         <h1 className={styles.title}>
           şifreyi yenile
         </h1>
@@ -83,7 +67,6 @@ export default function SifreyiYenile({ data }) {
         </form>)}
         </div>
       </main>
-    </Layout>
   )
 }
 

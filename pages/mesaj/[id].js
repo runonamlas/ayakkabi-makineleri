@@ -4,11 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { parseCookies } from "nookies";
 import * as React from "react";
-import Layout from "../../components/Layout";
 import styles from '../../styles/MessagePage.module.css';
 
 function MessagePage({data, messages, goster, product}){
-  const [mounted, setMounted] = React.useState(false);
   const [buttonState, setButtonState] = React.useState(false);
   const [image, setImage] = React.useState([]);
   const [message, setMessage] = React.useState('')
@@ -16,8 +14,7 @@ function MessagePage({data, messages, goster, product}){
     if(product.id){
       setImage(product.images.split(","))
     }
-    setMounted(true)}, []);
-  if (!mounted) return <Layout><main className={styles.main}></main></Layout>;
+  }, []);
   const unit = {
     1: "tl",
     2: "£",
@@ -52,11 +49,11 @@ function MessagePage({data, messages, goster, product}){
     });
   }
 
-  return (<Layout>
-    <Head>
+  return (
+    <main className={styles.main}>
+       <Head>
       <title>{data[1]}</title>
     </Head>
-    <main className={styles.main}>
       <Link href={`/magaza/${data[1]}`}>
         <a>
           <div className={styles.OwnerTitle}>
@@ -104,9 +101,7 @@ function MessagePage({data, messages, goster, product}){
       
       </div>
      
-    </main>
-    
-  </Layout>)
+    </main>)
 }
 
 export const getServerSideProps = async (context) => {

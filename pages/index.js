@@ -2,12 +2,10 @@ import axios from 'axios'
 import Image from 'next/future/image'
 import Link from 'next/link'
 import Category from '../components/Category'
-import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
 
 export default function Home({ products }) {
   return (
-    <Layout navSelect={0}>
       <section className={styles.section}>
         <Category />
         <main className={styles.main}>
@@ -41,7 +39,6 @@ export default function Home({ products }) {
           </div>
         </main>
       </section>
-    </Layout>
   )
 }
 

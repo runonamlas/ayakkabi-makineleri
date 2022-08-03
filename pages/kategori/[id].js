@@ -2,11 +2,10 @@ import axios from 'axios'
 import Image from "next/image";
 import Link from "next/link";
 import Category from "../../components/Category";
-import Layout from "../../components/Layout";
 import styles from '../../styles/ProductList.module.css'
 
 export default function AyakkabiMakineleri({ products, params}){
-  return <Layout>
+  return <section>
     <Category catSelect={params[0]-1}/>
     <main className={styles.main}>
         <h1 className={styles.title}>
@@ -46,7 +45,8 @@ export default function AyakkabiMakineleri({ products, params}){
           )}
         </div>
       </main>
-  </Layout>
+  </section>
+    
 }
 
 export const getServerSideProps = async (context) => {

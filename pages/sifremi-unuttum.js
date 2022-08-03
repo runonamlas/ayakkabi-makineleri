@@ -1,13 +1,10 @@
 import axios from 'axios'
-import { useRouter } from 'next/router'
 import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
-import Layout from '../components/Layout'
 import styles from '../styles/GirisYap.module.css'
 
 export default function SifremiUnuttum({ data }) {
   const [email, setEmail] = useState('')
-  const [mounted, setMounted] = useState(false);
   const [errorState, setErrorState] = useState();
   const [buttonState, setButtonState] = useState(false);
   const [showFinish, setShowFinish] = useState(false);
@@ -19,24 +16,9 @@ export default function SifremiUnuttum({ data }) {
       }
     }
     handleLogout()
-    setMounted(true) 
-
   }, []);
 
 
-
-  if (!mounted) return <Layout>
-    <main className={styles.main}>
-      <h1 className={styles.title}>
-        şifremi unuttum
-      </h1>
-      <div className={styles.productsList}>
-        
-      </div>
-    </main>
-  </Layout>;
-
-  
 
   const submitLogin = async (event) => {
     setButtonState(true)
@@ -62,9 +44,7 @@ export default function SifremiUnuttum({ data }) {
 
   }
 
-  return (
-    <Layout>
-      <main className={styles.main}>
+  return <main className={styles.main}>
         <h1 className={styles.title}>
           şifremi unuttum
         </h1>
@@ -77,8 +57,6 @@ export default function SifremiUnuttum({ data }) {
           {errorState && (<div className={styles.errorDiv}>{errorState}</div>)}
           <button type="submit" className={styles.saveButton}>şifreyi değiştir</button>
         </form>))}
-        </div>
-      </main>
-    </Layout>
-  )
+    </div>
+  </main>
 }

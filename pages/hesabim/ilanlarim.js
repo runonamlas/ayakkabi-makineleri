@@ -1,19 +1,9 @@
 import axios from "axios";
 import Image from "next/future/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import Layout from "../../components/Layout";
 import styles from '../../styles/Ilanlarim.module.css'
 
 export default function Ilanlarim({products}){
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return <Layout>
-  <main className={styles.main}>
-    <h1 className={styles.title}>ilanlarım</h1>
-    <div></div>
-  </main>
-</Layout>
   if(products){
     const groupByCategory = products?.reduce((group, product) => {
     const { categories } = product;
@@ -21,8 +11,7 @@ export default function Ilanlarim({products}){
     group[categories.name].push(product);
     return group;
   }, {});
-    return <Layout>
-    <main className={styles.main}>
+    return  <main className={styles.main}>
       <h1 className={styles.title}>ilanlarım</h1>
       <div className={styles.productListDiv}>
       {Object.keys(groupByCategory).map((keyName, i) => (
@@ -50,8 +39,6 @@ export default function Ilanlarim({products}){
         ))}
        </div>
     </main>
-
-  </Layout>
   }
   return <Layout>
   <main className={styles.main}>

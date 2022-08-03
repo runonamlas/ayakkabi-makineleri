@@ -2,7 +2,6 @@ import axios from "axios";
 import Image from "next/future/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Layout from "../../components/Layout";
 import styles from '../../styles/Istatistikler.module.css'
 
 export default function Istatistikler({userData}){
@@ -24,8 +23,7 @@ export default function Istatistikler({userData}){
     setTopProducts(userData?.products?.sort(function(a, b) { return a.clickProduct - b.clickProduct; }).slice(0,3).reverse())
     
   }, []);
-  return <Layout>
-    <main className={styles.main}>
+  return <main className={styles.main}>
       <h1 className={styles.title}>
         istatistikler
       </h1>
@@ -69,7 +67,6 @@ export default function Istatistikler({userData}){
         </div>
       </div>
     </main>
-  </Layout>
 }
 
 

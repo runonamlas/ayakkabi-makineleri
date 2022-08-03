@@ -2,7 +2,6 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Layout from "../components/Layout";
 import styles from '../styles/GirisYap.module.css'
 import { setCookie } from 'nookies'
 
@@ -70,8 +69,7 @@ export default function GirisYap(){
         }
     });
   }
-  return <Layout>
-    <main className={styles.main}>
+  return <main className={styles.main}>
       <h1 className={styles.title}>
         giriş yap / üye ol
       </h1>
@@ -101,5 +99,4 @@ export default function GirisYap(){
         <h2>Hemen yan kısımdan giriş yapabilir. Veya hızlıca üyelik oluşturabilirsin.</h2>
       </div>
     </main>
-  </Layout>
 }

@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/future/image";
 import Link from "next/link";
 import { useState } from "react";
-import Layout from "../../components/Layout";
 import styles from '../../styles/ProductDetail.module.css';
 
 export default function ProductPage({product, owner, }){
@@ -44,11 +43,11 @@ export default function ProductPage({product, owner, }){
   })
   const used = product.used.charAt(0).toUpperCase()+ product.used.slice(1)
 
-  return (<Layout>
-    <Head>
+  return (
+    <main className={styles.main}>
+      <Head>
       <title>{product.name}</title>
     </Head>
-    <main className={styles.main}>
       <h1 className={styles.productTitle}>{product.name}</h1>
       <section className={styles.productSection}>
         <div className={styles.sliderSection}>
@@ -104,8 +103,7 @@ export default function ProductPage({product, owner, }){
           </div>
         </div>
       </section>
-    </main>
-  </Layout>)
+    </main>)
 }
 
 export const getServerSideProps = async (context) => {

@@ -1,4 +1,3 @@
-import Layout from "../../components/Layout";
 import styles from '../../styles/HesapGuncelle.module.css'
 import * as React from "react";
 import citiesList from "../../cities.config";
@@ -47,8 +46,7 @@ export default function HesapGuncelle(){
       });
   }
 
-  return <Layout>
-    <main className={styles.main}>
+  return <main className={styles.main}>
       <h1 className={styles.title}>profili düzenle</h1>
       <form className={styles.formStyle} onSubmit={submitLogin}>
         <label className={styles.fieldHead} htmlFor="baslik">şirket adınız*</label>
@@ -104,5 +102,4 @@ export default function HesapGuncelle(){
        
       </form>
     </main>
-  </Layout>
 }
