@@ -9,7 +9,6 @@ const Layout = ({children, navSelect}) => {
       <meta name="description" content="Sahibinden ayakkabı, taban, kesim, kemer, hazır alt makineleri ve sanayi makineleri alım satım sitesi. İlan vererek kendi makinelerinizi hemen satılık olarak koyabilirsiniz."></meta>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Header navSelect={navSelect}/>
     {children}
   </>
 }

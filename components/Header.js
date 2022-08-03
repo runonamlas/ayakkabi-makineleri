@@ -1,14 +1,29 @@
 import axios from "axios"
 import Image from "next/future/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import CONSTANTS from "../constants.config"
 import styles from '../styles/Header.module.css'
 
-const NavBar = ({navSelect}) => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
+const NavBar = () => {
+  const [navSelect, setNavSelect] = useState(-1);
+  const router = useRouter();
+  useEffect(() => {
+    switch (router.asPath){
+      case '/':
+        setNavSelect(0)
+        break; 
+      case '/ilan-ver':
+        setNavSelect(1)
+        break;
+      case '/hesabim':
+        setNavSelect(2)
+        break;
+      default:
+        setNavSelect(-1)
+    }
+  },[router.asPath]);
   const links = [
     { id: 0, name: CONSTANTS.home, to: CONSTANTS.homePath, select: navSelect==0? true : false, icon: navSelect==0 ? CONSTANTS.homeIconBg : CONSTANTS.homeIcon },
     { id: 1, name: CONSTANTS.add, to: CONSTANTS.addPath, select: navSelect==1? true : false, icon: navSelect==1 ? CONSTANTS.addIconBg : CONSTANTS.addIcon },
@@ -33,7 +48,7 @@ const NavBar = ({navSelect}) => {
   )
 }
 
-function Header  ({navSelect})  {
+function Header()  {
   const [products, setProducts] = useState();
   const [searchText, setSearchText] = useState('');
   useEffect(() => {
@@ -93,7 +108,7 @@ function Header  ({navSelect})  {
           )}
         </div>}
       </div>
-      <NavBar  navSelect={navSelect}/>
+      <NavBar/>
     </header>
   )
 }
