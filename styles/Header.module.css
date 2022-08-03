@@ -23,6 +23,7 @@
 
 .productCard{
   height: 8rem;
+  display: flex;
   flex-direction:row;
   margin: 0.5rem;
   border: 0.1rem solid #EBEBED;
@@ -36,20 +37,21 @@
 
 
 .productLeft{
-  float: left;
   width: 30%;
-
 }
 
 .productRight{
-  float: left;
   width: 70%;
   display: flex;
   flex-direction: column;
 }
 
 .productimage{
-  object-fit: contain;
+  object-fit:fill;
+  width: auto;
+  max-width: 100%;
+  height:none;
+  max-height: 100%;
 }
 
 .productTitle{
@@ -152,14 +154,60 @@
 }
 
 @media only screen and (max-width:768px){
+  .headerDiv {
+    position: initial;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    background-color: #2F8F9D;
+  }
   .logo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
     font-size: 1.2rem;
   }
+
+  .mobileSearchDiv {
+    background-color: #2F8F9D;
+    position: absolute;
+    width: 100%;
+    min-height:7%;
+  }
+
+  .mobileSearchInput {
+    width: 100%;
+    height: 7vh;
+  }
+
+  .mobileSearchForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+  }
+
+  .mobileSearchBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 85%;
+    padding: 0.4rem 0.2rem;
+    border-radius: 1rem;
+  }
   
+
   .searchDiv {
     display: flex;
     align-items: center;
-    padding-right: 1rem;
+    justify-content: flex-end;
+    padding-right: 0;
   }
   
   .searchBox {
@@ -183,6 +231,21 @@
     display: inline;
   }
   
+  .searchSpace {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5vh;
+    z-index:2;
+    margin-top: 0.5rem;
+    background-color: #2F8F9D;
+    border-radius: 0;
+  }  
+
+ 
+
+
   .navParent{
     z-index: 8;
     padding: 0;
@@ -202,7 +265,6 @@
     flex-direction: row;
     justify-content: space-evenly;
   }
-  
 
   .menuItem {
     width: 30%;
@@ -211,7 +273,6 @@
     align-items: center;
     justify-content: center;
   }
-  
 
   .menuItemSelected {
     width: 30%;

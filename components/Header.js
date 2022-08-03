@@ -51,6 +51,7 @@ const NavBar = () => {
 function Header()  {
   const [products, setProducts] = useState();
   const [searchText, setSearchText] = useState('');
+  const [searchShow, setSearchShow] = useState(false);
   useEffect(() => {
     (async () => {
       const {data} = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/products/')
@@ -66,11 +67,11 @@ function Header()  {
         <Link href='/'>
           <a className={styles.logo}>ayakkabimakineleri.com</a>
         </Link>
-      <div className={styles.searchDiv}>
-        <div className={styles.searchInput}>
-          <form noValidate role="search" >
-          <input className={styles.searchBox} placeholder="ara" title='Search bar' value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
-          <Image className={styles.searchIcon} src={CONSTANTS.searchIconPath} alt="search-icon" width="22" height="22" />
+      <div className={searchShow ? styles.mobileSearchDiv : styles.searchDiv}>
+        <div className={searchShow ? styles.mobileSearchInput : styles.searchInput}>
+          <form noValidate role="search" className={searchShow && styles.mobileSearchForm} >
+          <input className={searchShow ? styles.mobileSearchBox : styles.searchBox} placeholder="ara" title='Search bar' value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
+          <Image className={styles.searchIcon} onClick={()=> {setSearchShow(!searchShow)}} src={searchShow ? CONSTANTS.cancelIconPath : CONSTANTS.searchIconPath} alt="search-icon" width="22" height="22" />
           </form>
         </div>
         {(searchText && products) && <div className={styles.searchSpace}>
