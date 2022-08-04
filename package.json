@@ -11,9 +11,11 @@
   "dependencies": {
     "axios": "^0.27.2",
     "next": "12.2",
+    "next-pwa": "^5.5.5",
     "nookies": "^2.5.2",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
     "eslint": "8.17.0",

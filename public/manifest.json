@@ -1,0 +1,32 @@
+{
+    "theme_color": "#2f8f9d",
+    "background_color": "#2f8f9d",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Ayakkab\u0131 Makineleri",
+    "short_name": "Ayakkab\u0131 Makineleri",
+    "description": "Her \u00e7e\u015fit ayakkab\u0131, taban, kemer kesim vb. makinelerin al\u0131m sat\u0131m pazaryeri",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
