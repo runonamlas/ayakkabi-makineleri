@@ -10,8 +10,6 @@
 
 .productTitle {
   width: 100%;
-  max-height: 8%;
-  min-height: 2.2rem;
   text-transform: capitalize;
   display: flex;
   justify-content: center;
@@ -41,6 +39,7 @@
   justify-content: space-between;
   margin-top: 1rem;
   text-transform: capitalize;
+  align-items: center;
 }
 
 .productOwner{
@@ -248,7 +247,7 @@
   }
   
   .productDetailData{
-    font-weight: bold;
+    font-weight:500;
   }
   
   .priceAndContactDiv{
@@ -258,8 +257,8 @@
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    position: relative;
-    bottom: auto;
+    position: fixed;
+    bottom: 10vh;
   
   }
   .buttonsGroup{
@@ -271,7 +270,7 @@
   }
   .productPrice{
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   
   .mesajButton{
@@ -316,12 +315,15 @@
   }
   
   .leftbutton{
-
     font-size: 2rem;
+    left:0;
+    padding: 0.6rem 1rem;
   }
   
   .rightbutton{
     font-size: 2rem;
+    right:0;
+    padding: 0.6rem 1rem;
   }
   
   .photoDiv {

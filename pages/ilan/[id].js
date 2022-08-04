@@ -69,6 +69,10 @@ export default function ProductPage({product, owner, }){
           </div>
         </div>
         <div className={styles.contentSection}>
+        <div className={styles.productDetailDiv}>
+            <a className={styles.productDetailTitle}>Fiyatı</a>
+            <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
+          </div>
           <div className={styles.productDetailDiv}>
             <a className={styles.productDetailTitle}>Satıcı</a>
             <Link href={`/magaza/${product.users.username}`}><a className={styles.productOwner}>{nameConfig.replace(/\s+$/g, '')}</a></Link>
@@ -90,7 +94,6 @@ export default function ProductPage({product, owner, }){
             <a className={styles.productDetailData}>{used}</a>
           </div>
           <div className={styles.priceAndContactDiv}>
-             <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
             {!owner && <div className={styles.buttonsGroup}>
               <Link href={{pathname: `/mesaj/${product.users.id}-${product.users.username}`, query: { product: product.id, productName: product.name} }}>
                 <div className={styles.mesajButton}>mesaj gönder</div>

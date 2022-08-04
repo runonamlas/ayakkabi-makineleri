@@ -5,8 +5,6 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import CONSTANTS from "../constants.config"
 import styles from '../styles/Header.module.css'
-import homePic from '../public/icons/home.png'
-import homeBgPic from '../public/icons/homeBg.png'
 
 const NavBar = () => {
   const [navSelect, setNavSelect] = useState(-1);
@@ -27,7 +25,7 @@ const NavBar = () => {
     }
   },[router.asPath]);
   const links = [
-    { id: 0, name: CONSTANTS.home, to: CONSTANTS.homePath, select: navSelect==0? true : false, icon: navSelect==0 ? homeBgPic : homePic },
+    { id: 0, name: CONSTANTS.home, to: CONSTANTS.homePath, select: navSelect==0? true : false, icon: navSelect==0 ? CONSTANTS.homeIconBg : CONSTANTS.homeIcon },
     { id: 1, name: CONSTANTS.add, to: CONSTANTS.addPath, select: navSelect==1? true : false, icon: navSelect==1 ? CONSTANTS.addIconBg : CONSTANTS.addIcon },
     { id: 2, name: CONSTANTS.account, to: CONSTANTS.accountPath, select: navSelect==2? true : false, icon: navSelect==2 ? CONSTANTS.accountIconBg : CONSTANTS.accountIcon }
   ]
