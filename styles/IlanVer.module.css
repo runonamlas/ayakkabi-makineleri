@@ -181,6 +181,7 @@
 
 @media only screen and (max-width:768px){
   .main {
+    margin-top: 7vh;
     height: auto;
     width: 100%;
     display: flex;

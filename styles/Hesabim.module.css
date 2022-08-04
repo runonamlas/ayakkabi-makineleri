@@ -43,6 +43,7 @@
 
 @media only screen and (max-width:768px){
   .main {
+    margin-top: 7vh;
     height: 86vh;
     width: 100%;
     float: left;

@@ -40,10 +40,12 @@ export default function Ilanlarim({products}){
        </div>
     </main>
   }
-  return <main className={styles.main}>
+  return <Layout>
+  <main className={styles.main}>
     <h1 className={styles.title}>ilanlarım</h1>
     <div></div>
   </main>
+</Layout>
   
   
 }

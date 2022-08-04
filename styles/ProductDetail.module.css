@@ -202,6 +202,7 @@
 
 @media only screen and (max-width:768px){
   .main {
+    margin-top: 7vh;
     height: 84%;
     width: 100%;
     padding: 0;
