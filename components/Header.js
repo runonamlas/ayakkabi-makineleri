@@ -52,15 +52,28 @@ function Header()  {
   const [products, setProducts] = useState();
   const [searchText, setSearchText] = useState('');
   const [searchShow, setSearchShow] = useState(false);
+  const [productsApi, setProductsApi] = useState([]);
   useEffect(() => {
-    (async () => {
-      const {data} = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/products/')
-      const productsAPI = data.data
-      let gg = productsAPI.filter(p => p.name.toLowerCase().indexOf(searchText.toLowerCase()) >= 0 || p.users.username.toLowerCase().indexOf(searchText.toLowerCase()) >= 0)
+    if(searchText.length>0){
+      (async () => {
+      var productsApiVar = productsApi
+      if(productsApi.length < 1){
+        const {data} = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/products/')
+        productsApiVar = data.data
+        setProductsApi(data.data)
+      }
+      let gg = productsApiVar.filter(p => p.name.toLowerCase().indexOf(searchText.toLowerCase()) >= 0 || p.users.username.toLowerCase().indexOf(searchText.toLowerCase()) >= 0)
       let uniqueChars = [...new Set(gg)];
       setProducts(uniqueChars)
     })()
+    }
   },[searchText]);
+
+  const searchClick =  () => {
+      setSearchText('')
+      setSearchShow(!searchShow)
+
+  }
   
   return (
     <header className={styles.headerDiv}>
@@ -69,9 +82,9 @@ function Header()  {
         </Link>
       <div className={searchShow ? styles.mobileSearchDiv : styles.searchDiv}>
         <div className={searchShow ? styles.mobileSearchInput : styles.searchInput}>
-          <form noValidate role="search" className={searchShow && styles.mobileSearchForm} >
+          <form noValidate role="search" className={searchShow ? styles.mobileSearchForm : undefined} >
           <input className={searchShow ? styles.mobileSearchBox : styles.searchBox} placeholder="ara" title='Search bar' value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
-          <Image className={styles.searchIcon} onClick={()=> {setSearchShow(!searchShow)}} src={searchShow ? CONSTANTS.cancelIconPath : CONSTANTS.searchIconPath} alt="search-icon" width="22" height="22" />
+          <Image className={styles.searchIcon} onClick={() => searchClick()} src={searchShow ? CONSTANTS.cancelIconPath : CONSTANTS.searchIconPath} alt="search-icon" width="22" height="22" />
           </form>
         </div>
         {(searchText && products) && <div className={styles.searchSpace}>
