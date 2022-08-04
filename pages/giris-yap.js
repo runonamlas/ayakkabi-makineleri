@@ -94,9 +94,7 @@ export default function GirisYap(){
         </Link>
       </div>
       <div className={styles.rightPanel}>
-        <h2>İlan yayınlayabilmek için giriş yapmalı ya da üye olmasın.</h2>
-        <h2>Gördüğüm kadarıyla henüz hesabına giriş yapmamışsın.</h2>
-        <h2>Hemen yan kısımdan giriş yapabilir. Veya hızlıca üyelik oluşturabilirsin.</h2>
+        <h3>İlan yayınlayabilmek için giriş yapmalı ya da üye olmasın.</h3>
       </div>
     </main>
 }
