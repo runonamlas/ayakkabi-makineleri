@@ -15,7 +15,7 @@ if(messages){
               <a className={styles.mesajTitle}>{message.owner.username}</a>
               <a className={styles.mesajContent}>{message.name}</a>
             </div>
-            <Image className={styles.productimage} src='/icons/right-arrow.svg' height='20' width='30' />
+            <Image  alt="mesajları göster" className={styles.productimage} src='/icons/right-arrow.svg' height='20' width='30' />
           </div>
         </Link>
         })}

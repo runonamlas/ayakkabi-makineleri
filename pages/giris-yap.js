@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from '../styles/GirisYap.module.css'
 import { setCookie } from 'nookies'
+import Image from "next/future/image";
 
 export default function GirisYap(){
   const [email, setEmail] = useState('')
@@ -81,7 +82,7 @@ export default function GirisYap(){
           <label className={styles.fieldHead} htmlFor="passwordText">şifreniz*</label>
           <div className={styles.passField}>
             <input required className={styles.passInput} type={passwordShown ? "text" : "password"} id="password" autoComplete="on" value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="sifreniz" name="password" />
-            <button type="button" className={styles.iconButton} onClick={()=>setPasswordShown(!passwordShown)}><img className={styles.icon} type="image" src={passwordShown ? "icons/passSee.svg" : "icons/passNotSee.svg"}/></button>
+            <button type="button" className={styles.iconButton} onClick={()=>setPasswordShown(!passwordShown)}><Image  alt="giriş yap" className={styles.icon} type="image" src={passwordShown ? "icons/passSee.svg" : "icons/passNotSee.svg"}/></button>
           </div>
           <Link href='sifremi-unuttum'><a className={styles.sifremiUnuttum}>şifremi unuttum</a></Link>
           <button type="submit" className={styles.saveButton}>giriş yap</button>

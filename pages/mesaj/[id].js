@@ -58,7 +58,7 @@ function MessagePage({data, messages, goster, product}){
         <a>
           <div className={styles.OwnerTitle}>
         <a>{data[1]}</a>
-        <Image className={styles.productimage} src='/icons/right-arrow-white.svg' height='20' width='20' />
+        <Image alt="gönder" className={styles.productimage} src='/icons/right-arrow-white.svg' height='20' width='20' />
       </div>
         </a>
       </Link>
@@ -69,7 +69,7 @@ function MessagePage({data, messages, goster, product}){
           return <div className={styles.chatSatirLeft}>
           <div className={styles.chatDiv}>
             <div className={styles.productCardM}>
-              <Image priority="true" key={e.id} className={styles.productimageM} src={imageArray[e.product.vitrin - 1]} height='100' width='140'/>
+              <Image priority="true" alt="ayakkabı makinesi fotografı" key={e.id} className={styles.productimageM} src={imageArray[e.product.vitrin - 1]} height='100' width='140'/>
               <a className={styles.productTitleM}>{e.product.name}</a>
               <a className={styles.productPriceM}>{e.product.price} {unit[e.product.priceUnit]}</a>
             </div>
@@ -87,7 +87,7 @@ function MessagePage({data, messages, goster, product}){
       </div>
       <div className={styles.chatWrite}>
         {goster && <div className={styles.productCard}>
-              <Image priority="true"  className={styles.productimage} src={image[product.vitrin - 1]} height='100' width='140'/>
+              <Image priority="true" alt="ayakkabı makinesi fotografı"  className={styles.productimage} src={image[product.vitrin - 1]} height='100' width='140'/>
               <a className={styles.productTitle}>{product.name}</a>
               <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
             </div>}

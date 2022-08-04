@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Image from 'next/future/image'
 import { useRouter } from 'next/router'
 import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
@@ -60,7 +61,7 @@ export default function SifreyiYenile({ data }) {
           <label className={styles.fieldHead} htmlFor="passwordRText">yeni şifreniz(tekrar)*</label>
           <div className={styles.passField}>
             <input required className={styles.passInput} type={passwordShown ? "text" : "password"} id="passwordR" value={passwordR} onChange={(e) => setPasswordR(e.target.value)}  placeholder="yeni sifreniz(tekrar)" name="passwordR" minLength="8" />
-            <button type="button" className={styles.iconButton} onClick={()=>setPasswordShown(!passwordShown)}><img className={styles.icon} type="image" src={passwordShown ? "../icons/passSee.svg" : "../icons/passNotSee.svg"}/></button>
+            <button type="button" className={styles.iconButton} onClick={()=>setPasswordShown(!passwordShown)}><Image className={styles.icon} alt="şifreyi göster" type="image" src={passwordShown ? "../icons/passSee.svg" : "../icons/passNotSee.svg"}/></button>
           </div>
           {errorState && (<div className={styles.errorDiv}>{errorState}</div>)}
           <button type="submit" className={styles.saveButton}>şifreyi değiştir</button>

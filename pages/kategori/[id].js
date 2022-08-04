@@ -31,7 +31,7 @@ export default function AyakkabiMakineleri({ products, params}){
             return <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
               <div className={styles.productCard}>
                 <div className={styles.productLeft}>
-                  <Image priority="true" className={styles.productimage} src={imageArray[product.vitrin-1]} height='80' width='100' layout='responsive'/>
+                  <Image priority="true" alt="ayakkabı makinesi resmi" className={styles.productimage} src={imageArray[product.vitrin-1]} height='80' width='100' layout='responsive'/>
                 </div>
                 <div className={styles.productRight}>
                   <p className={styles.productTitle}>{product.name}</p>

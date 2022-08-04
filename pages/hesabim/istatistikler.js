@@ -53,7 +53,7 @@ export default function Istatistikler({userData}){
                
                 <div className={styles.productCard}>
                   <div className={styles.productLeft}>
-                    <Image priority="true" className={styles.productimage} src={imageArray[product.vitrin-1]} height='30' width='50' layout='responsive'/>
+                    <Image  alt="ayakkabı makinesi resmi" priority="true" className={styles.productimage} src={imageArray[product.vitrin-1]} height='30' width='50' layout='responsive'/>
                   </div>
                   <div className={styles.productRight}>
                     <p className={styles.productTitle}>{product.name}</p>

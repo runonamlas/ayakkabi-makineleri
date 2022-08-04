@@ -43,7 +43,7 @@ export default function MagazaScreen({user}){
             return <Link key={product.id} href={`/ilan/${product.id}-${name}`}>
               <div className={styles.productCard}>
                 <div className={styles.productLeft}>
-                  <Image priority="true" className={styles.productimage} src={images[product.vitrin-1] ? images[product.vitrin-1]: ''} height='65' width='100' layout='responsive'/>
+                  <Image priority="true" alt="ayakkabı makinesi resmi" className={styles.productimage} src={images[product.vitrin-1] ? images[product.vitrin-1]: ''} height='65' width='100' layout='responsive'/>
                 </div>
                 <div className={styles.productRight}>
                   <a className={styles.productTitle}>{product.name}</a>

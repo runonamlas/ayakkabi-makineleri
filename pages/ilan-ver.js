@@ -129,7 +129,7 @@ export default function IlanVer () {
           <div draggable="false" key={index} className={styles.imageDivCup}>
             <button type="button" name="vitrinimage" onClick={()=>vitrinimage(index)} disabled={vitrinState==index ? true : false} className={styles.vitrinimage}>vitrin</button>
             <button type="button" name="deleteimage" onClick={()=>deleteimage(index)} className={styles.deleteimage}>X</button>
-            <Image key={index} draggable="false" className={styles.productimage} src={e} height='150' width='200' />
+            <Image key={index} draggable="false"  alt="ayakkabı makinesi resmi" className={styles.productimage} src={e} height='150' width='200' />
           </div>)) }
         </div>
         {selectedFile.length>=6 ? (<a className={styles.maxImages}>en fazla 6 adet resim yükleyebilirsiniz</a>):(
