@@ -1,3 +1,10 @@
+.section {
+  height: 93%;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 1rem 0 1rem;
+}
+
 .main {
   height: 91.2vh;
   width: 85%;
@@ -38,13 +45,11 @@
 
 
 .productLeft{
-  float: left;
   width: 30%;
 
 }
 
 .productRight{
-  float: left;
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -56,9 +61,14 @@
   font-size: 1.2rem;
 }
 
-.productimage{
-  object-fit: contain;
+.productimage {
+  object-fit:fill;
+  width: auto;
+  max-width: 100%;
+  height:auto;
+  max-height: 100%;
 }
+
 
 .productTitle{
   font-size: 1.1rem;
@@ -77,10 +87,19 @@
 }
 
 @media only screen and (max-width:768px){
+  .section {
+    height: 73.2vh;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
   .main {
     height: 71vh;
     width: 100%;
-    float: left;
+    float: none;
     padding: 0;
     margin-top: 7vh;
   }
@@ -104,7 +123,7 @@
   }
   
   .productCard{
-    width: 100%;
+    width: 95vw;
     height: 18vh;
     display: flex;
     flex-direction:row;
@@ -112,6 +131,8 @@
     margin-right: 0.5rem;
     margin-top: 0.5rem;
     border: 0.1rem solid #EBEBED;
+    justify-content: center;
+    align-items: center;
     padding: 0  0.2rem 0.3rem 0.2rem;
     text-align: center;
     border-radius: 0.5rem;
@@ -119,13 +140,11 @@
   }
   
   .productLeft{
-    float: left;
     width: 30%;
     height: 100%;
   }
   
   .productRight{
-    float: left;
     width: 70%;
     height: 100%;
     display: flex;
@@ -139,7 +158,11 @@
   }
   
   .productimage{
-    object-fit: contain;
+    object-fit:fill;
+    width: auto;
+    max-width: 100%;
+    height:none;
+    max-height: 100%;
   }
   
   .productTitle{

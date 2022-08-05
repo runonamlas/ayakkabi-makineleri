@@ -86,7 +86,8 @@
   }
   
   .categoryItem:hover {
-    color: #ffffff;
+    background-color: white;
+    color: #2F8F9D;
   }
   
   .categoryItemSelected {

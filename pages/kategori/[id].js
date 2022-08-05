@@ -1,11 +1,11 @@
 import axios from 'axios'
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 import Category from "../../components/Category";
 import styles from '../../styles/ProductList.module.css'
 
 export default function AyakkabiMakineleri({ products, params}){
-  return <section>
+  return <section className={styles.section}>
     <Category catSelect={params[0]-1}/>
     <main className={styles.main}>
         <h1 className={styles.title}>
@@ -28,10 +28,10 @@ export default function AyakkabiMakineleri({ products, params}){
               nameConfig += nameParse
             })
 
-            return <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
+            return <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a className={styles.links}>
               <div className={styles.productCard}>
                 <div className={styles.productLeft}>
-                  <Image priority="true" alt="ayakkabı makinesi resmi" className={styles.productimage} src={imageArray[product.vitrin-1]} height='80' width='100' layout='responsive'/>
+                  <Image priority="true" alt="ayakkabı makinesi resmi" className={styles.productimage} src={imageArray[product.vitrin-1]} height='80' width='100' />
                 </div>
                 <div className={styles.productRight}>
                   <p className={styles.productTitle}>{product.name}</p>
