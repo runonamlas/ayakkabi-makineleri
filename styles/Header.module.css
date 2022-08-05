@@ -58,6 +58,12 @@
   font-size: 1.4rem;
   padding-top: 0.8rem;
   font-weight: bold;
+  display: inline-block;
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: calc(100%);
+  text-transform: capitalize;
 }
 
 .productOwner{
