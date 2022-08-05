@@ -24,7 +24,7 @@ export default function Home({ products }) {
               return  <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
                 <div key={product.id} className={styles.productCard}>
                   <div className={styles.photoDiv}>
-                    <Image  alt="ayakkabi makinesi resmi" priority={index === 0} className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
+                    <Image  alt="ayakkabi makinesi resmi" priority="true" className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
                   </div>
                   <div className={styles.productInfoDiv}>
                     <h3 className={styles.productTitle}>{product.name}</h3>
