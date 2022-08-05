@@ -13,7 +13,7 @@ export default function Home({ products }) {
             son ilanlar
           </h1>
           <div className={styles.productsList}>
-            {products.map(product => {
+            {products.map((product,index) => {
               const imageArray = product.images.split(",")
               const unit = {
                 1: "tl",
@@ -24,102 +24,10 @@ export default function Home({ products }) {
               return  <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
                 <div key={product.id} className={styles.productCard}>
                   <div className={styles.photoDiv}>
-                    <Image  alt="ayakkabi makinesi resmi" priority="true" className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
+                    <Image  alt="ayakkabi makinesi resmi" priority={index === 0} className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
                   </div>
                   <div className={styles.productInfoDiv}>
                     <h3 className={styles.productTitle}>{product.name}</h3>
-                    <p className={styles.productAddress}>{product.users.address.split('%')[1]}</p>
-                    <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
-                  </div>
-                  
-                </div>
-              </a></Link>
-            }
-          )}
-          {products.map(product => {
-              const imageArray = product.images.split(",")
-              const unit = {
-                1: "tl",
-                2: "£",
-                3: "$"
-              }
-              const name = product.name.replace(/ /g, '-')
-              return  <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
-                <div key={product.id} className={styles.productCard}>
-                  <div className={styles.photoDiv}>
-                    <Image  alt="ayakkabı makinesi resmi" priority="true" className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
-                  </div>
-                  <div className={styles.productInfoDiv}>
-                    <p className={styles.productTitle}>{product.name}</p>
-                    <p className={styles.productAddress}>{product.users.address.split('%')[1]}</p>
-                    <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
-                  </div>
-                  
-                </div>
-              </a></Link>
-            }
-          )}
-          {products.map(product => {
-              const imageArray = product.images.split(",")
-              const unit = {
-                1: "tl",
-                2: "£",
-                3: "$"
-              }
-              const name = product.name.replace(/ /g, '-')
-              return  <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
-                <div key={product.id} className={styles.productCard}>
-                  <div className={styles.photoDiv}>
-                    <Image  alt="ayakkabı makinesi resmi" priority="true" className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
-                  </div>
-                  <div className={styles.productInfoDiv}>
-                    <p className={styles.productTitle}>{product.name}</p>
-                    <p className={styles.productAddress}>{product.users.address.split('%')[1]}</p>
-                    <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
-                  </div>
-                  
-                </div>
-              </a></Link>
-            }
-          )}
-          {products.map(product => {
-              const imageArray = product.images.split(",")
-              const unit = {
-                1: "tl",
-                2: "£",
-                3: "$"
-              }
-              const name = product.name.replace(/ /g, '-')
-              return  <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
-                <div key={product.id} className={styles.productCard}>
-                  <div className={styles.photoDiv}>
-                    <Image  alt="ayakkabı makinesi resmi" priority="true" className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
-                  </div>
-                  <div className={styles.productInfoDiv}>
-                    <p className={styles.productTitle}>{product.name}</p>
-                    <p className={styles.productAddress}>{product.users.address.split('%')[1]}</p>
-                    <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
-                  </div>
-                  
-                </div>
-              </a></Link>
-            }
-          )}
-          {products.map(product => {
-              const imageArray = product.images.split(",")
-              const unit = {
-                1: "tl",
-                2: "£",
-                3: "$"
-              }
-              const name = product.name.replace(/ /g, '-')
-              return  <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
-                <div key={product.id} className={styles.productCard}>
-                  <div className={styles.photoDiv}>
-                    <Image  alt="ayakkabı makinesi resmi" priority="true" className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
-                  </div>
-                  <div className={styles.productInfoDiv}>
-                    <p className={styles.productTitle}>{product.name}</p>
                     <p className={styles.productAddress}>{product.users.address.split('%')[1]}</p>
                     <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
                   </div>
