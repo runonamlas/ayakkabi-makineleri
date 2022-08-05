@@ -71,10 +71,6 @@
   padding: 0.3rem 0;
 }
 
-.icon{
-  width: 2rem;
-}
-
 .iconButton{
   margin-right: 1rem;
   background-color: white;
@@ -167,13 +163,13 @@
   .fieldHead {
     color: #2F8F9D;
     margin-top: 0.8rem;
-    font-size: 2rem;
+    font-size: 1rem;
   }
   
   .categoryInput {
     text-align: center;
     color: black;
-    font-size: 1.1rem;
+    font-size: 1rem;
     width: 80%;
     border-radius:2rem;
     border: 0.2rem solid #2F8F9D;
@@ -186,24 +182,20 @@
     flex-direction: row;
     border: 0.2rem solid #2F8F9D;
     border-radius: 2rem;
+    margin-top: 0.5rem;
   }
   
   .passInput {
     text-align: center;
     color: black;
-    font-size: 1.1rem;
+    font-size: 1rem;
     width: 92%;
     margin-left: 1rem;
     border: none;
-    padding: 0.3rem 0;
-  }
-  
-  .icon{
-    width: 2rem;
   }
   
   .iconButton{
-    margin-right: 1rem;
+    margin-right: 0.8rem;
     background-color: white;
     border: none;
   }

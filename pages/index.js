@@ -27,7 +27,7 @@ export default function Home({ products }) {
                     <Image  alt="ayakkabı makinesi resmi" priority="true" className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>
                   </div>
                   <div className={styles.productInfoDiv}>
-                    <p className={styles.productTitle}>{product.name}</p>
+                    <h3 className={styles.productTitle}>{product.name}</h3>
                     <p className={styles.productAddress}>{product.users.address.split('%')[1]}</p>
                     <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
                   </div>
