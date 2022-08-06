@@ -10,7 +10,7 @@ const Category = ({catSelect}) => {
   return (
     <div className={styles.categoryDiv}>
       <div className={styles.categoryHeadDiv}>
-          <a className={styles.categoryHeadText}>kategoriler</a>
+          <h2 className={styles.categoryHeadText}>kategoriler</h2>
       </div>
       <ul className={styles.categoryButonsDiv}>
         <li key="ayakkabi-makineleri-li" className={ catSelect==0? styles.categoryItemSelected : styles.categoryItem }>
