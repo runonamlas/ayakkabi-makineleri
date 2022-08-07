@@ -22,7 +22,7 @@
   border-radius: 2rem;
   color:#2F8F9D;
   font-size: 1.2rem;
-  display: grid;
+  display: flex;
   cursor: pointer;
 }
 
@@ -39,6 +39,8 @@
   border-radius: 2rem;
   font-size: 1.2rem;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 
 .catText{
@@ -83,17 +85,26 @@
     width: 48%;
     height: 4.6vh;
     font-size: 1rem;
+
   }
   
   .categoryItem:hover {
     background-color: white;
     color: #2F8F9D;
   }
+
+  .catText {
+    padding: 0;
+  }
+  .catTextSelected{
+    padding: 0;
+  }
+  
   
   .categoryItemSelected {
-    padding: 0.2rem;
     color:#ffffff;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    height: 4.6vh;
     width: 48%;
   }
 
