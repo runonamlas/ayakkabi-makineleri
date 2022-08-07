@@ -54,7 +54,7 @@ function MessagePage({data, messages, goster, product}){
        <Head>
       <title>{data[1]}</title>
     </Head>
-      <Link href={`/magaza/${data[1]}`}>
+      <Link href={`/magaza/${data[0]}-${data[1]}`}>
         <a>
           <div className={styles.OwnerTitle}>
         <a>{data[1]}</a>

@@ -75,7 +75,7 @@ export default function ProductPage({product, owner, }){
           </div>
           <div className={styles.productDetailDiv}>
             <a className={styles.productDetailTitle}>Satıcı</a>
-            <Link href={`/magaza/${product.users.username}`}><a className={styles.productOwner}>{nameConfig.replace(/\s+$/g, '')}</a></Link>
+            <Link href={`/magaza/${product.users.id}-${product.users.username}`}><a className={styles.productOwner}>{nameConfig.replace(/\s+$/g, '')}</a></Link>
           </div>
           <div className={styles.productDetailDiv}>
             <a className={styles.productDetailTitle}>İlan Tarihi</a>
