@@ -34,7 +34,7 @@ const NavBar = () => {
        <ul className={styles.navUl}>
       {links.map(link => (
           <li key={link.name} className={ link.select? styles.menuItemSelected : styles.menuItem }>
-            <Link key={link.id} href={link.to}><a className={styles.menuText }>
+            <Link prefetch={false} key={link.id} href={link.to}><a className={styles.menuText }>
               <div className={styles.navDiv}>
                 <Image src={link.icon} alt={link.name} width="32" height="32" priority="true"/> &nbsp;
                 {link.name}
@@ -77,7 +77,7 @@ function Header()  {
   
   return (
     <header className={styles.headerDiv}>
-        <Link href='/'>
+        <Link prefetch={false} href='/'>
           <a className={styles.logo}>ayakkabimakineleri.com</a>
         </Link>
       <div className={searchShow ? styles.mobileSearchDiv : styles.searchDiv}>
@@ -105,7 +105,7 @@ function Header()  {
             })
 
 
-            return <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
+            return <Link prefetch={false} key={product.id} href={`/ilan/${product.id}-${name}`}><a>
               <div className={styles.productCard}>
                 <div className={styles.productLeft}>
                   <Image priority="true" alt="ayakkabı makinesi" className={styles.productimage} src={imageArray[product.vitrin-1]} height='80' width='100' layout='responsive'/>

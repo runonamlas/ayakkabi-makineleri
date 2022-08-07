@@ -14,7 +14,8 @@ function Hesabim(){
 
   useEffect(() => {
     const cookies = parseCookies()
-    const nameArray = cookies.name.split("-")
+    if(cookies.OursiteJWT){
+      const nameArray = cookies.name.split("-")
     var nameConfig =''
     nameArray.forEach(e=>{
       const nameParse = e.charAt(0).toUpperCase()+ e.slice(1) + " "
@@ -34,6 +35,10 @@ function Hesabim(){
       default:
         return setStatus('ana hesap')
     }
+    }else{
+      router.push('/giris-yap')
+    }
+    
   }, []);
   
   const handleLogout = async (e) => {
@@ -42,7 +47,7 @@ function Hesabim(){
     for (const cookie of Object.keys(cookies)) {
       await destroyCookie(null, cookie, {path:"/"})
     }
-    router.reload()
+    router.push('/')
   }
 
   return <main className={styles.main}>
@@ -51,25 +56,25 @@ function Hesabim(){
       <h3 className={styles.title}>{address} {city}</h3>
       <div className={styles.hesapType}>
         <a>{status}</a>
-        <Link href='hesabim/hesap-yukselt'>
+        <Link prefetch={false} href='hesabim/hesap-yukselt'>
           <div className={styles.saveButton}>
           yükselt</div>
         </Link>
       </div>
       <div className={styles.butonGroup}>
-        <Link href='/hesabim/istatistikler'>
+        <Link prefetch={false} href='/hesabim/istatistikler'>
           <div className={styles.saveButton}>
           istatistikler</div>
         </Link><br/>
-        <Link href='/hesabim/mesajlar'>
+        <Link prefetch={false} href='/hesabim/mesajlar'>
           <div className={styles.saveButton}>
           mesajlar</div>
         </Link><br/>
-        <Link href='hesabim/ilanlarim'>
+        <Link prefetch={false} href='hesabim/ilanlarim'>
           <div className={styles.saveButton}>
           ilanlarım</div>
         </Link><br/>
-        <Link href='hesabim/hesap-guncelle'>
+        <Link prefetch={false} href='hesabim/hesap-guncelle'>
           <div className={styles.saveButton}>
           bilgileri güncelle</div>
         </Link>

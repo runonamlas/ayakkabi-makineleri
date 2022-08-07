@@ -84,11 +84,11 @@ export default function GirisYap(){
             <input required className={styles.passInput} type={passwordShown ? "text" : "password"} id="password" autoComplete="on" value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="sifreniz" name="password" />
             <button type="button" className={styles.iconButton} onClick={()=>setPasswordShown(!passwordShown)}><Image  alt="giriş yap" type="image" width={24} height={24} src={passwordShown ? "/icons/passSee.png" : "/icons/passSeeNot.png"}/></button>
           </div>
-          <Link href='sifremi-unuttum'><a className={styles.sifremiUnuttum}>şifremi unuttum</a></Link>
+          <Link prefetch={false} href='sifremi-unuttum'><a className={styles.sifremiUnuttum}>şifremi unuttum</a></Link>
           <button type="submit" className={styles.saveButton}>giriş yap</button>
         </form>
         <a className={styles.veya}>henüz kayıtlı değil isen</a>
-        <Link href='uye-ol'>
+        <Link prefetch={false} href='uye-ol'>
           <button type="submit" className={styles.kayıtol}>
             kayıt ol
           </button>

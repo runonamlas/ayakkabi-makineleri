@@ -21,7 +21,7 @@ export default function Home({ products }) {
                 3: "$"
               }
               const name = product.name.replace(/ /g, '-')
-              return  <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
+              return  <Link prefetch={false} key={product.id} href={`/ilan/${product.id}-${name}`}><a>
                 <div key={product.id} className={styles.productCard}>
                   <div className={styles.photoDiv}>
                     <Image  alt="ayakkabi makinesi resmi" priority="true" className={styles.productImage} src={imageArray[product.vitrin - 1]} height='100' width='100'/>

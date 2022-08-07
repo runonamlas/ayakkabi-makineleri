@@ -1,28 +1,35 @@
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { parseCookies } from "nookies";
-import * as React from "react";
+
 import styles from '../styles/IlanVer.module.css'
 
 export default function IlanVer () {
   const router = useRouter();
-  const [buttonState, setButtonState] = React.useState(false);
-  const [errorState, setErrorState] = React.useState(null);
+  const [buttonState, setButtonState] = useState(false);
+  const [errorState, setErrorState] = useState(null);
 
-  const [selectedFile, setSelectedFile] = React.useState([])
-  const [preview, setPreview] = React.useState([])
-  const [vitrinState, setVitrin] = React.useState(0)
+  const [selectedFile, setSelectedFile] = useState([])
+  const [preview, setPreview] = useState([])
+  const [vitrinState, setVitrin] = useState(0)
 
-  const [name, setName] = React.useState('')
-  const [brand, setBrand] = React.useState('')
-  const [used, setUsed] = React.useState('ikinci el')
-  const [price, setPrice] = React.useState(0)
-  const [priceUnit, setPriceUnit] = React.useState(1)
-  const [categoryID, setCategoryID] = React.useState(1)
+  const [name, setName] = useState('')
+  const [brand, setBrand] = useState('')
+  const [used, setUsed] = useState('ikinci el')
+  const [price, setPrice] = useState(0)
+  const [priceUnit, setPriceUnit] = useState(1)
+  const [categoryID, setCategoryID] = useState(1)
 
+  useEffect(()=>{
+    const cookies = parseCookies()
+    if(!cookies.OursiteJWT){
+      router.push('/giris-yap')
+    }
+  },[])
   // create a preview as a side effect, whenever selected file is changed
-  React.useEffect(() => {
+  useEffect(() => {
       if (!selectedFile) {
           return
       }
