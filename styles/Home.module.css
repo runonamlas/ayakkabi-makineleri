@@ -122,7 +122,7 @@
     justify-content: space-evenly;
     align-content: flex-start;
     align-items: center;
-    padding-bottom: 22vh;
+    padding-bottom: 6vh;
   }
 
  .productsList a:visited :hover :active{
