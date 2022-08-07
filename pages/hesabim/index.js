@@ -51,41 +51,31 @@ function Hesabim(){
   }
 
   return <main className={styles.main}>
-      <h1 className={styles.title}>{name}</h1>
+    <div className={styles.infoGroup}>
+       <h1 className={styles.title}>{name}</h1>
       <h2 className={styles.title}>{callNumber}</h2>
       <h3 className={styles.title}>{address} {city}</h3>
-      <div className={styles.hesapType}>
-        <a>{status}</a>
-        <Link prefetch={false} href='hesabim/hesap-yukselt'>
-          <div className={styles.saveButton}>
-          yükselt</div>
-        </Link>
-      </div>
-      <div className={styles.butonGroup}>
-        <Link prefetch={false} href='/hesabim/istatistikler'>
-          <div className={styles.saveButton}>
-          istatistikler</div>
-        </Link><br/>
-        <Link prefetch={false} href='/hesabim/mesajlar'>
-          <div className={styles.saveButton}>
-          mesajlar</div>
-        </Link><br/>
-        <Link prefetch={false} href='hesabim/ilanlarim'>
-          <div className={styles.saveButton}>
-          ilanlarım</div>
-        </Link><br/>
-        <Link prefetch={false} href='hesabim/hesap-guncelle'>
-          <div className={styles.saveButton}>
-          bilgileri güncelle</div>
-        </Link>
-      </div>
-
-      <div className={styles.butonGroup}>
-          <div className={styles.saveButton} onClick={handleLogout}>
-          çıkış yap</div>
-      </div>
-      
-    </main>
+      <h3>{status}</h3>
+      <Link prefetch={false} href='/hesabim/hesap-yukselt'>
+        <a className={styles.yukselt}>yükselt</a>
+      </Link>
+    </div>
+    <div className={styles.butonGroup}>
+      <Link prefetch={false} href='/hesabim/istatistikler'>
+        <a className={styles.saveButton}>istatistikler</a>
+      </Link>
+      <Link prefetch={false} href='/hesabim/mesajlar'>
+        <a className={styles.saveButton}>mesajlar</a>
+      </Link>
+      <Link prefetch={false} href='/hesabim/ilanlarim'>
+        <a className={styles.saveButton}>ilanlarım</a>
+      </Link>
+      <Link prefetch={false} href='/hesabim/hesap-guncelle'>
+        <a className={styles.saveButton}>bilgileri güncelle</a>
+      </Link>
+      <a className={styles.saveButton} onClick={handleLogout}>çıkış yap</a>
+    </div>
+  </main>
 }
 
 export default Hesabim
