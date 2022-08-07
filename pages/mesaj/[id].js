@@ -42,7 +42,7 @@ function MessagePage({data, messages, goster, product}){
       }
     }
     axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
-    await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/messages",groupData).then(response => {
+    await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/messages/",groupData).then(response => {
       setButtonState(false);
     }).catch((error) => {
       console.error('Error:', error.response);
