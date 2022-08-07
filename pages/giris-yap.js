@@ -75,7 +75,7 @@ export default function GirisYap(){
         giriş yap / üye ol
       </h1>
       <div className={styles.leftPanel}>
-        {errorState != '' && <a>{errorState}</a>}
+        {errorState != '' && <a className={styles.errorText}>{errorState}</a>}
         <form className={styles.formStyle} onSubmit={submitLogin}>
           <label className={styles.fieldHead} htmlFor="email">telefon numarası veya e-posta adresi*</label>
           <input required className={styles.categoryInput} type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="e-posta adresi veya telefon numarası" maxLength="25" />

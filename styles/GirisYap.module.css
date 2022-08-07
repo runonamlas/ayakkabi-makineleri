@@ -1,5 +1,5 @@
 .main {
-  height: 89vh;
+  height: 89.5vh;
   width: 100%;
   float: left;
   padding: 1rem 0 0 3rem;
@@ -8,6 +8,10 @@
 .title {
   text-align: center;
   color: #2F8F9D;
+}
+
+.errorText {
+  color: red;
 }
 
 .leftPanel{
@@ -20,6 +24,7 @@
   justify-content: center;
   align-items: center;
 }
+
 
 .rightPanel{
   width: 50%;

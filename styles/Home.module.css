@@ -1,5 +1,5 @@
 .section{
-  height: 92vh;
+  height: 92.5vh;
   display: flex;
   flex-direction: row;
   padding: 1rem 1rem 0 1rem;
@@ -13,8 +13,8 @@
 
 .title {
   color: #2F8F9D;
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .productsList{
@@ -101,7 +101,7 @@
   .main {
     width: 100%;
     height: auto;
-    padding: 8vh 0 27vh 0;
+    padding: 7.5vh 0 27vh 0;
   }
   
   .title {
@@ -109,8 +109,8 @@
     margin: 0;
     padding: 0;
     padding-left: 0.5rem;
-    font-size: 0.8rem;
-    font-weight: normal;
+    font-size: 1.5em;
+    font-weight: bold;
   }
 
   .productsList{
