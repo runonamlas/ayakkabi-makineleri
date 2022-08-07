@@ -13,13 +13,13 @@
 
 .title {
   color: #2F8F9D;
-  font-size: 1.5em;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .productsList{
   width: 100%;
-  height: 95%;
+  height: 92%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -109,7 +109,7 @@
     margin: 0;
     padding: 0;
     padding-left: 0.5rem;
-    font-size: 1.5em;
+    font-size: 1.2rem;
     font-weight: bold;
   }
 
