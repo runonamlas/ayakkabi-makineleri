@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from '../../styles/MagazaScreen.module.css';
 
 export default function MagazaScreen({user}){
+  console.log(user)
   const nameArray = user.username.split("-")
   var nameConfig = ''
   nameArray.forEach(e=>{
@@ -60,7 +61,7 @@ export default function MagazaScreen({user}){
 export const getServerSideProps = async (context) => {
   try {
     const param = context.params.id
-    const {data} = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/user/profile/'+param)
+    const {data} = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/user/profile/'+param+'/')
     const user = data.data
     return {
       props: {
