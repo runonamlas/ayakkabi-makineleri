@@ -1,5 +1,5 @@
 .section{
-  height: 92.5vh;
+  height: 93vh;
   display: flex;
   flex-direction: row;
   padding: 1rem 1rem 0 1rem;
@@ -100,8 +100,9 @@
 
   .main {
     width: 100%;
-    height: auto;
-    padding: 7.5vh 0 27vh 0;
+    height: 71vh;
+    margin-top: 7vh;
+    padding: 0;
   }
   
   .title {
@@ -121,6 +122,7 @@
     justify-content: space-evenly;
     align-content: flex-start;
     align-items: center;
+    padding-bottom: 22vh;
   }
 
  .productsList a:visited :hover :active{

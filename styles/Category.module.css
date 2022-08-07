@@ -5,110 +5,84 @@
   color: #2F8F9D;
 }
 
-
 .categoryHeadDiv {
   padding-bottom: 0.4rem;;
 }
 
 .categoryButonsDiv {
-  list-style-type: none;
-  font-weight: bold;
-}
-
-.categoryItem {
-  text-align: center;
-  margin-bottom: 0.5rem;
-  border: 0.2rem solid #2F8F9D;
-  border-radius: 2rem;
-  color:#2F8F9D;
-  font-size: 1.2rem;
+  width: 100%;
   display: flex;
-  cursor: pointer;
-}
-
-.categoryItem:hover {
-  background-color: #2F8F9D;
-}
-
-.categoryItemSelected {
-  display: grid;
-  text-align: center;
-  background-color: #2F8F9D;
-  margin-bottom: 0.5rem;
-  border: 0.2rem solid #2F8F9D;
-  border-radius: 2rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  font-weight: bold;
+  text-align: center;
 }
 
 .catText{
+  width: 100%;
+  border: 0.2rem solid #2F8F9D;
+  border-radius: 2rem;
   color:#2F8F9D;
-  padding: 0.3rem;
+  padding: 0.5rem 0;
+  margin-bottom: 1vh;
+  font-size: 1.2rem;
+  background-color: white;
 }
 .catText:hover {
   color: #ffffff;
+  background-color: #2F8F9D;
 }
 
 .catTextSelected{
   color:#ffffff;
-  padding: 0.3rem;
+  background-color: #2F8F9D;
+  width: 100%;
+  border: 0.2rem solid #2F8F9D;
+  border-radius: 2rem;
+  padding: 0.5rem 0;
+  margin-bottom: 1vh;
+  font-size: 1.2rem;
 }
 
 
 @media only screen and (max-width:768px){
   .categoryDiv {
     position:fixed;
-    bottom: 9vh;
-    height: 18vh;
+    bottom: 8vh;
+    height: 14vh;
     width: 100%;
-    padding: 0.5rem 0 0 0;
+    padding: 0;
     color: #2F8F9D;
     background-color: white;
     z-index: 5;
   }
-  
+
   .categoryHeadDiv {
-    padding-bottom: 0.4rem;;
     font-size: 0.8rem;
     padding-left: 0.5rem;
   }
+
   .categoryButonsDiv {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  
-  .categoryItem {
+
+  .catText{
     width: 48%;
-    height: 4.6vh;
+    padding: 0.3rem 0;
     font-size: 1rem;
-
-  }
-  
-  .categoryItem:hover {
-    background-color: white;
-    color: #2F8F9D;
   }
 
-  .catText {
-    padding: 0;
-  }
   .catTextSelected{
-    padding: 0;
-  }
-  
-  
-  .categoryItemSelected {
-    color:#ffffff;
-    font-size: 1rem;
-    height: 4.6vh;
     width: 48%;
+    padding: 0.3rem 0;
+    font-size: 1rem;
   }
 
   .catText:hover {
     color: #2F8F9D;
+    background-color: white;
   }
 }
