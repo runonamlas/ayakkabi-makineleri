@@ -64,10 +64,8 @@ function Header()  {
   },[searchText]);
 
   const searchClick =  () => {
-    if(searchShow){
-       setSearchText('')
-      setSearchShow(!searchShow)
-    }
+    setSearchText('')
+    setSearchShow(!searchShow)
   }
   
   return (
