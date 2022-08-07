@@ -51,7 +51,7 @@
 
 .productImage {
   object-fit:fill;
-  width: auto;
+  width: 100%;
   max-width: 100%;
   height:auto;
   max-height: 100%;
