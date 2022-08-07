@@ -73,7 +73,7 @@ function Hesabim(){
       <Link prefetch={false} href='/hesabim/hesap-guncelle'>
         <a className={styles.saveButton}>bilgileri güncelle</a>
       </Link>
-      <a className={styles.saveButton} onClick={handleLogout}>çıkış yap</a>
+      <a className={styles.saveButton}  href="#cikis-yap" onClick={handleLogout}>çıkış yap</a>
     </div>
   </main>
 }
