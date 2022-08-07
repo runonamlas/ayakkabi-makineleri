@@ -80,9 +80,9 @@
   }
   
   .categoryItem {
-    padding: 0.2rem;
     width: 48%;
-    font-size: 0.8rem;
+    height: 4.6vh;
+    font-size: 1rem;
   }
   
   .categoryItem:hover {
