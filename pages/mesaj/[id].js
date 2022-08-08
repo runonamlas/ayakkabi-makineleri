@@ -60,6 +60,7 @@ function MessagePage({data, messages, goster, product}){
       {Object.keys(messageList).map((e)=>{
         const imageArray = messageList[e].product.images.split(",")
         if(messageList[e].owner.id == data[0]){
+          if(e>0 && messageList[e].product.id !== messageList[e-1].product.id)
           return <div key={e} className={styles.chatSatirLeft}>
           <div className={styles.chatDiv}>
             <div className={styles.productCardM}>
