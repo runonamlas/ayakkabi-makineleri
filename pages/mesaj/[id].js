@@ -5,12 +5,27 @@ import Link from "next/link";
 import { parseCookies } from "nookies";
 import { useEffect, useState } from "react";
 import styles from '../../styles/MessagePage.module.css';
+import { w3cwebsocket } from "websocket";
+import jwt_decode from "jwt-decode";
 
-function MessagePage({data, messages, goster, product}){ 
-  const [magazaName, setMagazaName] = useState(data ? data[1] : '');
-  const [image, setImage] =useState(product.id ? product.images.split(",") : []);
+function MessagePage({data, messages, goster, product, token}){
+  var userID = jwt_decode(token).user_id
+  const [magazaName] = useState(data ? data[1] : '');
+  const [image] =useState(product.id ? product.images.split(",") : []);
   const [message, setMessage] = useState('');
+  const [gosterP, setGosterP] = useState(goster);
   const [messageList, setMessageList] = useState(messages);
+  const [client] = useState(() =>  new w3cwebsocket(process.env.NEXT_PUBLIC_AXIOS_CONF+'/ws/'+(userID > data[0] ? userID+""+data[0]: data[0]+""+userID)))
+  
+  useEffect(()=>{
+    client.onopen = () => {console.log("connected")}
+    client.onerror = function() {console.log('Connection Error')}
+    client.onmessage = (message) => {
+      var dataFromServer = JSON.parse(message.data);
+      setMessageList(current => [...current, dataFromServer]);
+    }
+  },[])
+
   const unit = {
     1: "tl",
     2: "£",
@@ -39,8 +54,10 @@ function MessagePage({data, messages, goster, product}){
     }
     axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
     await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/messages/",groupData).then(response => {
-      setMessageList(current => [...current, response.data.data]);
+      client.send(JSON.stringify(response.data.data));
       setMessage('');
+      setGosterP(false);
+
     }).catch((error) => {
       console.error('Error:', error.response);
     });
@@ -60,8 +77,8 @@ function MessagePage({data, messages, goster, product}){
       {Object.keys(messageList).map((e)=>{
         const imageArray = messageList[e].product.images.split(",")
         if(messageList[e].owner.id == data[0]){
-          if(e>0 && messageList[e].product.id !== messageList[e-1].product.id)
-          return <div key={e} className={styles.chatSatirLeft}>
+          if(e>0 && messageList[e].product.id !== messageList[e-1].product.id){
+            return <div key={e} className={styles.chatSatirLeft}>
           <div className={styles.chatDiv}>
             <div className={styles.productCardM}>
               <Image priority="true" alt="ayakkabı makinesi fotografı" key={messageList[e].id} className={styles.productimageM} src={imageArray[messageList[e].product.vitrin - 1]} height='100' width='140'/>
@@ -71,6 +88,25 @@ function MessagePage({data, messages, goster, product}){
             <a className={styles.chatText}>{messageList[e].name}</a>
           </div>
         </div>
+          }else if(e==0){
+            return <div key={e} className={styles.chatSatirLeft}>
+          <div className={styles.chatDiv}>
+            <div className={styles.productCardM}>
+              <Image priority="true" alt="ayakkabı makinesi fotografı" key={messageList[e].id} className={styles.productimageM} src={imageArray[messageList[e].product.vitrin - 1]} height='100' width='140'/>
+              <a className={styles.productTitleM}>{messageList[e].product.name}</a>
+              <a className={styles.productPriceM}>{messageList[e].product.price} {unit[messageList[e].product.priceUnit]}</a>
+            </div>
+            <a className={styles.chatText}>{messageList[e].name}</a>
+          </div>
+        </div>
+        }else{
+          return <div key={e} className={styles.chatSatirLeft}>
+            <div className={styles.chatDivR}>
+              <a className={styles.chatText}>{messageList[e].name}</a>
+            </div>
+          </div>
+        }
+          
         }else {
           return <div key={e} className={styles.chatSatirRight}>
             <div className={styles.chatDivR}>
@@ -81,7 +117,7 @@ function MessagePage({data, messages, goster, product}){
       })}
       </div>
       <div className={styles.chatWrite}>
-        {goster && <div className={styles.productCard}>
+        {gosterP && <div className={styles.productCard}>
               <Image src={image[product.vitrin-1]} key="mesaj-ilan" priority="true" alt='ayakkabi-makinesi-fotografi'  className={styles.productimage} height='100' width='140'/>
               <a className={styles.productTitle}>{product.name}</a>
               <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
@@ -118,18 +154,21 @@ export const getServerSideProps = async (context) => {
         data: params,
         messages,
         goster: context.query.product ? true : false,
-        product
+        product,
+        token
       },
     }
   } catch (error) {
     const messages = []
     const product = false
+    const token= -1;
     return {
       props: {
         data: params,
         messages,
         goster: false,
-        product
+        product,
+        token
       },
     }
   }

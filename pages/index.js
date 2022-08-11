@@ -1,8 +1,11 @@
 import axios from 'axios'
 import Image from 'next/future/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import Category from '../components/Category'
 import styles from '../styles/Home.module.css'
+import { w3cwebsocket as W3CWebSocket } from "websocket";
+
 
 export default function Home({ products }) {
   return (
@@ -31,12 +34,14 @@ export default function Home({ products }) {
                     <p className={styles.productAddress}>{product.users.address.split('%')[1]}</p>
                     <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
                   </div>
+
+                 
                   
                 </div>
               </a></Link>
             }
           )}
-          </div>
+          </div> 
         </main>
       </section>
   )
