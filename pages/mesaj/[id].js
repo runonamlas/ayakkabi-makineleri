@@ -18,7 +18,6 @@ function MessagePage({data, messages, goster, product, token}){
   const [channel, ably] = useChannel((userID > data[0] ? userID+""+data[0]: data[0]+""+userID), (message) => {
     setMessageList(current => [...current, message.data]);
   });
-  
 
   const unit = {
     1: "tl",
