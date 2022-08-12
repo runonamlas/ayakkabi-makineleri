@@ -136,9 +136,13 @@
   margin-bottom: 1rem;
 }
 
-.productimage{
-  object-fit: contain;
+.productCardM{
+    object-fit:fill;
+    width: auto;
+    max-width: 40%;
+    height:95%;
 }
+
 
 .productTitle{
   display: inline-block;
@@ -191,10 +195,7 @@
     font-weight: bold;
     padding: 0 1rem;
   }
-  
-  .productimage{
-    object-fit: contain;
-  }
+
   .mesajTitle{
     display: inline-block;
     overflow: hidden; 
@@ -285,6 +286,12 @@
     object-fit:fill;
     width: auto;
     max-width: 100%;
+    height:95%;
+  }
+  .productimageM{
+    object-fit:fill;
+    width: auto;
+    max-width: 40%;
     height:95%;
   }
   
