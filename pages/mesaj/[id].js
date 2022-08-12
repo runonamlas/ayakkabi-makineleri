@@ -5,8 +5,8 @@ import Link from "next/link";
 import { parseCookies } from "nookies";
 import { useEffect, useState } from "react";
 import styles from '../../styles/MessagePage.module.css';
-import { w3cwebsocket } from "websocket";
 import jwt_decode from "jwt-decode";
+import { useChannel } from "../../components/AblyReactEffect";
 
 function MessagePage({data, messages, goster, product, token}){
   var userID = jwt_decode(token).user_id
@@ -15,16 +15,10 @@ function MessagePage({data, messages, goster, product, token}){
   const [message, setMessage] = useState('');
   const [gosterP, setGosterP] = useState(goster);
   const [messageList, setMessageList] = useState(messages);
-  const [client] = useState(() =>  new w3cwebsocket(process.env.NEXT_PUBLIC_AXIOS_CONF+'/ws/'+(userID > data[0] ? userID+""+data[0]: data[0]+""+userID)))
+  const [channel, ably] = useChannel((userID > data[0] ? userID+""+data[0]: data[0]+""+userID), (message) => {
+    setMessageList(current => [...current, message.data]);
+  });
   
-  useEffect(()=>{
-    client.onopen = () => {console.log("connected")}
-    client.onerror = function() {console.log('Connection Error')}
-    client.onmessage = (message) => {
-      var dataFromServer = JSON.parse(message.data);
-      setMessageList(current => [...current, dataFromServer]);
-    }
-  },[])
 
   const unit = {
     1: "tl",
@@ -54,10 +48,9 @@ function MessagePage({data, messages, goster, product, token}){
     }
     axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
     await axios.post(process.env.NEXT_PUBLIC_AXIOS_CONF+"/messages/",groupData).then(response => {
-      client.send(JSON.stringify(response.data.data));
+      channel.publish({ name: "chat-message", data: response.data.data });
       setMessage('');
       setGosterP(false);
-
     }).catch((error) => {
       console.error('Error:', error.response);
     });
