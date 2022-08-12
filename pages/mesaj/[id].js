@@ -110,7 +110,7 @@ function MessagePage({data, messages, goster, product, token}){
       </div>
       <div className={styles.chatWrite}>
         {gosterP && <div className={styles.productCard}>
-              <Image src={image[product.vitrin-1]} key="mesaj-ilan" priority="true" alt='ayakkabi-makinesi-fotografi'  className={styles.productimage} height='100' width='140'/>
+              <Image src={image[product.vitrin-1]} key="mesaj-ilan" priority="true" alt='ayakkabi-makinesi-fotografi'  className={styles.productimage} height='60' width='80'/>
               <a className={styles.productTitle}>{product.name}</a>
               <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
     </div>}
