@@ -115,7 +115,7 @@ function MessagePage({data, messages, goster, product, token}){
               <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
     </div>}
         <div>
-          <form onSubmit={submitMessage}>
+          <form autocomplete="off" onSubmit={submitMessage}>
             <input required type="text" className={styles.chatInput} id="mesaj" name="mesaj" placeholder="bla bla bla" value={message} onChange={(e) => setMessage(e.target.value)}   />
             <input type="image" src="/icons/right-arrow.svg" className={styles.writeButton} alt="Submit" width="48" height="48"/>
           </form>
