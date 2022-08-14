@@ -256,6 +256,7 @@
 
   .chatDivR{
     min-width: 0;
+    max-width: 90%;
     border: 0.2rem solid #2F8F9D;
     border-radius: 2rem;
     margin-top: 0.5rem;
