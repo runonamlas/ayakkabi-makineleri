@@ -271,7 +271,7 @@
     width: 100%;
     position: fixed;
     bottom: 10vh;
-    height: 16vh;
+    max-height: 16vh;
   }
   
   
