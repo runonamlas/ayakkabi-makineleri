@@ -56,9 +56,11 @@
 
   .yukselt{
     width: 90%;
+    padding: 0.4rem 0;
   }
   
   .saveButton{
     width: 90%;
+    padding: 0.4rem 0;
   }
 }
