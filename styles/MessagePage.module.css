@@ -243,12 +243,15 @@
   }
   
   .chatDiv{
-    width: 49%;
+    max-width: 90%;
     height: 15vh;
     border: 0.2rem solid #2F8F9D;
     border-radius: 2rem;
     margin-top: 0.5rem;
-  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 
   .chatDivR{
