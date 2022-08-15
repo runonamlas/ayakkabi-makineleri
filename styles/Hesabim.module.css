@@ -1,5 +1,5 @@
 .main {
-  height: 92vh;
+  height: 93vh;
   width: 100%;
   background-color: #2F8F9D;
   text-align: center;
@@ -52,6 +52,7 @@
 @media only screen and (max-width:768px){
   .main {
     padding-top: 7vh;
+    height: 92vh;
   }
 
   .yukselt{
