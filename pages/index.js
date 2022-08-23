@@ -1,7 +1,6 @@
 import axios from 'axios'
 import Image from 'next/future/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import Category from '../components/Category'
 import styles from '../styles/Home.module.css'
 

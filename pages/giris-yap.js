@@ -94,8 +94,5 @@ export default function GirisYap(){
           </button>
         </Link>
       </div>
-      <div className={styles.rightPanel}>
-        <h3>İlan yayınlayabilmek için giriş yapmalı ya da üye olmasın.</h3>
-      </div>
     </main>
 }
