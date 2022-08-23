@@ -10,7 +10,7 @@ export default function Notfound() {
           <h3 className={styles.hthere}>
             <Link href='/'><a className={styles.link}>
             ana sayfa
-            </a></Link> 'ya dönebilir veya arama kısmından aradığına ulaşabilirsin</h3>
+            </a></Link>&quot;ya dönebilir veya arama kısmından aradığına ulaşabilirsin</h3>
         </main>
       </section>
   )
