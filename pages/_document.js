@@ -39,7 +39,7 @@ class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"></link>
           <Script
             strategy="lazyOnload"
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=G-F9Y4WQEKCF`}
           />
 
           <Script id="ga-script" strategy="lazyOnload">
@@ -47,7 +47,7 @@ class MyDocument extends Document {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
+              gtag('config', 'G-F9Y4WQEKCF', {
                 page_path: window.location.pathname,
               });
                   `}
