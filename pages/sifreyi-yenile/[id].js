@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Image from 'next/future/image'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
@@ -50,6 +51,16 @@ export default function SifreyiYenile({ data }) {
   }
 
   return ( <main className={styles.main}>
+        <Head>
+        <title>sifreyi yenile - ayakkabi makineleri</title>
+        <meta name='twitter:title' content='sifreyi yenile - ayakkabi makineleri' />
+        <meta property='og:title' content='sifreyi yenile - ayakkabi makineleri' />
+        <meta name='description' content='Şifrenizi değiştirerek ilanlarınıza erişerek mesajlarınıza ve istatistiklernize ulaşabilirsiniz.' />
+        <meta name='twitter:description' content='Şifrenizi değiştirerek ilanlarınıza erişerek mesajlarınıza ve istatistiklernize ulaşabilirsiniz.' />
+        <meta property='og:description' content='Şifrenizi değiştirerek ilanlarınıza erişerek mesajlarınıza ve istatistiklernize ulaşabilirsiniz.' />
+        <meta name='twitter:url' content='https://ayakkabimakineleri.com/sifreyi-yenile' />
+        <meta property='og:url' content='https://ayakkabimakineleri.com/sifreyi-yenile' />
+      </Head>
         <h1 className={styles.title}>
           şifreyi yenile
         </h1>

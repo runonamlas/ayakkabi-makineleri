@@ -57,7 +57,12 @@ function MessagePage({data, messages, goster, product, token}){
   return (
     <main className={styles.main}>
        <Head>
-      <title>{data[1]}</title>
+      <title>{data[1]} - ayakkabi makineleri</title>
+        <meta name='twitter:title' content={data[1]} />
+        <meta property='og:title' content={data[1]}/>
+        <meta name='description' content={data[1]} />
+        <meta name='twitter:description' content={data[1]} />
+        <meta property='og:description' content={data[1]} />
     </Head>
       <Link rel="prefetch" href={`/magaza/${data[0]}-${data[1]}`}>
           <a className={styles.OwnerTitle}>

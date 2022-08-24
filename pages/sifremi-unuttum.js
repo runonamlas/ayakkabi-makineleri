@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Head from 'next/head'
 import { destroyCookie, parseCookies } from 'nookies'
 import { useEffect, useState } from 'react'
 import styles from '../styles/GirisYap.module.css'
@@ -45,6 +46,16 @@ export default function SifremiUnuttum({ data }) {
   }
 
   return <main className={styles.main}>
+    <Head>
+        <title>sifremi unuttum - ayakkabi makineleri</title>
+        <meta name='twitter:title' content='sifremi unuttum - ayakkabi makineleri' />
+        <meta property='og:title' content='sifremi unuttum - ayakkabi makineleri' />
+        <meta name='description' content='Şifrenizi değiştirerek tüm makinele ilanlarınıza hemen ulaşabilirsiniz.' />
+        <meta name='twitter:description' content='Şifrenizi değiştirerek tüm makinele ilanlarınıza hemen ulaşabilirsiniz.' />
+        <meta property='og:description' content='Şifrenizi değiştirerek tüm makinele ilanlarınıza hemen ulaşabilirsiniz.' />
+        <meta name='twitter:url' content='https://ayakkabimakineleri.com/sifremi-unuttum' />
+        <meta property='og:url' content='https://ayakkabimakineleri.com/sifremi-unuttum' />
+      </Head>
         <h1 className={styles.title}>
           şifremi unuttum
         </h1>

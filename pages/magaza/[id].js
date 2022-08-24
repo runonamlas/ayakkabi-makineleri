@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from '../../styles/MagazaScreen.module.css';
@@ -18,6 +19,14 @@ export default function MagazaScreen({user}){
 
   return (
     <main className={styles.main}>
+      <Head>
+        <title>{nameConfig.replace(/\s+$/g, '')} - ayakkabi makineleri</title>
+        <meta name='twitter:title' content={nameConfig.replace(/\s+$/g, '')} />
+        <meta property='og:title' content={nameConfig.replace(/\s+$/g, '')}/>
+        <meta name='description' content={nameConfig.replace(/\s+$/g, '')} />
+        <meta name='twitter:description' content={nameConfig.replace(/\s+$/g, '')} />
+        <meta property='og:description' content={nameConfig.replace(/\s+$/g, '')} />
+      </Head>
       <div className={styles.headText}>
       <h1>{nameConfig.replace(/\s+$/g, '')}</h1>
       <h2>{user.callNumber}</h2>

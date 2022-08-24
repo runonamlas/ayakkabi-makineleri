@@ -1,11 +1,20 @@
 import axios from 'axios'
 import Image from "next/future/image";
+import Head from 'next/head';
 import Link from "next/link";
 import Category from "../../components/Category";
 import styles from '../../styles/ProductList.module.css'
 
 export default function AyakkabiMakineleri({ products, params}){
   return <section className={styles.section}>
+          <Head>
+        <title>{params[1]} {params[2]}</title>
+        <meta name='twitter:title' content={params[1]} />
+        <meta property='og:title' content={params[1]}/>
+        <meta name='description' content={params[1]}/>
+        <meta name='twitter:description' content={params[1]} />
+        <meta property='og:description' content={params[1]}/>
+      </Head>
     <Category catSelect={params[0]-1}/>
     <main className={styles.main}>
         <h1 className={styles.title}>

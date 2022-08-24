@@ -4,6 +4,7 @@ import citiesList from "../../cities.config";
 import { parseCookies, setCookie } from "nookies";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Head from 'next/head';
 
 export default function HesapGuncelle(){
   const [selectedCity, setSelectedCity] = React.useState();
@@ -47,6 +48,16 @@ export default function HesapGuncelle(){
   }
 
   return <main className={styles.main}>
+    <Head>
+        <title>hesap güncelle - ayakkabi makineleri</title>
+        <meta name='twitter:title' content='hesap güncelle - ayakkabi makineleri' />
+        <meta property='og:title' content='hesap güncelle - ayakkabi makineleri' />
+        <meta name='description' content='Hesabınızda değişiklikler yapabilir ve bilgilerinizi güncelleyebilirsiniz.' />
+        <meta name='twitter:description' content='Hesabınızda değişiklikler yapabilir ve bilgilerinizi güncelleyebilirsiniz.' />
+        <meta property='og:description' content='Hesabınızda değişiklikler yapabilir ve bilgilerinizi güncelleyebilirsiniz.' />
+        <meta name='twitter:url' content='https://ayakkabimakineleri.com/hesabim/hesap-güncelle' />
+        <meta property='og:url' content='https://ayakkabimakineleri.com/hesabim/hesap-güncelle' />
+      </Head>
       <h1 className={styles.title}>profili düzenle</h1>
       <form className={styles.formStyle} onSubmit={submitLogin}>
         <label className={styles.fieldHead} htmlFor="baslik">şirket adınız*</label>
@@ -97,7 +108,7 @@ export default function HesapGuncelle(){
 
        
         <button type="submit" className={styles.saveButton} disabled={buttonState}>
-          kaydet
+          hesap-güncelle
         </button>
        
       </form>

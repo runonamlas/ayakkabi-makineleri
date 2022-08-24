@@ -46,7 +46,15 @@ export default function ProductPage({product, owner, }){
   return (
     <main className={styles.main}>
       <Head>
-      <title>{product.name}</title>
+        <title>{product.name} - ayakkabi makineleri</title>
+        <meta name='twitter:title' content={product.name} />
+        <meta property='og:title' content={product.name}/>
+        <meta name='description' content={product.name}/>
+        <meta name='twitter:description' content={product.name} />
+        <meta property='og:description' content={product.name}/>
+      </Head>
+      <Head>
+      
     </Head>
       <h1 className={styles.productTitle}>{product.name}</h1>
       <section className={styles.productSection}>

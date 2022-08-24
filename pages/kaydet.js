@@ -1,9 +1,20 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from '../styles/Kaydet.module.css'
 
 export default function Kaydet(){
   return <main className={styles.main}>
+     <Head>
+        <title>ilanınız yayınlanıyor - ayakkabi makineleri</title>
+        <meta name='twitter:title' content='ilanınız yayınlanıyor - ayakkabi makineleri' />
+        <meta property='og:title' content='ilanınız yayınlanıyor - ayakkabi makineleri' />
+        <meta name='description' content='İlanınız yayınlanmak için denetimden geçmektedir. Hemen diğer ilanlara bakabilir tekstil ayakkabi taban kemer kesim makinelerine bakabilirsiniz.' />
+        <meta name='twitter:description' content='İlanınız yayınlanmak için denetimden geçmektedir. Hemen diğer ilanlara bakabilir tekstil ayakkabi taban kemer kesim makinelerine bakabilirsiniz.' />
+        <meta property='og:description' content='İlanınız yayınlanmak için denetimden geçmektedir. Hemen diğer ilanlara bakabilir tekstil ayakkabi taban kemer kesim makinelerine bakabilirsiniz.' />
+        <meta name='twitter:url' content='https://ayakkabimakineleri.com/kaydet' />
+        <meta property='og:url' content='https://ayakkabimakineleri.com/kaydet' />
+      </Head>
       <Image src="/icons/check.svg" alt="success" width="200" height="200" />
       <h1 className={styles.title}>İlanınız onay aşamasındadır.</h1>
       <h2>Bilgilerin doğruluğu ve fiyatın tutarlılığı sonrasında onaylanacaktır. </h2>

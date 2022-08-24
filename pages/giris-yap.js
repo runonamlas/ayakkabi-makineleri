@@ -5,6 +5,7 @@ import { useState } from "react";
 import styles from '../styles/GirisYap.module.css'
 import { setCookie } from 'nookies'
 import Image from "next/future/image";
+import Head from "next/head";
 
 export default function GirisYap(){
   const [email, setEmail] = useState('')
@@ -71,6 +72,16 @@ export default function GirisYap(){
     });
   }
   return <main className={styles.main}>
+    <Head>
+      <title>giriş yap - ayakkabi makineleri</title>
+      <meta name='description' content='Sitemize giriş yaparak makinelerinizi koyabilir ve hızlıca satabilirsiniz. Üye olmadan devam ederek tüm ayakkabı taban kesim vb makinelerini görebilirsiniz.' />
+      <meta name='twitter:url' content='https://ayakkabimakineleri.com/giris-yap' />
+      <meta name='twitter:title' content='giriş yap - ayakkabi makineleri' />
+      <meta name='twitter:description' content='Sitemize giriş yaparak makinelerinizi koyabilir ve hızlıca satabilirsiniz. Üye olmadan devam ederek tüm ayakkabı taban kesim vb makinelerini görebilirsiniz.' />
+      <meta property='og:title' content='giriş yap - ayakkabi makineleri' />
+      <meta property='og:description' content='Sitemize giriş yaparak makinelerinizi koyabilir ve hızlıca satabilirsiniz. Üye olmadan devam ederek tüm ayakkabı taban kesim vb makinelerini görebilirsiniz.' />
+      <meta property='og:url' content='https://ayakkabimakineleri.com/giris-yap' />
+    </Head>
       <h1 className={styles.title}>
         giriş yap / üye ol
       </h1>

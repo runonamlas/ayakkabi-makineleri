@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { parseCookies } from "nookies";
 
 import styles from '../styles/IlanVer.module.css'
+import Head from "next/head";
 
 export default function IlanVer () {
   const router = useRouter();
@@ -109,6 +110,16 @@ export default function IlanVer () {
   }
 
   return <main className={styles.main}>
+      <Head>
+        <title>ilan ver - ayakkabi makineleri</title>
+        <meta name='description' content='Ürünlerinizi hızlı ve kolay satmak için hemen ilanınızı yayınlayın. Tüm ayakkabı taban kesim vb makinelerinin arasında sizde yer alın.' />
+        <meta name='twitter:url' content='https://ayakkabimakineleri.com/ilan-ver' />
+        <meta name='twitter:title' content='ilan ver - ayakkabi makineleri' />
+        <meta name='twitter:description' content='Ürünlerinizi hızlı ve kolay satmak için hemen ilanınızı yayınlayın. Tüm ayakkabı taban kesim vb makinelerinin arasında sizde yer alın.' />
+        <meta property='og:title' content='ilan ver - ayakkabi makineleri' />
+        <meta property='og:description' content='Ürünlerinizi hızlı ve kolay satmak için hemen ilanınızı yayınlayın. Tüm ayakkabı taban kesim vb makinelerinin arasında sizde yer alın.' />
+        <meta property='og:url' content='https://ayakkabimakineleri.com/ilan-ver' />
+      </Head>
       <h1 className={styles.title}>
         ilan ver
       </h1>

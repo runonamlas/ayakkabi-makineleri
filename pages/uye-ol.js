@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { setCookie } from "nookies";
 import * as React from "react";
@@ -69,6 +70,16 @@ export default function UyeOl () {
   }
 
   return <main className={styles.main}>
+    <Head>
+        <title>üye ol - ayakkabi makineleri</title>
+        <meta name='twitter:title' content='üye ol - ayakkabi makineleri' />
+        <meta property='og:title' content='üye ol - ayakkabi makineleri' />
+        <meta name='description' content='Üye olarak ilan yayınlayabilir ve sizde ürünlerinizi satışa koyabilirsiniz. Her çeşit ayakkabi taban kemer kesim dikiş makinelerini satabilirsiniz.' />
+        <meta name='twitter:description' content='Üye olarak ilan yayınlayabilir ve sizde ürünlerinizi satışa koyabilirsiniz. Her çeşit ayakkabi taban kemer kesim dikiş makinelerini satabilirsiniz.' />
+        <meta property='og:description' content='Üye olarak ilan yayınlayabilir ve sizde ürünlerinizi satışa koyabilirsiniz. Her çeşit ayakkabi taban kemer kesim dikiş makinelerini satabilirsiniz.' />
+        <meta name='twitter:url' content='https://ayakkabimakineleri.com/uye-ol' />
+        <meta property='og:url' content='https://ayakkabimakineleri.com/uye-ol' />
+      </Head>
       <h1 className={styles.title}>
         üye ol
       </h1>
