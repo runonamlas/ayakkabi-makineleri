@@ -36,17 +36,18 @@ export default function AyakkabiMakineleri({ products, params}){
               const nameParse = e.charAt(0).toUpperCase()+ e.slice(1) + " "
               nameConfig += nameParse
             })
-
-            return <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a className={styles.links}>
+            var date = new Date(product.createdAt);
+            return <Link key={product.id} href={`/ilan/${product.id}-${name}`}><a>
               <div className={styles.productCard}>
-                <div className={styles.productLeft}>
-                  <Image priority="true" alt="ayakkabı makinesi resmi" className={styles.productimage} src={imageArray[product.vitrin-1]} height='80' width='100' />
+                <div className={styles.photoDiv}>
+                  <Image priority="true" alt="ayakkabı makinesi resmi" className={styles.productImage} src={imageArray[product.vitrin-1]} height='80' width='100' />
                 </div>
-                <div className={styles.productRight}>
+                <div className={styles.productInfoDiv}>
                   <p className={styles.productTitle}>{product.name}</p>
                   <p className={styles.productOwner}>{nameConfig.replace(/\s+$/g, '')}</p>
                   <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
                   <p className={styles.productAdress}>{product.users.address.split('%')[1]}</p>
+                  <p className={styles.productDate}>{date.getDay()}/{date.getMonth()}/{date.getFullYear()}</p>
                 </div>
               </div></a>
             </Link>

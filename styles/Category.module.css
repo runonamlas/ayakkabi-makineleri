@@ -49,8 +49,8 @@
 @media only screen and (max-width:768px){
   .categoryDiv {
     position:fixed;
-    bottom: 11vh;
-    height: 14vh;
+    bottom: 7vh;
+    height: 18vh;
     width: 100%;
     padding: 0;
     color: #2F8F9D;
