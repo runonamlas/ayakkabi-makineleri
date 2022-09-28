@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export function middleware(req) {
-  const { cookies } = req;
-  const jwt = cookies.get("OursiteJWT");
+  const jwt = req.cookies.get("OursiteJWT");
   const BaseUrl = req.url; 
   const url = req.nextUrl.pathname;
 
