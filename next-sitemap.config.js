@@ -2,7 +2,7 @@
 const config = {
   siteUrl: 'https://ayakkabimakineleri.com' || 'https://www.ayakkabimakineleri.com',
   generateRobotsTxt: true,
-  exclude: ["/404", '/server-sitemap.xml', '/hesabim', 'kaydet'],
+  exclude: ["/404", '/server-sitemap.xml', '/hesabim', '/kaydet'],
   robotsTxtOptions: {
     policies: [
       {

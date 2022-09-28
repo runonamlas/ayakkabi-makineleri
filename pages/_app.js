@@ -7,7 +7,6 @@ function MyApp({ Component, pageProps }) {
       <Head>
       <title>Ayakkabı Taban Kesim Kemer Makineleri Burada - ayakkab, Makineleri</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <meta name="description" content="Sahibinden ayakkabı, taban, kesim, kemer, hazır alt makineleri ve sanayi makineleri alım satım sitesi. İlan vererek kendi makinelerinizi hemen satılık olarak koyabilirsiniz."></meta>
       <link rel="icon" href="/favicon.ico" />
     </Head>
    <Header/>

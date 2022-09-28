@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Image from 'next/future/image'
+import Head from 'next/head'
 import Link from 'next/link'
 import Category from '../components/Category'
 import styles from '../styles/Home.module.css'
@@ -7,6 +8,9 @@ import styles from '../styles/Home.module.css'
 export default function Home({ products }) {
   return (
       <section className={styles.section}>
+        <Head>
+        <meta name="description" content="Sahibinden ayakkabı, taban, kesim, kemer, hazır alt makineleri ve sanayi makineleri alım satım sitesi. İlan vererek kendi makinelerinizi hemen satılık olarak koyabilirsiniz."></meta>
+        </Head>
         <Category />
         <main className={styles.main}>
           <h1 className={styles.title}>
