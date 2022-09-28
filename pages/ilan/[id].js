@@ -63,7 +63,7 @@ export default function ProductPage({product, owner, }){
             { 
             images.map((imageUrl, i) => {
               return <div key={imageUrl}  className={styles.smallPhotoOne}>
-              <Image key={imageUrl} alt="ayakkabı makinesi resmi" className={styles.productSmallImage} src={imageUrl} onClick={()=>{changeImage(imageUrl,i)}} height='100' width='300'/>
+              <Image key={imageUrl} alt={product.name} className={styles.productSmallImage} src={imageUrl} onClick={()=>{changeImage(imageUrl,i)}} height='100' width='300'/>
               </div>
             })
             }
@@ -72,7 +72,7 @@ export default function ProductPage({product, owner, }){
             {images.length > 1 && <button type="button" name="sag" onClick={()=>{leftImage()}} className={styles.leftbutton}>&lt;</button>}
             {images.length > 1 && <button type="button" name="sol" onClick={()=>{rightImage()}} className={styles.rightbutton}>&gt;</button>}
             <div className={styles.photoDiv}>
-              <Image priority="true"  alt="ayakkabı makinesi resmi" className={styles.productImage} src={image}  height='700' width='700'/>
+              <Image priority="true"  alt={product.name} className={styles.productImage} src={image}  height='700' width='700'/>
             </div>
           </div>
         </div>

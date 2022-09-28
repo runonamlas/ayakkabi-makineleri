@@ -9,7 +9,13 @@ export const getServerSideProps  = async (ctx) => {
     priority: 0.8,
   }));
 
-  const fields = [...newsSitemaps];
+  const magazaSitemaps = data.data.map((item) => ({
+    loc: `https://www.ayakkabimakineleri.com/magaza/${product.users.id}-${product.users.username}`,
+    lastmod: new Date().toISOString(),
+    priority: 0.7,
+  }));
+
+  const fields = [...newsSitemaps, ...magazaSitemaps];
 
   return getServerSideSitemap(ctx, fields);
 };
