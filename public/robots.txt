@@ -1,5 +1,9 @@
 # *
 User-agent: *
+Disallow: /404
+
+# *
+User-agent: *
 Allow: /
 
 # Host
@@ -7,3 +11,5 @@ Host: https://ayakkabimakineleri.com
 
 # Sitemaps
 Sitemap: https://ayakkabimakineleri.com/sitemap.xml
+Sitemap: https://www.ayakkabimakineleri.com/sitemap.xml
+Sitemap: https://www.ayakkabimakineleri.com/server-sitemap.xml

@@ -34,3 +34,6 @@ yarn-error.log*
 
 **/public/workbox-*.js
 **/public/sw.js
+# Sitemap file
+sitemap.xml
+sitemap-0.xml
