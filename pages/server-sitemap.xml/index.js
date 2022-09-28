@@ -1,7 +1,7 @@
 import axios from "axios";
-import { getServerSideSitemap } from "next-sitemap";
+import {getServerSideSitemap} from "next-sitemap";
 
-export const getServerSideProps = async (ctx) => {
+export const getServerSideProps  = async (ctx) => {
   const { data } = await axios.get(process.env.NEXT_PUBLIC_AXIOS_CONF+'/products')
   const newsSitemaps = data.data.map((item) => ({
     loc: `https://www.ayakkabimakineleri.com/ilan/${product.id}-${product.name.replace(/ /g, '-')}`,
@@ -14,4 +14,4 @@ export const getServerSideProps = async (ctx) => {
   return getServerSideSitemap(ctx, fields);
 };
 
-export default function Site() {}
+export default function SitemapIndex() {}
