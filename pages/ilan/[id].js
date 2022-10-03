@@ -4,8 +4,11 @@ import Image from "next/future/image";
 import Link from "next/link";
 import { useState } from "react";
 import styles from '../../styles/ProductDetail.module.css';
+import { parseCookies } from "nookies";
+import { useRouter } from "next/router";
 
 export default function ProductPage({product, owner, }){
+  const router = useRouter();
   const images = product.images.split(',')
   const [image, setImage] = useState(images[product.vitrin-1] ? images[product.vitrin-1]: '')
   const [imageIndex, setImageIndex] = useState(images[product.vitrin-1] ? product.vitrin-1 : 0)
@@ -14,6 +17,35 @@ export default function ProductPage({product, owner, }){
     setImageIndex(i)
     setImage(image)
   }
+
+  const deleteProduct = async() => {
+    const cookies = parseCookies()
+    axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
+      await axios.delete(process.env.NEXT_PUBLIC_AXIOS_CONF+"/products/"+product.id).then(response => {
+        if(response.status == 200){
+          router.push("/")
+        }else{
+          console.log("error silinemedi.")
+        }
+      }).catch((error) => {
+        console.error('Error:', error.response);
+      });
+  }
+
+  const soldProduct = async() => {
+    const cookies = parseCookies()
+    axios.defaults.headers.common['Authorization'] = cookies.OursiteJWT;
+      await axios.delete(process.env.NEXT_PUBLIC_AXIOS_CONF+"/products/sold/"+product.id).then(response => {
+        if(response.status == 200){
+          router.push("/")
+        }else{
+          console.log("error satıldı isaretlenemedi.")
+        }
+      }).catch((error) => {
+        console.error('Error:', error.response);
+      });
+  }
+
 
   const leftImage = () => {
     if(images.length > 1 && imageIndex < images.length && imageIndex > 0){
@@ -111,9 +143,9 @@ export default function ProductPage({product, owner, }){
                   ara ({product.users.callNumber})</div>
               </Link>
             </div> : <div className={styles.buttonsGroup}>
-              <Link href={`tel:${product.users.callNumber}`} ><div className={styles.callButton}>satıldı olarak işaretle</div></Link>
-              <Link href={`tel:${product.users.callNumber}`} ><div className={styles.callButton}>ilanı düzenle</div></Link>
-              <Link href={`tel:${product.users.callNumber}`} ><div className={styles.callButton}>ilanı sil</div></Link>
+              <button type="button" name="sold" onClick={()=>{soldProduct()}} className={styles.callButton}>satıldı olarak işaretle</button>
+              <Link href={`/ilan/duzenle?id=${product.id}`} ><div className={styles.callButton}>ilanı düzenle</div></Link>
+              <button type="button" name="delete" onClick={()=>{deleteProduct()}} className={styles.callButton}>ilanı sil</button>
             </div>
             }
           </div>
