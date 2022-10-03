@@ -111,7 +111,9 @@ export default function ProductPage({product, owner, }){
                   ara ({product.users.callNumber})</div>
               </Link>
             </div> : <div className={styles.buttonsGroup}>
+              <Link href={`tel:${product.users.callNumber}`} ><div className={styles.callButton}>satıldı olarak işaretle</div></Link>
               <Link href={`tel:${product.users.callNumber}`} ><div className={styles.callButton}>ilanı düzenle</div></Link>
+              <Link href={`tel:${product.users.callNumber}`} ><div className={styles.callButton}>ilanı sil</div></Link>
             </div>
             }
           </div>
