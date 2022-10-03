@@ -146,8 +146,8 @@ export default function ProductPage({product, owner, }){
                   ara ({product.users.callNumber})</div>
               </Link>
             </div> : <div className={styles.buttonsGroup}>
-              <button type="button" name="sold" onClick={()=>{soldProduct()}} className={styles.callButton}>satıldı olarak işaretle</button>
-              <Link href={`/ilan/duzenle?id=${product.id}`} name="duzenle" ><div className={styles.callButton}>ilanı düzenle</div></Link>
+            {product.status ==1 && <><button type="button" name="sold" onClick={()=>{soldProduct()}} className={styles.callButton}>satıldı olarak işaretle</button>
+              <Link href={`/ilan/duzenle?id=${product.id}`} name="duzenle" ><div className={styles.callButton}>ilanı düzenle</div></Link></>}
               <button type="button" name="delete" onClick={()=>{deleteProduct()}} className={styles.callButton}>ilanı sil</button>
             </div>
             }
