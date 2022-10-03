@@ -102,13 +102,16 @@ export default function ProductPage({product, owner, }){
             <a className={styles.productDetailData}>{used}</a>
           </div>
           <div className={styles.priceAndContactDiv}>
-            {!owner && <div className={styles.buttonsGroup}>
+
+            {!owner ? <div className={styles.buttonsGroup}>
               <Link href={{pathname: `/mesaj/${product.users.id}-${product.users.username}`, query: { product: product.id, productName: product.name} }}>
                 <div className={styles.mesajButton}>mesaj gönder</div>
               </Link>
               <Link href={`tel:${product.users.callNumber}`} ><div className={styles.callButton}>
                   ara ({product.users.callNumber})</div>
               </Link>
+            </div> : <div className={styles.buttonsGroup}>
+              <Link href={`tel:${product.users.callNumber}`} ><div className={styles.callButton}>ilanı düzenle</div></Link>
             </div>
             }
           </div>
