@@ -111,7 +111,10 @@ export default function ProductPage({product, owner, }){
         <div className={styles.contentSection}>
         <div className={styles.productDetailDiv}>
             <a className={styles.productDetailTitle}>Fiyatı</a>
-            <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a>
+            {product.status ==1 ? 
+             <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a> :
+              <a className={styles.productPrice}> satıldı</a>}
+           
           </div>
           <div className={styles.productDetailDiv}>
             <a className={styles.productDetailTitle}>Satıcı</a>

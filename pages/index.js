@@ -33,7 +33,9 @@ export default function Home({ products }) {
                   <div className={styles.productInfoDiv}>
                     <h3 className={styles.productTitle}>{product.name}</h3>
                     <p className={styles.productAddress}>{product.users.address.split('%')[1]}</p>
-                    <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p>
+                    {product.status ==1 ? 
+                      <p className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</p> :
+                        <p className={styles.productPrice}> satıldı</p>}
                   </div>
 
                  
