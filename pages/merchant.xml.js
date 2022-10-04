@@ -6,9 +6,9 @@ const toProduct = (product) => {
 	const name = product.name.replace(/ /g, '-')
 	const imageArray = product.images.split(",")
 	const unit = {
-		1: "tl",
-		2: "£",
-		3: "$"
+		1: "TRY",
+		2: "EUR",
+		3: "USD"
 	}
   return `<item> 
 	<g:id>${product.id}</g:id>
