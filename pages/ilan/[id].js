@@ -12,10 +12,38 @@ export default function ProductPage({product, owner, }){
   const images = product.images.split(',')
   const [image, setImage] = useState(images[product.vitrin-1] ? images[product.vitrin-1]: '')
   const [imageIndex, setImageIndex] = useState(images[product.vitrin-1] ? product.vitrin-1 : 0)
+  const [showSorun, setShowSorun] = useState(false)
+  const [category, setCategory] = useState('')
+  const [name, setName] = useState('')
+  const [iletisim, setIletisim] = useState('')
+  const [errorState, setErrorState] = useState(null);
 
   const changeImage = (image, i) => {
     setImageIndex(i)
     setImage(image)
+  }
+
+  const submitSorun = async (event) => {
+    event.preventDefault();
+    const res = await fetch("/api/sendgrid", {
+      body: JSON.stringify({
+        email: iletisim,
+        fullname: name,
+        subject: iletisim,
+        message: name,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    const { error } = await res.json();
+    if (error) {
+      console.log(error);
+      return;
+    }
+  setShowSorun(!showSorun)
   }
 
   const deleteProduct = async() => {
@@ -85,11 +113,32 @@ export default function ProductPage({product, owner, }){
         <meta name='twitter:description' content={product.name} />
         <meta property='og:description' content={product.name}/>
       </Head>
-      <Head>
-      
-    </Head>
       <h1 className={styles.productTitle}>{product.name}</h1>
       <section className={styles.productSection}>
+        {showSorun && <div onClick={(event)=> {if(event.target !== event.currentTarget) return;
+          setShowSorun(!showSorun)}} className={styles.sorunVar}>
+          <div onClick={() => {}} className={styles.sorunVarContent}>
+            <h2>Sorun Bildir</h2>
+            <form className={styles.formStyle} onSubmit={submitSorun}>
+        <label className={styles.fieldHead} htmlFor="sorun category">sorun konusu*</label>
+        <select required className={styles.categoryInput} value={category} id="sorun-category" name="sorun-category" onChange={(e) => setCategory(e.target.value)}>
+          <option value="Geçersiz Fiyat Yazılmış">Geçersiz Fiyat Yazılmış</option>
+          <option value="Başkasının Makinesini Satıyor">Başkasının Makinesini Satıyor</option>
+          <option value="Böyle Bir Satıcı Yok">Böyle Bir Satıcı Yok</option>
+          <option value="Diğer">Diğer</option>
+        </select>
+        <label className={styles.fieldHead} htmlFor="konu">açıklama*</label>
+        <input required className={styles.categoryInput} type="text" id="konu" name="konu" placeholder="açıklama" maxLength="180" value={name} onChange={(e) => setName(e.target.value)} />
+        <label className={styles.fieldHead} htmlFor="baslik">iletişim*</label>
+        <input required className={styles.categoryInput} type="text" id="iletisim" name="iletisim" placeholder="size ulaşabileceğimiz telefon numarası" maxLength="65" value={iletisim} onChange={(e) => setIletisim(e.target.value)} />
+        {errorState && (<div className={styles.errorDiv}>{errorState}</div>)}
+        <button type="submit" className={styles.saveButton}>
+          kaydet
+        </button>
+       
+      </form>
+          </div>
+         </div>}
         <div className={styles.sliderSection}>
           {images.length > 1 && <div className={styles.smallPhotoArea}>
             { 
@@ -136,9 +185,11 @@ export default function ProductPage({product, owner, }){
             <a className={styles.productDetailTitle}>Durumu</a>
             <a className={styles.productDetailData}>{used}</a>
           </div>
+          {!owner &&<button type="button" name="delete" onClick={()=>{setShowSorun(!showSorun)}} className={styles.sorunBildir}>sorun bildir</button>}
           <div className={styles.priceAndContactDiv}>
 
             {!owner ? <div className={styles.buttonsGroup}>
+              
               <Link href={{pathname: `/mesaj/${product.users.id}-${product.users.username}`, query: { product: product.id, productName: product.name} }}>
                 <div className={styles.mesajButton}>mesaj gönder</div>
               </Link>

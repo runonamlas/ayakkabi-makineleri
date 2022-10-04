@@ -16,3 +16,9 @@ a {
   margin: 0;
   padding: 0;
 }
+
+.info {
+  color: red;
+  position: fixed;
+  bottom: 0px;
+}

@@ -2,6 +2,7 @@
 User-agent: *
 Disallow: /404
 Disallow: /server-sitemap.xml
+Disallow: /merchant.xml
 
 # *
 User-agent: *
