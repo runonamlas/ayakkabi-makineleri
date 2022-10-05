@@ -9,7 +9,7 @@ export default function Home({ products }) {
   return (
       <section className={styles.section}>
         <Head>
-        <meta name="description" content="Sahibinden ayakkabı, taban, ,jurdan, kesim, kemer, hazır alt makineleri ve sanayi makineleri alım satım sitesi. İlan vererek kendi makinelerinizi hemen satılık olarak koyabilirsiniz."></meta>
+        <meta name="description" content="Sahibinden ayakkabı, taban, ,jurdan, kesim, kemer, hazır alt makineleri ve sanayi makinaleri alım satım sitesi. İlan vererek kendi makinelerinizi hemen satılık olarak koyabilirsiniz."></meta>
         </Head>
         <Category />
         <main className={styles.main}>
