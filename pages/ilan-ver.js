@@ -80,7 +80,7 @@ export default function IlanVer () {
       const formData = new FormData();
       formData.append('file', file);
       formData.append('upload_preset', 'my-uploads');
-      await axios('https://api.cloudinary.com/demo/ayakkabimakineleri/image/upload/I_watermarks_kkddiq', {
+      await axios('https://api.cloudinary.com/ayakkabimakineleri/image/upload/l_watermarks_kkddiq', {
         method: 'POST',
         data: formData
       }).then(r => {
