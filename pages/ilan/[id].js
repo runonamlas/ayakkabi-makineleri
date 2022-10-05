@@ -91,7 +91,7 @@ export default function ProductPage({product, owner, }){
     }
   }
   const unit = {
-    1 : "tl",
+    1 : "TRY",
     2 : "£",
     3 : "$"
   }

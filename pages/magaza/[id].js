@@ -12,7 +12,7 @@ export default function MagazaScreen({user}){
     nameConfig += nameParse
   })
   const unit = {
-    1 : "tl",
+    1 : "TRY",
     2 : "£",
     3 : "$"
   }

@@ -20,7 +20,7 @@ export default function Home({ products }) {
             {products.map((product,index) => {
               const imageArray = product.images.split(",")
               const unit = {
-                1: "tl",
+                1: "TRY",
                 2: "£",
                 3: "$"
               }
