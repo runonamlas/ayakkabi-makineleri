@@ -80,8 +80,14 @@ export default function IlanVer () {
       const formData = new FormData();
       formData.append('file', file);
       formData.append('upload_preset', 'my-uploads');
-      await axios.post('https://api.cloudinary.com/v1_1/ayakkabimakineleri/image/upload/f_auto',formData).then(r => {
-        imageArray.push(r.data.secure_url)
+      await axios('https://api.cloudinary.com/v1_1/ayakkabimakineleri/image/upload', {
+        method: 'POST',
+        data: formData
+      }).then(r => {
+        var url = r.data.secure_url
+        var parseUrl = url.split("/upload/")
+        var finishUrl = parseUrl[0] + "/upload/l_watermarks_kkddiq/" + parseUrl[1]
+        imageArray.push(finishUrl)
       });
     }
     if (selectedFile.length == 0 ){
