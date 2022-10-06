@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
       <link rel="icon" href="/favicon.ico" />
     </Head>
    <Header/>
-   <div style={{color:'#2F8d9d', position:'fixed', bottom:'0px', textAlign:'center', width:'100%', padding:'0.5em 0', fontSize:'1.2em'}}><p>Yardım veya sorularınız için <b>0544 565 8384</b> numarasını arayabilir veya Whattsap üzerinden ulaşabilirsiniz. </p></div>
+   <div style={{color:'#2F8d9d', position:'fixed', bottom:'0px', textAlign:'center', width:'100%', padding:'0.5em 0', fontSize:'1.2em', zIndex:'999'}}><p>Yardım veya sorularınız için <b>0544 565 8384</b> numarasını arayabilir veya Whattsap üzerinden ulaşabilirsiniz. </p></div>
   <Component {...pageProps} />
   </>
 }
