@@ -155,7 +155,7 @@ export default function IlanVer () {
         </div>
         {selectedFile.length>=6 ? (<a className={styles.maxImages}>en fazla 6 adet resim yükleyebilirsiniz</a>):(
           <label className={styles.customFileUpload}>
-            <input type='file' accept="images/*" className={styles.imageInput} onChange={onSelectFile} multiple/>
+            <input type='file' accept="image/*" className={styles.imageInput} onChange={onSelectFile} multiple/>
             fotograf seç
           </label>
         )}
