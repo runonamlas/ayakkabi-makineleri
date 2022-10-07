@@ -1,0 +1,10 @@
+.info {
+  color:#2F8d9d;
+  position:fixed;
+  bottom:0px;
+  text-align:center; 
+  width:100%;
+  padding:0.5em 0;
+  font-size:1.2em;
+  z-index:999;
+}

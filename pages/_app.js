@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import '../styles/globals.css';
+import styles from '../styles/StaticCss.module.css'
 
 function MyApp({ Component, pageProps }) {
   return <>
@@ -10,7 +11,7 @@ function MyApp({ Component, pageProps }) {
       <link rel="icon" href="/favicon.ico" />
     </Head>
    <Header/>
-   <div style={{color:'#2F8d9d', position:'fixed', bottom:'0px', textAlign:'center', width:'100%', padding:'0.5em 0', fontSize:'1.2em', zIndex:'999'}}><p>Yardım veya sorularınız için <b>0544 565 8384</b> numarasını arayabilir veya Whattsap üzerinden ulaşabilirsiniz. </p></div>
+   <div className={styles.info}><p>Yardım veya sorularınız için <b>0544 565 8384</b> numarasını arayabilir veya Whattsap üzerinden ulaşabilirsiniz. </p></div>
   <Component {...pageProps} />
   </>
 }
