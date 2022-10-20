@@ -284,6 +284,7 @@
   .productTitle {
     font-size: 1.4rem;
     min-height: 4vh;
+    z-index: 100;
   }
 
   .productSection{
