@@ -33,7 +33,7 @@ const NavBar = () => {
     <nav className={styles.navParent}>
       {links.map(link => (
             <Link prefetch={false} key={link.id} href={link.to}><a className={link.select? styles.menuTextSelected : styles.menuText }>
-                <Image src={link.icon} alt={link.name} width="32" height="32" priority="true"/> &nbsp;
+                <Image className={styles.imageClass} src={link.icon} alt={link.name} width="32" height="32" priority="true"/> &nbsp;
                 {link.name}
             </a></Link>
       ))}

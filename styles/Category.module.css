@@ -48,9 +48,9 @@
 
 @media only screen and (max-width:768px){
   .categoryDiv {
-    position:fixed;
-    bottom: 7vh;
-    height: 18vh;
+    position:sticky;
+    top: 7vh;
+    height: 14vh;
     width: 100%;
     padding: 0;
     color: #2F8F9D;
@@ -59,7 +59,7 @@
   }
 
   .categoryHeadDiv {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     padding-left: 0.5rem;
   }
 
@@ -72,7 +72,7 @@
   .catText{
     width: 48%;
     padding: 0.3rem 0;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .catTextSelected{

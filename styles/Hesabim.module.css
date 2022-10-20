@@ -50,11 +50,6 @@
 
 
 @media only screen and (max-width:768px){
-  .main {
-    padding-top: 7vh;
-    height: 92vh;
-  }
-
   .yukselt{
     width: 90%;
     padding: 0.4rem 0;
