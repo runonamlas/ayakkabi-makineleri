@@ -158,7 +158,8 @@ export default function ProductPage({product, owner, }){
           </div>
         </div>
         <div className={styles.contentSection}>
-        <div className={styles.productDetailDiv}>
+          <div className={styles.contentDiv}>
+          <div className={styles.productDetailDiv}>
             <a className={styles.productDetailTitle}>Fiyatı</a>
             {product.status ==1 ? 
              <a className={styles.productPrice}>{product.price} {unit[product.priceUnit]}</a> :
@@ -185,6 +186,8 @@ export default function ProductPage({product, owner, }){
             <a className={styles.productDetailTitle}>Durumu</a>
             <a className={styles.productDetailData}>{used}</a>
           </div>
+          </div>
+          <div className={styles.contentDiv}>
           {!owner &&<button type="button" name="delete" onClick={()=>{setShowSorun(!showSorun)}} className={styles.sorunBildir}>sorun bildir</button>}
           <div className={styles.priceAndContactDiv}>
 
@@ -202,6 +205,7 @@ export default function ProductPage({product, owner, }){
               <button type="button" name="delete" onClick={()=>{deleteProduct()}} className={styles.callButton}>ilanı sil</button>
             </div>
             }
+          </div>
           </div>
         </div>
       </section>
