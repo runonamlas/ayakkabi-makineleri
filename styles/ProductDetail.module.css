@@ -283,7 +283,7 @@
   
   .productTitle {
     font-size: 1.4rem;
-    height: 4vh;
+    min-height: 4vh;
   }
 
   .productSection{
